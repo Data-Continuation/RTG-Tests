@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4",
+  "schema_version": "1.5",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -10,7 +10,8 @@
     "Schema version 1.1 added the first RTG cell-geometry smoke test layer.",
     "Schema version 1.2 added provisional RTG function-class behavior tests.",
     "Schema version 1.3 added provisional RTG coupling translation tests.",
-    "Schema version 1.4 adds provisional RTG shell-role expectation tests."
+    "Schema version 1.4 added provisional RTG shell-role expectation tests.",
+    "Schema version 1.5 adds provisional RTG dark-cell color emergence tests."
   ],
   "tasks": [
     {
@@ -56,6 +57,15 @@
       "command": [
         "python",
         "tests/test_shell_roles.py"
+      ]
+    },
+    {
+      "name": "dark_cell_color_emergence_tests",
+      "description": "Validate provisional RTG dark-cell color emergence behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_color.py"
       ]
     },
     {
