@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "source_cells": [
+    {
+      "cell_id": "RTG-CELL-SRC-0001",
+      "function_class": "bridging",
+      "shell_role": "p",
+      "governance_posture": "unresolved"
+    },
+    {
+      "cell_id": "RTG-CELL-SRC-0002",
+      "function_class": "barrier",
+      "shell_role": "d",
+      "governance_posture": "quarantined"
+    }
+  ],
+  "target_cells": [
+    {
+      "cell_id": "RTG-CELL-TGT-0001",
+      "admissibility_pressure": 0.4,
+      "confidence": 0.2,
+      "darkness": 0.7,
+      "emission_readiness": 0.15
+    },
+    {
+      "cell_id": "RTG-CELL-TGT-0002",
+      "admissibility_pressure": 0.45,
+      "confidence": 0.35,
+      "darkness": 0.5,
+      "emission_readiness": 0.3
+    }
+  ],
+  "couplings": [
+    {
+      "source_cell": "RTG-CELL-SRC-0001",
+      "target_cell": "RTG-CELL-TGT-0001",
+      "relation_type": "shared_evidence",
+      "translation_weight": 0.5,
+      "pressure_effect": 0.1,
+      "confidence_effect": 0.2,
+      "darkness_effect": -0.2,
+      "emission_effect": 0.05,
+      "notes": "Shared evidence weakly raises confidence and lowers darkness."
+    },
+    {
+      "source_cell": "RTG-CELL-SRC-0002",
+      "target_cell": "RTG-CELL-TGT-0002",
+      "relation_type": "barrier",
+      "translation_weight": 0.6,
+      "pressure_effect": 0.3,
+      "confidence_effect": -0.1,
+      "darkness_effect": 0.15,
+      "emission_effect": -0.25,
+      "notes": "Barrier relation raises pressure, lowers confidence, increases darkness, and lowers emission readiness."
+    }
+  ],
+  "expected_targets_after_translation": [
+    {
+      "cell_id": "RTG-CELL-TGT-0001",
+      "admissibility_pressure": 0.45,
+      "confidence": 0.3,
+      "darkness": 0.6,
+      "emission_readiness": 0.175
+    },
+    {
+      "cell_id": "RTG-CELL-TGT-0002",
+      "admissibility_pressure": 0.63,
+      "confidence": 0.29,
+      "darkness": 0.59,
+      "emission_readiness": 0.15
+    }
+  ]
+}
