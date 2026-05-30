@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "classes": [
+    "false_transition",
+    "unknown_unknown"
+  ],
+  "valid_false_transition_subtypes": [
+    "spoofed_identity",
+    "misclassified_transition",
+    "overclaimed_authority",
+    "phantom_signal",
+    "aliased_signal",
+    "invalid_replay",
+    "contradictory_receipts"
+  ],
+  "valid_unknown_unknown_subtypes": [
+    "unmodeled_external_factor",
+    "insufficient_observer_window",
+    "missing_detector_class",
+    "latent_coupling",
+    "future_correction_factor",
+    "unexplained_anomaly"
+  ],
+  "allowed_governance_outputs": {
+    "false_transition": [
+      "block",
+      "reject",
+      "quarantine",
+      "require_replay"
+    ],
+    "unknown_unknown": [
+      "defer",
+      "lower_confidence",
+      "preserve_anomaly",
+      "widen_observer_window",
+      "mark_provisional"
+    ]
+  },
+  "cases": [
+    {
+      "case_id": "RTG-UNCERTAINTY-0001",
+      "label": "Spoofed identity surface creates false transition",
+      "apparent_transition": true,
+      "valid_transition": false,
+      "claim_integrity": 0.2,
+      "model_visibility": 0.82,
+      "known_invalid_signal": true,
+      "unmodeled_external_factor": false,
+      "subtype": "spoofed_identity",
+      "expected_uncertainty_class": "false_transition",
+      "expected_governance_output": "quarantine"
+    },
+    {
+      "case_id": "RTG-UNCERTAINTY-0002",
+      "label": "Overclaimed authority creates false transition",
+      "apparent_transition": true,
+      "valid_transition": false,
+      "claim_integrity": 0.35,
+      "model_visibility": 0.78,
+      "known_invalid_signal": true,
+      "unmodeled_external_factor": false,
+      "subtype": "overclaimed_authority",
+      "expected_uncertainty_class": "false_transition",
+      "expected_governance_output": "block"
+    },
+    {
+      "case_id": "RTG-UNCERTAINTY-0003",
+      "label": "Contradictory receipts require replay",
+      "apparent_transition": true,
+      "valid_transition": false,
+      "claim_integrity": 0.42,
+      "model_visibility": 0.8,
+      "known_invalid_signal": true,
+      "unmodeled_external_factor": false,
+      "subtype": "contradictory_receipts",
+      "expected_uncertainty_class": "false_transition",
+      "expected_governance_output": "require_replay"
+    },
+    {
+      "case_id": "RTG-UNCERTAINTY-0004",
+      "label": "Unmodeled external factor lowers confidence without declaring falsehood",
+      "apparent_transition": true,
+      "valid_transition": null,
+      "claim_integrity": 0.62,
+      "model_visibility": 0.38,
+      "known_invalid_signal": false,
+      "unmodeled_external_factor": true,
+      "subtype": "unmodeled_external_factor",
+      "expected_uncertainty_class": "unknown_unknown",
+      "expected_governance_output": "lower_confidence"
+    },
+    {
+      "case_id": "RTG-UNCERTAINTY-0005",
+      "label": "Missing detector class widens observer window",
+      "apparent_transition": false,
+      "valid_transition": null,
+      "claim_integrity": 0.5,
+      "model_visibility": 0.22,
+      "known_invalid_signal": false,
+      "unmodeled_external_factor": true,
+      "subtype": "missing_detector_class",
+      "expected_uncertainty_class": "unknown_unknown",
+      "expected_governance_output": "widen_observer_window"
+    },
+    {
+      "case_id": "RTG-UNCERTAINTY-0006",
+      "label": "Latent coupling marks result provisional",
+      "apparent_transition": true,
+      "valid_transition": null,
+      "claim_integrity": 0.58,
+      "model_visibility": 0.45,
+      "known_invalid_signal": false,
+      "unmodeled_external_factor": true,
+      "subtype": "latent_coupling",
+      "expected_uncertainty_class": "unknown_unknown",
+      "expected_governance_output": "mark_provisional"
+    }
+  ]
+}
