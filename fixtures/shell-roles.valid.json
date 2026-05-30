@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "scale": "0..1",
+  "roles": [
+    {
+      "role": "s",
+      "description": "Foundational stabilizer role.",
+      "stabilization_bias": 0.85,
+      "coupling_reach": 0.2,
+      "authority_complexity": 0.25,
+      "latent_complexity": 0.15,
+      "observability_burden": 0.25,
+      "emission_latency": 0.2,
+      "ambiguity_tolerance": 0.2,
+      "expected_behavior": "anchors core validity, receipts, identity, provenance, and low-ambiguity checks"
+    },
+    {
+      "role": "p",
+      "description": "Directional translator role.",
+      "stabilization_bias": 0.6,
+      "coupling_reach": 0.55,
+      "authority_complexity": 0.45,
+      "latent_complexity": 0.35,
+      "observability_burden": 0.45,
+      "emission_latency": 0.4,
+      "ambiguity_tolerance": 0.45,
+      "expected_behavior": "orients transitions across policy, evidence, authority, observer, and state boundaries"
+    },
+    {
+      "role": "d",
+      "description": "Coordination mediator role.",
+      "stabilization_bias": 0.7,
+      "coupling_reach": 0.7,
+      "authority_complexity": 0.75,
+      "latent_complexity": 0.65,
+      "observability_burden": 0.7,
+      "emission_latency": 0.65,
+      "ambiguity_tolerance": 0.65,
+      "expected_behavior": "mediates quorum, dispute, escalation, quarantine, replay, and multi-authority coordination"
+    },
+    {
+      "role": "f",
+      "description": "Deep complexity role.",
+      "stabilization_bias": 0.55,
+      "coupling_reach": 0.8,
+      "authority_complexity": 0.85,
+      "latent_complexity": 0.9,
+      "observability_burden": 0.95,
+      "emission_latency": 0.9,
+      "ambiguity_tolerance": 0.8,
+      "expected_behavior": "carries long-range dependencies, hidden context, emergent behavior, and slow stabilization"
+    }
+  ]
+}
