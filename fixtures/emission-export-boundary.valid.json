@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "emission_export_boundary",
+  "valid_states": [
+    "export_allowed",
+    "boundary_blocked",
+    "export_deferred",
+    "export_quarantined",
+    "export_overclaimed"
+  ],
+  "cases": [
+    {
+      "case_id": "EEB-001",
+      "boundary_authorized": true,
+      "emission_readiness": 0.82,
+      "export_risk": 0.18,
+      "claimed_export": false,
+      "expected_state": "export_allowed"
+    },
+    {
+      "case_id": "EEB-002",
+      "boundary_authorized": false,
+      "emission_readiness": 0.85,
+      "export_risk": 0.2,
+      "claimed_export": false,
+      "expected_state": "boundary_blocked"
+    },
+    {
+      "case_id": "EEB-003",
+      "boundary_authorized": true,
+      "emission_readiness": 0.5,
+      "export_risk": 0.2,
+      "claimed_export": false,
+      "expected_state": "export_deferred"
+    },
+    {
+      "case_id": "EEB-004",
+      "boundary_authorized": true,
+      "emission_readiness": 0.8,
+      "export_risk": 0.72,
+      "claimed_export": false,
+      "expected_state": "export_quarantined"
+    },
+    {
+      "case_id": "EEB-005",
+      "boundary_authorized": false,
+      "emission_readiness": 0.4,
+      "export_risk": 0.2,
+      "claimed_export": true,
+      "expected_state": "export_overclaimed"
+    }
+  ]
+}

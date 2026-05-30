@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "coupling_replay_consistency",
+  "valid_states": [
+    "coupling_replay_valid",
+    "source_replay_missing",
+    "target_replay_missing",
+    "effect_mismatch",
+    "coupling_quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "CRC-001",
+      "source_replay_valid": true,
+      "target_replay_valid": true,
+      "effect_consistency": 0.91,
+      "quarantine_signal": false,
+      "expected_state": "coupling_replay_valid"
+    },
+    {
+      "case_id": "CRC-002",
+      "source_replay_valid": false,
+      "target_replay_valid": true,
+      "effect_consistency": 0.8,
+      "quarantine_signal": false,
+      "expected_state": "source_replay_missing"
+    },
+    {
+      "case_id": "CRC-003",
+      "source_replay_valid": true,
+      "target_replay_valid": false,
+      "effect_consistency": 0.8,
+      "quarantine_signal": false,
+      "expected_state": "target_replay_missing"
+    },
+    {
+      "case_id": "CRC-004",
+      "source_replay_valid": true,
+      "target_replay_valid": true,
+      "effect_consistency": 0.42,
+      "quarantine_signal": false,
+      "expected_state": "effect_mismatch"
+    },
+    {
+      "case_id": "CRC-005",
+      "source_replay_valid": true,
+      "target_replay_valid": true,
+      "effect_consistency": 0.35,
+      "quarantine_signal": true,
+      "expected_state": "coupling_quarantine"
+    }
+  ]
+}

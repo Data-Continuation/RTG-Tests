@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "confidence_regrade",
+  "valid_states": [
+    "confidence_upgraded",
+    "confidence_downgraded",
+    "confidence_stable",
+    "confidence_provisional",
+    "confidence_rejected"
+  ],
+  "cases": [
+    {
+      "case_id": "CR-001",
+      "old_confidence": 0.5,
+      "new_confidence": 0.82,
+      "provisional_factor": false,
+      "rejection_signal": false,
+      "expected_state": "confidence_upgraded"
+    },
+    {
+      "case_id": "CR-002",
+      "old_confidence": 0.82,
+      "new_confidence": 0.4,
+      "provisional_factor": false,
+      "rejection_signal": false,
+      "expected_state": "confidence_downgraded"
+    },
+    {
+      "case_id": "CR-003",
+      "old_confidence": 0.7,
+      "new_confidence": 0.72,
+      "provisional_factor": false,
+      "rejection_signal": false,
+      "expected_state": "confidence_stable"
+    },
+    {
+      "case_id": "CR-004",
+      "old_confidence": 0.55,
+      "new_confidence": 0.58,
+      "provisional_factor": true,
+      "rejection_signal": false,
+      "expected_state": "confidence_provisional"
+    },
+    {
+      "case_id": "CR-005",
+      "old_confidence": 0.7,
+      "new_confidence": 0.2,
+      "provisional_factor": false,
+      "rejection_signal": true,
+      "expected_state": "confidence_rejected"
+    }
+  ]
+}

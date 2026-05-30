@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "state_lineage_integrity",
+  "valid_states": [
+    "lineage_valid",
+    "orphan_state",
+    "fork_conflict",
+    "parent_mismatch",
+    "lineage_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "SLI-001",
+      "parent_present": true,
+      "fork_conflict": false,
+      "parent_mismatch": false,
+      "lineage_confidence": 0.92,
+      "expected_state": "lineage_valid"
+    },
+    {
+      "case_id": "SLI-002",
+      "parent_present": false,
+      "fork_conflict": false,
+      "parent_mismatch": false,
+      "lineage_confidence": 0.7,
+      "expected_state": "orphan_state"
+    },
+    {
+      "case_id": "SLI-003",
+      "parent_present": true,
+      "fork_conflict": true,
+      "parent_mismatch": false,
+      "lineage_confidence": 0.82,
+      "expected_state": "fork_conflict"
+    },
+    {
+      "case_id": "SLI-004",
+      "parent_present": true,
+      "fork_conflict": false,
+      "parent_mismatch": true,
+      "lineage_confidence": 0.88,
+      "expected_state": "parent_mismatch"
+    },
+    {
+      "case_id": "SLI-005",
+      "parent_present": true,
+      "fork_conflict": false,
+      "parent_mismatch": false,
+      "lineage_confidence": 0.45,
+      "expected_state": "lineage_provisional"
+    }
+  ]
+}

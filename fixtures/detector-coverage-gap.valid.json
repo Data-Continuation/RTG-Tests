@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "detector_coverage_gap",
+  "valid_states": [
+    "covered",
+    "gap_detected",
+    "gap_with_anomaly",
+    "gap_requires_new_detector",
+    "coverage_overclaimed"
+  ],
+  "cases": [
+    {
+      "case_id": "DCG-001",
+      "detector_available": true,
+      "anomaly_present": false,
+      "new_detector_required": false,
+      "claimed_coverage": false,
+      "expected_state": "covered"
+    },
+    {
+      "case_id": "DCG-002",
+      "detector_available": false,
+      "anomaly_present": false,
+      "new_detector_required": false,
+      "claimed_coverage": false,
+      "expected_state": "gap_detected"
+    },
+    {
+      "case_id": "DCG-003",
+      "detector_available": false,
+      "anomaly_present": true,
+      "new_detector_required": false,
+      "claimed_coverage": false,
+      "expected_state": "gap_with_anomaly"
+    },
+    {
+      "case_id": "DCG-004",
+      "detector_available": false,
+      "anomaly_present": true,
+      "new_detector_required": true,
+      "claimed_coverage": false,
+      "expected_state": "gap_requires_new_detector"
+    },
+    {
+      "case_id": "DCG-005",
+      "detector_available": false,
+      "anomaly_present": false,
+      "new_detector_required": false,
+      "claimed_coverage": true,
+      "expected_state": "coverage_overclaimed"
+    }
+  ]
+}

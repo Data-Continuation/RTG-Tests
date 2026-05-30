@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "supersession_ordering",
+  "valid_states": [
+    "supersession_valid",
+    "older_attempt_blocked",
+    "same_version_conflict",
+    "missing_predecessor",
+    "supersession_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "SO-001",
+      "new_version": 2,
+      "prior_version": 1,
+      "predecessor_present": true,
+      "ordering_confidence": 0.9,
+      "expected_state": "supersession_valid"
+    },
+    {
+      "case_id": "SO-002",
+      "new_version": 1,
+      "prior_version": 2,
+      "predecessor_present": true,
+      "ordering_confidence": 0.85,
+      "expected_state": "older_attempt_blocked"
+    },
+    {
+      "case_id": "SO-003",
+      "new_version": 2,
+      "prior_version": 2,
+      "predecessor_present": true,
+      "ordering_confidence": 0.8,
+      "expected_state": "same_version_conflict"
+    },
+    {
+      "case_id": "SO-004",
+      "new_version": 3,
+      "prior_version": 2,
+      "predecessor_present": false,
+      "ordering_confidence": 0.8,
+      "expected_state": "missing_predecessor"
+    },
+    {
+      "case_id": "SO-005",
+      "new_version": 3,
+      "prior_version": 2,
+      "predecessor_present": true,
+      "ordering_confidence": 0.45,
+      "expected_state": "supersession_provisional"
+    }
+  ]
+}

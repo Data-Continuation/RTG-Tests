@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "anomaly_retention",
+  "valid_states": [
+    "retain_anomaly",
+    "retain_and_widen_window",
+    "retain_and_quarantine",
+    "resolve_anomaly",
+    "discard_noise"
+  ],
+  "cases": [
+    {
+      "case_id": "AR-001",
+      "anomaly_present": true,
+      "observer_gap": 0.4,
+      "invalid_signal": false,
+      "resolved": false,
+      "retention_value": 0.4,
+      "expected_state": "retain_anomaly"
+    },
+    {
+      "case_id": "AR-002",
+      "anomaly_present": true,
+      "observer_gap": 0.7,
+      "invalid_signal": false,
+      "resolved": false,
+      "retention_value": 0.7,
+      "expected_state": "retain_and_widen_window"
+    },
+    {
+      "case_id": "AR-003",
+      "anomaly_present": true,
+      "observer_gap": 0.8,
+      "invalid_signal": true,
+      "resolved": false,
+      "retention_value": 0.8,
+      "expected_state": "retain_and_quarantine"
+    },
+    {
+      "case_id": "AR-004",
+      "anomaly_present": true,
+      "observer_gap": 0.9,
+      "invalid_signal": false,
+      "resolved": true,
+      "retention_value": 0.85,
+      "expected_state": "resolve_anomaly"
+    },
+    {
+      "case_id": "AR-005",
+      "anomaly_present": false,
+      "observer_gap": 0.1,
+      "invalid_signal": false,
+      "resolved": false,
+      "retention_value": 0.1,
+      "expected_state": "discard_noise"
+    }
+  ]
+}

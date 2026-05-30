@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "quarantine_release",
+  "valid_states": [
+    "release_allowed",
+    "continue_quarantine",
+    "escalate_quarantine",
+    "reject_release",
+    "release_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "QR-001",
+      "risk_score": 0.15,
+      "review_confidence": 0.88,
+      "remediation_verified": true,
+      "rejection_signal": false,
+      "expected_state": "release_allowed"
+    },
+    {
+      "case_id": "QR-002",
+      "risk_score": 0.55,
+      "review_confidence": 0.72,
+      "remediation_verified": true,
+      "rejection_signal": false,
+      "expected_state": "continue_quarantine"
+    },
+    {
+      "case_id": "QR-003",
+      "risk_score": 0.82,
+      "review_confidence": 0.5,
+      "remediation_verified": false,
+      "rejection_signal": false,
+      "expected_state": "escalate_quarantine"
+    },
+    {
+      "case_id": "QR-004",
+      "risk_score": 0.75,
+      "review_confidence": 0.2,
+      "remediation_verified": false,
+      "rejection_signal": true,
+      "expected_state": "reject_release"
+    },
+    {
+      "case_id": "QR-005",
+      "risk_score": 0.3,
+      "review_confidence": 0.62,
+      "remediation_verified": true,
+      "rejection_signal": false,
+      "expected_state": "release_provisional"
+    }
+  ]
+}

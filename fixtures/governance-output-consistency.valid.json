@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "governance_output_consistency",
+  "valid_states": [
+    "output_consistent",
+    "output_class_mismatch",
+    "output_authority_mismatch",
+    "output_receipt_missing",
+    "output_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "GOC-001",
+      "declared_output": "accept",
+      "computed_output": "accept",
+      "authority_satisfied": true,
+      "confidence": 0.9,
+      "expected_state": "output_consistent"
+    },
+    {
+      "case_id": "GOC-002",
+      "declared_output": "reject",
+      "computed_output": "accept",
+      "authority_satisfied": true,
+      "confidence": 0.8,
+      "expected_state": "output_class_mismatch"
+    },
+    {
+      "case_id": "GOC-003",
+      "declared_output": "accept",
+      "computed_output": "accept",
+      "authority_satisfied": false,
+      "confidence": 0.85,
+      "expected_state": "output_authority_mismatch"
+    },
+    {
+      "case_id": "GOC-004",
+      "declared_output": "quarantine",
+      "computed_output": "quarantine",
+      "authority_satisfied": false,
+      "confidence": 0.8,
+      "expected_state": "output_receipt_missing"
+    },
+    {
+      "case_id": "GOC-005",
+      "declared_output": "defer",
+      "computed_output": "defer",
+      "authority_satisfied": true,
+      "confidence": 0.45,
+      "expected_state": "output_provisional"
+    }
+  ]
+}

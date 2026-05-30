@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "receipt_chain_continuity",
+  "valid_states": [
+    "continuous",
+    "missing_prior",
+    "missing_result",
+    "export_missing",
+    "receipt_break"
+  ],
+  "cases": [
+    {
+      "case_id": "RCC-001",
+      "prior_state_present": true,
+      "receipt_link_valid": true,
+      "result_state_present": true,
+      "export_receipt_present": true,
+      "expected_state": "continuous"
+    },
+    {
+      "case_id": "RCC-002",
+      "prior_state_present": false,
+      "receipt_link_valid": true,
+      "result_state_present": true,
+      "export_receipt_present": true,
+      "expected_state": "missing_prior"
+    },
+    {
+      "case_id": "RCC-003",
+      "prior_state_present": true,
+      "receipt_link_valid": true,
+      "result_state_present": false,
+      "export_receipt_present": true,
+      "expected_state": "missing_result"
+    },
+    {
+      "case_id": "RCC-004",
+      "prior_state_present": true,
+      "receipt_link_valid": true,
+      "result_state_present": true,
+      "export_receipt_present": false,
+      "expected_state": "export_missing"
+    },
+    {
+      "case_id": "RCC-005",
+      "prior_state_present": true,
+      "receipt_link_valid": false,
+      "result_state_present": true,
+      "export_receipt_present": true,
+      "expected_state": "receipt_break"
+    }
+  ]
+}
