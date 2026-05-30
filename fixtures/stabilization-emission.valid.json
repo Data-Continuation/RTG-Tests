@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "thresholds": {
+    "stabilization_min": 0.7,
+    "evidence_min": 0.7,
+    "confidence_min": 0.7,
+    "admissibility_min": 0.75,
+    "risk_max": 0.35,
+    "emission_min": 0.7,
+    "admissibility_block_max": 0.4,
+    "deferred_stabilization_min": 0.5
+  },
+  "cases": [
+    {
+      "case_id": "RTG-EMIT-0001",
+      "label": "Unstabilized compressed state remains ineligible",
+      "compression_pressure": 0.8,
+      "stabilization": 0.3,
+      "evidence_density": 0.25,
+      "confidence": 0.2,
+      "admissibility_score": 0.45,
+      "risk_resistance": 0.3,
+      "emission_readiness": 0.15,
+      "expected_emission_state": "ineligible"
+    },
+    {
+      "case_id": "RTG-EMIT-0002",
+      "label": "Partially stabilized state is deferred",
+      "compression_pressure": 0.7,
+      "stabilization": 0.58,
+      "evidence_density": 0.55,
+      "confidence": 0.52,
+      "admissibility_score": 0.62,
+      "risk_resistance": 0.28,
+      "emission_readiness": 0.42,
+      "expected_emission_state": "deferred"
+    },
+    {
+      "case_id": "RTG-EMIT-0003",
+      "label": "High risk state is quarantined despite partial stabilization",
+      "compression_pressure": 0.82,
+      "stabilization": 0.72,
+      "evidence_density": 0.74,
+      "confidence": 0.68,
+      "admissibility_score": 0.78,
+      "risk_resistance": 0.62,
+      "emission_readiness": 0.64,
+      "expected_emission_state": "quarantined"
+    },
+    {
+      "case_id": "RTG-EMIT-0004",
+      "label": "Admissibility failure blocks emission",
+      "compression_pressure": 0.6,
+      "stabilization": 0.76,
+      "evidence_density": 0.75,
+      "confidence": 0.74,
+      "admissibility_score": 0.32,
+      "risk_resistance": 0.22,
+      "emission_readiness": 0.72,
+      "expected_emission_state": "blocked"
+    },
+    {
+      "case_id": "RTG-EMIT-0005",
+      "label": "Stabilized admissible state becomes eligible for governed emission",
+      "compression_pressure": 0.68,
+      "stabilization": 0.82,
+      "evidence_density": 0.8,
+      "confidence": 0.78,
+      "admissibility_score": 0.84,
+      "risk_resistance": 0.2,
+      "emission_readiness": 0.76,
+      "expected_emission_state": "eligible"
+    }
+  ]
+}
