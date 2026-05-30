@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "cell_id": "RTG-CELL-DARK-0001",
+  "label": "Dark Cell Color Emergence Sequence",
+  "color_intensity_formula": "average(observation,evidence_density,confidence,stabilization,emission_readiness)",
+  "darkness_tolerance": 0.05,
+  "phases": [
+    {
+      "phase": "unobserved",
+      "governance_posture": "unknown",
+      "observation": 0.0,
+      "evidence_density": 0.0,
+      "confidence": 0.0,
+      "stabilization": 0.0,
+      "emission_readiness": 0.0,
+      "darkness": 1.0,
+      "expected_color_family": "dark",
+      "notes": "No governed observation exists yet."
+    },
+    {
+      "phase": "touched",
+      "governance_posture": "unresolved",
+      "observation": 0.2,
+      "evidence_density": 0.15,
+      "confidence": 0.1,
+      "stabilization": 0.12,
+      "emission_readiness": 0.02,
+      "darkness": 0.8,
+      "expected_color_family": "dark",
+      "notes": "The dark cell has been touched, but not enough structure exists to emit governed color."
+    },
+    {
+      "phase": "classified",
+      "governance_posture": "deferred",
+      "observation": 0.45,
+      "evidence_density": 0.4,
+      "confidence": 0.32,
+      "stabilization": 0.38,
+      "emission_readiness": 0.2,
+      "darkness": 0.55,
+      "expected_color_family": "pending",
+      "notes": "The cell is partially colored through classification but remains below stable emission."
+    },
+    {
+      "phase": "stabilizing",
+      "governance_posture": "contested",
+      "observation": 0.68,
+      "evidence_density": 0.62,
+      "confidence": 0.55,
+      "stabilization": 0.6,
+      "emission_readiness": 0.42,
+      "darkness": 0.32,
+      "expected_color_family": "contested",
+      "notes": "The cell carries meaningful color but remains contested."
+    },
+    {
+      "phase": "emitted",
+      "governance_posture": "accepted",
+      "observation": 0.86,
+      "evidence_density": 0.82,
+      "confidence": 0.78,
+      "stabilization": 0.8,
+      "emission_readiness": 0.72,
+      "darkness": 0.14,
+      "expected_color_family": "stable",
+      "notes": "The cell has stabilized enough to emit governed color."
+    }
+  ]
+}
