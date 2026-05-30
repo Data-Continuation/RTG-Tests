@@ -1,12 +1,13 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
     "This registry declares tasks the repo dispatcher is allowed to run.",
     "The dispatcher rejects undeclared task names.",
-    "Commands are intentionally simple and repo-local."
+    "Commands are intentionally simple and repo-local.",
+    "Schema version 1.1 adds the first RTG cell-geometry smoke test layer."
   ],
   "tasks": [
     {
@@ -16,6 +17,15 @@
       "command": [
         "python",
         "tests/test_rtg_fixtures.py"
+      ]
+    },
+    {
+      "name": "cell_geometry_smoke_tests",
+      "description": "Validate first provisional RTG cell-geometry invariants.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_cell_geometry.py"
       ]
     },
     {
