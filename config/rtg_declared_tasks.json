@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.10",
+  "schema_version": "1.11",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -7,7 +7,7 @@
     "This registry declares tasks the repo dispatcher is allowed to run.",
     "The dispatcher rejects undeclared task names.",
     "Commands are intentionally simple and repo-local.",
-    "Schema version 1.10 adds provisional RTG uncertainty-class separation tests."
+    "Schema version 1.11 adds provisional RTG observer-identity coupling tests."
   ],
   "tasks": [
     {
@@ -107,6 +107,15 @@
       "command": [
         "python",
         "tests/test_uncertainty_class_separation.py"
+      ]
+    },
+    {
+      "name": "observer_identity_coupling_tests",
+      "description": "Validate provisional RTG observer identity compatibility with transition identity classes.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_identity_coupling.py"
       ]
     },
     {
