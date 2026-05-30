@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "principle": "A transition claim must be replayable or receipt-consistent before it can become valid state evidence.",
+  "valid_replay_states": [
+    "valid_replay",
+    "receipt_consistent",
+    "replay_required",
+    "receipt_conflict",
+    "invalid_replay",
+    "unreplayable_provisional"
+  ],
+  "governance_outputs": {
+    "valid_replay": "accept_state_evidence",
+    "receipt_consistent": "accept_with_receipt_basis",
+    "replay_required": "defer_require_replay",
+    "receipt_conflict": "quarantine_receipt_conflict",
+    "invalid_replay": "reject_invalid_replay",
+    "unreplayable_provisional": "mark_provisional_preserve_anomaly"
+  },
+  "thresholds": {
+    "hash_match_required": true,
+    "receipt_consistency_min": 0.8,
+    "replay_consistency_min": 0.8,
+    "provisional_visibility_max": 0.5
+  },
+  "cases": [
+    {
+      "case_id": "RTG-REPLAY-0001",
+      "label": "Replayable transition with matching receipts becomes valid state evidence",
+      "transition_claim_present": true,
+      "replay_attempted": true,
+      "replay_success": true,
+      "source_hash_match": true,
+      "target_hash_match": true,
+      "receipt_consistency": 0.94,
+      "replay_consistency": 0.92,
+      "model_visibility": 0.88,
+      "known_invalid_signal": false,
+      "expected_replay_state": "valid_replay"
+    },
+    {
+      "case_id": "RTG-REPLAY-0002",
+      "label": "Replay unavailable but receipt chain is consistent",
+      "transition_claim_present": true,
+      "replay_attempted": false,
+      "replay_success": false,
+      "source_hash_match": true,
+      "target_hash_match": true,
+      "receipt_consistency": 0.91,
+      "replay_consistency": 0.0,
+      "model_visibility": 0.84,
+      "known_invalid_signal": false,
+      "expected_replay_state": "receipt_consistent"
+    },
+    {
+      "case_id": "RTG-REPLAY-0003",
+      "label": "Transition claim lacks replay and insufficient receipt basis",
+      "transition_claim_present": true,
+      "replay_attempted": false,
+      "replay_success": false,
+      "source_hash_match": true,
+      "target_hash_match": false,
+      "receipt_consistency": 0.56,
+      "replay_consistency": 0.0,
+      "model_visibility": 0.76,
+      "known_invalid_signal": false,
+      "expected_replay_state": "replay_required"
+    },
+    {
+      "case_id": "RTG-REPLAY-0004",
+      "label": "Contradictory receipts quarantine transition claim",
+      "transition_claim_present": true,
+      "replay_attempted": true,
+      "replay_success": false,
+      "source_hash_match": true,
+      "target_hash_match": false,
+      "receipt_consistency": 0.3,
+      "replay_consistency": 0.25,
+      "model_visibility": 0.86,
+      "known_invalid_signal": true,
+      "expected_replay_state": "receipt_conflict"
+    },
+    {
+      "case_id": "RTG-REPLAY-0005",
+      "label": "Attempted replay fails despite matching source hash",
+      "transition_claim_present": true,
+      "replay_attempted": true,
+      "replay_success": false,
+      "source_hash_match": true,
+      "target_hash_match": true,
+      "receipt_consistency": 0.82,
+      "replay_consistency": 0.42,
+      "model_visibility": 0.82,
+      "known_invalid_signal": true,
+      "expected_replay_state": "invalid_replay"
+    },
+    {
+      "case_id": "RTG-REPLAY-0006",
+      "label": "Low-visibility unreplayable anomaly remains provisional",
+      "transition_claim_present": true,
+      "replay_attempted": false,
+      "replay_success": false,
+      "source_hash_match": false,
+      "target_hash_match": false,
+      "receipt_consistency": 0.48,
+      "replay_consistency": 0.0,
+      "model_visibility": 0.32,
+      "known_invalid_signal": false,
+      "expected_replay_state": "unreplayable_provisional"
+    }
+  ]
+}
