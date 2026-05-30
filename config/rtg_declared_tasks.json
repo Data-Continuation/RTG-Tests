@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.7",
+  "schema_version": "1.8",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -13,7 +13,8 @@
     "Schema version 1.4 added provisional RTG shell-role expectation tests.",
     "Schema version 1.5 added provisional RTG dark-cell color emergence tests.",
     "Schema version 1.6 added provisional RTG Zeno-prone transition tests.",
-    "Schema version 1.7 adds provisional RTG stabilization-emission threshold tests."
+    "Schema version 1.7 added provisional RTG stabilization-emission threshold tests.",
+    "Schema version 1.8 adds provisional RTG observer-window tests."
   ],
   "tasks": [
     {
@@ -86,6 +87,15 @@
       "command": [
         "python",
         "tests/test_stabilization_emission.py"
+      ]
+    },
+    {
+      "name": "observer_window_tests",
+      "description": "Validate provisional RTG observer-window visibility, classification, and emission behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_windows.py"
       ]
     },
     {
