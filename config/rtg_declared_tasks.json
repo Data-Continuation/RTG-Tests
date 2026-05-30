@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "repo": "Data-Continuation/RTG-Tests",
+  "dispatcher": "rtg-repo-dispatcher",
+  "posture": "repo-local-only",
+  "notes": [
+    "This registry declares tasks the repo dispatcher is allowed to run.",
+    "The dispatcher rejects undeclared task names.",
+    "Commands are intentionally simple and repo-local."
+  ],
+  "tasks": [
+    {
+      "name": "fixture_smoke_tests",
+      "description": "Validate provisional RTG fixture shape and allowed values.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_fixtures.py"
+      ]
+    },
+    {
+      "name": "dispatcher_self_check",
+      "description": "Validate dispatcher registry shape and unknown-task rejection.",
+      "enabled": true,
+      "command": [
+        "python",
+        "scripts/verify_rtg_dispatcher.py"
+      ]
+    }
+  ]
+}
