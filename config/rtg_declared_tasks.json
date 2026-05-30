@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.6",
+  "schema_version": "1.7",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -12,7 +12,8 @@
     "Schema version 1.3 added provisional RTG coupling translation tests.",
     "Schema version 1.4 added provisional RTG shell-role expectation tests.",
     "Schema version 1.5 added provisional RTG dark-cell color emergence tests.",
-    "Schema version 1.6 adds provisional RTG Zeno-prone transition tests."
+    "Schema version 1.6 added provisional RTG Zeno-prone transition tests.",
+    "Schema version 1.7 adds provisional RTG stabilization-emission threshold tests."
   ],
   "tasks": [
     {
@@ -76,6 +77,15 @@
       "command": [
         "python",
         "tests/test_zeno_transitions.py"
+      ]
+    },
+    {
+      "name": "stabilization_emission_tests",
+      "description": "Validate provisional RTG stabilization-to-emission threshold behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_stabilization_emission.py"
       ]
     },
     {
