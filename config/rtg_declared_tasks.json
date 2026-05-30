@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.12",
+  "schema_version": "1.22",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -7,7 +7,7 @@
     "This registry declares tasks the repo dispatcher is allowed to run.",
     "The dispatcher rejects undeclared task names.",
     "Commands are intentionally simple and repo-local.",
-    "Schema version 1.12 adds provisional RTG transition-replay validation tests."
+    "Schema version 1.13 through 1.22 add the next ten provisional RTG test layers."
   ],
   "tasks": [
     {
@@ -125,6 +125,96 @@
       "command": [
         "python",
         "tests/test_transition_replay_validation.py"
+      ]
+    },
+    {
+      "name": "receipt_chain_continuity_tests",
+      "description": "Validate provisional RTG receipt-chain continuity behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_chain_continuity.py"
+      ]
+    },
+    {
+      "name": "state_lineage_integrity_tests",
+      "description": "Validate provisional RTG state-lineage integrity behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_lineage_integrity.py"
+      ]
+    },
+    {
+      "name": "coupling_replay_consistency_tests",
+      "description": "Validate provisional RTG coupling-replay consistency behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_coupling_replay_consistency.py"
+      ]
+    },
+    {
+      "name": "emission_export_boundary_tests",
+      "description": "Validate provisional RTG emission-export boundary behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_export_boundary.py"
+      ]
+    },
+    {
+      "name": "anomaly_retention_tests",
+      "description": "Validate provisional RTG anomaly retention behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_anomaly_retention.py"
+      ]
+    },
+    {
+      "name": "detector_coverage_gap_tests",
+      "description": "Validate provisional RTG detector coverage gap behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_coverage_gap.py"
+      ]
+    },
+    {
+      "name": "confidence_regrade_tests",
+      "description": "Validate provisional RTG confidence regrade behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_regrade.py"
+      ]
+    },
+    {
+      "name": "quarantine_release_tests",
+      "description": "Validate provisional RTG quarantine release behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_release.py"
+      ]
+    },
+    {
+      "name": "supersession_ordering_tests",
+      "description": "Validate provisional RTG supersession ordering behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_ordering.py"
+      ]
+    },
+    {
+      "name": "governance_output_consistency_tests",
+      "description": "Validate provisional RTG governance-output consistency behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_consistency.py"
       ]
     },
     {
