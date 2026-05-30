@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "authority_order": [
+    "none",
+    "observer",
+    "reviewer",
+    "maintainer",
+    "quorum",
+    "root"
+  ],
+  "transition_authority_requirements": {
+    "informational": "observer",
+    "classification": "reviewer",
+    "repo_change": "maintainer",
+    "quarantine": "quorum",
+    "root_override": "root"
+  },
+  "thresholds": {
+    "visibility_min": 0.7,
+    "stabilization_min": 0.7,
+    "evidence_min": 0.7,
+    "confidence_min": 0.7,
+    "emission_min": 0.7
+  },
+  "cases": [
+    {
+      "case_id": "RTG-AUTH-0001",
+      "label": "Low visibility prevents emission before authority matters",
+      "transition_class": "classification",
+      "observer_authority_class": "reviewer",
+      "target_visibility": 0.45,
+      "stabilization": 0.82,
+      "evidence_density": 0.8,
+      "confidence": 0.78,
+      "emission_readiness": 0.76,
+      "claimed_emission": false,
+      "expected_authority_emission_state": "not_visible"
+    },
+    {
+      "case_id": "RTG-AUTH-0002",
+      "label": "Visible but not ready transition is not emission eligible",
+      "transition_class": "repo_change",
+      "observer_authority_class": "maintainer",
+      "target_visibility": 0.84,
+      "stabilization": 0.62,
+      "evidence_density": 0.75,
+      "confidence": 0.74,
+      "emission_readiness": 0.58,
+      "claimed_emission": false,
+      "expected_authority_emission_state": "not_ready"
+    },
+    {
+      "case_id": "RTG-AUTH-0003",
+      "label": "Visible ready repo change is blocked by insufficient authority",
+      "transition_class": "repo_change",
+      "observer_authority_class": "reviewer",
+      "target_visibility": 0.86,
+      "stabilization": 0.82,
+      "evidence_density": 0.81,
+      "confidence": 0.79,
+      "emission_readiness": 0.76,
+      "claimed_emission": false,
+      "expected_authority_emission_state": "authority_insufficient"
+    },
+    {
+      "case_id": "RTG-AUTH-0004",
+      "label": "Visible ready quarantine transition satisfies quorum authority",
+      "transition_class": "quarantine",
+      "observer_authority_class": "quorum",
+      "target_visibility": 0.88,
+      "stabilization": 0.8,
+      "evidence_density": 0.82,
+      "confidence": 0.8,
+      "emission_readiness": 0.78,
+      "claimed_emission": true,
+      "expected_authority_emission_state": "authority_satisfied"
+    },
+    {
+      "case_id": "RTG-AUTH-0005",
+      "label": "Observer overclaims root override emission without root authority",
+      "transition_class": "root_override",
+      "observer_authority_class": "quorum",
+      "target_visibility": 0.9,
+      "stabilization": 0.84,
+      "evidence_density": 0.85,
+      "confidence": 0.83,
+      "emission_readiness": 0.82,
+      "claimed_emission": true,
+      "expected_authority_emission_state": "overclaimed_authority"
+    }
+  ]
+}
