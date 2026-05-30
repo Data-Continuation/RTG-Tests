@@ -1,0 +1,26 @@
+{
+  "couplings": [
+    {
+      "source_cell": "RTG-CELL-0001",
+      "target_cell": "RTG-CELL-0002",
+      "relation_type": "shared_evidence",
+      "translation_weight": 0.35,
+      "pressure_effect": 0.12,
+      "confidence_effect": 0.04,
+      "darkness_effect": -0.03,
+      "emission_effect": 0.01,
+      "notes": "A weak translated coupling caused by shared evidence class."
+    },
+    {
+      "source_cell": "RTG-CELL-0001",
+      "target_cell": "RTG-CELL-0003",
+      "relation_type": "barrier",
+      "translation_weight": 0.6,
+      "pressure_effect": 0.3,
+      "confidence_effect": -0.08,
+      "darkness_effect": 0.1,
+      "emission_effect": -0.12,
+      "notes": "A barrier relation where unresolved posture raises pressure and lowers emission readiness."
+    }
+  ]
+}

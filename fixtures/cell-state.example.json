@@ -1,0 +1,17 @@
+{
+  "cell_id": "RTG-CELL-0001",
+  "label": "Dark Cell Stabilization Example",
+  "maturity": "draft",
+  "observation": 0.15,
+  "evidence_density": 0.1,
+  "confidence": 0.08,
+  "admissibility_pressure": 0.72,
+  "risk_resistance": 0.64,
+  "stabilization": 0.22,
+  "emission_readiness": 0.05,
+  "darkness": 0.88,
+  "function_class": "slow_growth",
+  "shell_role": "f",
+  "governance_posture": "unresolved",
+  "notes": "A provisional example of a dark transition cell that has been touched by observation but has not stabilized enough for governed emission."
+}
