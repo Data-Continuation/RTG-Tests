@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "scale": "0..1 except coupling_effect, which may be -1..1",
+  "profiles": [
+    {
+      "class_name": "bounded",
+      "description": "Observation and pressure remain locally constrained.",
+      "pressure_growth": 0.25,
+      "observation_effect": 0.4,
+      "coupling_effect": 0.0,
+      "stabilization_difficulty": 0.25,
+      "emission_constraint": 0.25,
+      "zeno_sensitivity": 0.2,
+      "expected_behavior": "prevents runaway admissibility pressure"
+    },
+    {
+      "class_name": "slow_growth",
+      "description": "Pressure accumulates gradually as observation increases.",
+      "pressure_growth": 0.45,
+      "observation_effect": 0.5,
+      "coupling_effect": 0.05,
+      "stabilization_difficulty": 0.4,
+      "emission_constraint": 0.35,
+      "zeno_sensitivity": 0.35,
+      "expected_behavior": "allows transition to continue while evidence accumulates"
+    },
+    {
+      "class_name": "steep_growth",
+      "description": "Pressure rises sharply near a boundary.",
+      "pressure_growth": 0.75,
+      "observation_effect": 0.65,
+      "coupling_effect": 0.1,
+      "stabilization_difficulty": 0.65,
+      "emission_constraint": 0.6,
+      "zeno_sensitivity": 0.65,
+      "expected_behavior": "creates strong admissibility pressure near transition thresholds"
+    },
+    {
+      "class_name": "singular",
+      "description": "Pressure approaches a near-singular boundary.",
+      "pressure_growth": 0.95,
+      "observation_effect": 0.85,
+      "coupling_effect": -0.05,
+      "stabilization_difficulty": 0.9,
+      "emission_constraint": 0.9,
+      "zeno_sensitivity": 0.9,
+      "expected_behavior": "strongly risks Zeno-like freezing if over-observed"
+    },
+    {
+      "class_name": "dampening",
+      "description": "Absorbs uncertainty and reduces propagation to other cells.",
+      "pressure_growth": 0.35,
+      "observation_effect": 0.45,
+      "coupling_effect": -0.45,
+      "stabilization_difficulty": 0.35,
+      "emission_constraint": 0.4,
+      "zeno_sensitivity": 0.3,
+      "expected_behavior": "reduces transmitted admissibility pressure"
+    },
+    {
+      "class_name": "amplifying",
+      "description": "Increases propagated influence across coupled cells.",
+      "pressure_growth": 0.6,
+      "observation_effect": 0.6,
+      "coupling_effect": 0.55,
+      "stabilization_difficulty": 0.55,
+      "emission_constraint": 0.55,
+      "zeno_sensitivity": 0.55,
+      "expected_behavior": "amplifies translated coupling effects"
+    },
+    {
+      "class_name": "bridging",
+      "description": "Connects otherwise distant regions through translated relevance.",
+      "pressure_growth": 0.5,
+      "observation_effect": 0.7,
+      "coupling_effect": 0.65,
+      "stabilization_difficulty": 0.5,
+      "emission_constraint": 0.45,
+      "zeno_sensitivity": 0.45,
+      "expected_behavior": "supports cross-region translation without full equivalence"
+    },
+    {
+      "class_name": "barrier",
+      "description": "Blocks or strongly restricts transition propagation and emission.",
+      "pressure_growth": 0.7,
+      "observation_effect": 0.55,
+      "coupling_effect": -0.6,
+      "stabilization_difficulty": 0.75,
+      "emission_constraint": 0.85,
+      "zeno_sensitivity": 0.7,
+      "expected_behavior": "prevents unstable or inadmissible emission"
+    },
+    {
+      "class_name": "resonant",
+      "description": "Reinforces similar patterns across related cells.",
+      "pressure_growth": 0.55,
+      "observation_effect": 0.75,
+      "coupling_effect": 0.5,
+      "stabilization_difficulty": 0.55,
+      "emission_constraint": 0.5,
+      "zeno_sensitivity": 0.6,
+      "expected_behavior": "supports pattern reinforcement across comparable cells"
+    }
+  ]
+}
