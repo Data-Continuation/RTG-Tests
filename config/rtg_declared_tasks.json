@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.11",
+  "schema_version": "1.12",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -7,7 +7,7 @@
     "This registry declares tasks the repo dispatcher is allowed to run.",
     "The dispatcher rejects undeclared task names.",
     "Commands are intentionally simple and repo-local.",
-    "Schema version 1.11 adds provisional RTG observer-identity coupling tests."
+    "Schema version 1.12 adds provisional RTG transition-replay validation tests."
   ],
   "tasks": [
     {
@@ -116,6 +116,15 @@
       "command": [
         "python",
         "tests/test_observer_identity_coupling.py"
+      ]
+    },
+    {
+      "name": "transition_replay_validation_tests",
+      "description": "Validate provisional RTG replay and receipt consistency for transition claims.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_replay_validation.py"
       ]
     },
     {
