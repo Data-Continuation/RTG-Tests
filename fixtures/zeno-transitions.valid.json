@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "zeno_pressure_formula": "observation_frequency * zeno_sensitivity",
+  "thresholds": {
+    "supported_max_exclusive": 0.35,
+    "slowed_min_inclusive": 0.35,
+    "slowed_max_inclusive": 0.7,
+    "frozen_min_exclusive": 0.7
+  },
+  "cases": [
+    {
+      "case_id": "RTG-ZENO-0001",
+      "label": "Bounded observation supports transition",
+      "function_class": "bounded",
+      "observation_frequency": 0.3,
+      "zeno_sensitivity": 0.2,
+      "stabilization_before": 0.3,
+      "stabilization_after": 0.48,
+      "emission_before": 0.1,
+      "emission_after": 0.24,
+      "expected_transition_state": "supported"
+    },
+    {
+      "case_id": "RTG-ZENO-0002",
+      "label": "Slow growth observation slows transition but does not freeze it",
+      "function_class": "slow_growth",
+      "observation_frequency": 0.75,
+      "zeno_sensitivity": 0.6,
+      "stabilization_before": 0.42,
+      "stabilization_after": 0.46,
+      "emission_before": 0.21,
+      "emission_after": 0.22,
+      "expected_transition_state": "slowed"
+    },
+    {
+      "case_id": "RTG-ZENO-0003",
+      "label": "Singular high-frequency observation freezes transition",
+      "function_class": "singular",
+      "observation_frequency": 0.9,
+      "zeno_sensitivity": 0.9,
+      "stabilization_before": 0.52,
+      "stabilization_after": 0.5,
+      "emission_before": 0.28,
+      "emission_after": 0.27,
+      "expected_transition_state": "frozen"
+    }
+  ]
+}
