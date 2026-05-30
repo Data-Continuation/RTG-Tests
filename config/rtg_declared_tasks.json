@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.8",
+  "schema_version": "1.9",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -14,7 +14,8 @@
     "Schema version 1.5 added provisional RTG dark-cell color emergence tests.",
     "Schema version 1.6 added provisional RTG Zeno-prone transition tests.",
     "Schema version 1.7 added provisional RTG stabilization-emission threshold tests.",
-    "Schema version 1.8 adds provisional RTG observer-window tests."
+    "Schema version 1.8 added provisional RTG observer-window tests.",
+    "Schema version 1.9 adds provisional RTG authority-bound emission tests."
   ],
   "tasks": [
     {
@@ -96,6 +97,15 @@
       "command": [
         "python",
         "tests/test_observer_windows.py"
+      ]
+    },
+    {
+      "name": "authority_bound_emission_tests",
+      "description": "Validate provisional RTG authority-bound emission behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_bound_emission.py"
       ]
     },
     {
