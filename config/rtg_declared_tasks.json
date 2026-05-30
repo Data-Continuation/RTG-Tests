@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.3",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -8,7 +8,8 @@
     "The dispatcher rejects undeclared task names.",
     "Commands are intentionally simple and repo-local.",
     "Schema version 1.1 added the first RTG cell-geometry smoke test layer.",
-    "Schema version 1.2 adds provisional RTG function-class behavior tests."
+    "Schema version 1.2 added provisional RTG function-class behavior tests.",
+    "Schema version 1.3 adds provisional RTG coupling translation tests."
   ],
   "tasks": [
     {
@@ -36,6 +37,15 @@
       "command": [
         "python",
         "tests/test_function_classes.py"
+      ]
+    },
+    {
+      "name": "coupling_translation_tests",
+      "description": "Validate provisional RTG translated coupling effects between cells.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_coupling_translation.py"
       ]
     },
     {
