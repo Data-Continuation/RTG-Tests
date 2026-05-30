@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "principle": "Observation requires observer identity class compatibility with transition identity class.",
+  "observer_identity_classes": [
+    "none",
+    "ambient_observer",
+    "semantic_reviewer",
+    "identity_verifier",
+    "authority_reviewer",
+    "state_maintainer",
+    "quorum_detector",
+    "root_detector"
+  ],
+  "transition_identity_classes": [
+    "ambient_signal",
+    "semantic_claim",
+    "identity_surface_claim",
+    "authority_claim",
+    "repo_state_change",
+    "quorum_boundary_change",
+    "root_boundary_change"
+  ],
+  "compatibility_matrix": {
+    "none": [],
+    "ambient_observer": [
+      "ambient_signal"
+    ],
+    "semantic_reviewer": [
+      "ambient_signal",
+      "semantic_claim"
+    ],
+    "identity_verifier": [
+      "ambient_signal",
+      "semantic_claim",
+      "identity_surface_claim"
+    ],
+    "authority_reviewer": [
+      "ambient_signal",
+      "semantic_claim",
+      "identity_surface_claim",
+      "authority_claim"
+    ],
+    "state_maintainer": [
+      "ambient_signal",
+      "semantic_claim",
+      "identity_surface_claim",
+      "authority_claim",
+      "repo_state_change"
+    ],
+    "quorum_detector": [
+      "ambient_signal",
+      "semantic_claim",
+      "identity_surface_claim",
+      "authority_claim",
+      "repo_state_change",
+      "quorum_boundary_change"
+    ],
+    "root_detector": [
+      "ambient_signal",
+      "semantic_claim",
+      "identity_surface_claim",
+      "authority_claim",
+      "repo_state_change",
+      "quorum_boundary_change",
+      "root_boundary_change"
+    ]
+  },
+  "thresholds": {
+    "window_visibility_min": 0.6,
+    "classification_confidence_min": 0.65,
+    "emission_authority_min": 0.7,
+    "detector_compatibility_required": true
+  },
+  "cases": [
+    {
+      "case_id": "RTG-OBS-ID-0001",
+      "label": "Ambient observer can observe ambient signal",
+      "observer_identity_class": "ambient_observer",
+      "transition_identity_class": "ambient_signal",
+      "window_visibility": 0.72,
+      "classification_confidence": 0.3,
+      "emission_authority": 0.2,
+      "claimed_classification": false,
+      "claimed_emission": false,
+      "expected_coupling_state": "visible_unclassified"
+    },
+    {
+      "case_id": "RTG-OBS-ID-0002",
+      "label": "Ambient observer cannot see identity-surface claim as governed observation",
+      "observer_identity_class": "ambient_observer",
+      "transition_identity_class": "identity_surface_claim",
+      "window_visibility": 0.9,
+      "classification_confidence": 0.8,
+      "emission_authority": 0.8,
+      "claimed_classification": true,
+      "claimed_emission": true,
+      "expected_coupling_state": "incompatible_observer"
+    },
+    {
+      "case_id": "RTG-OBS-ID-0003",
+      "label": "Identity verifier can classify identity-surface claim",
+      "observer_identity_class": "identity_verifier",
+      "transition_identity_class": "identity_surface_claim",
+      "window_visibility": 0.82,
+      "classification_confidence": 0.76,
+      "emission_authority": 0.55,
+      "claimed_classification": true,
+      "claimed_emission": false,
+      "expected_coupling_state": "classified_not_emittable"
+    },
+    {
+      "case_id": "RTG-OBS-ID-0004",
+      "label": "State maintainer can emit repo-state change when authority is sufficient",
+      "observer_identity_class": "state_maintainer",
+      "transition_identity_class": "repo_state_change",
+      "window_visibility": 0.86,
+      "classification_confidence": 0.78,
+      "emission_authority": 0.74,
+      "claimed_classification": true,
+      "claimed_emission": true,
+      "expected_coupling_state": "coupled_emittable"
+    },
+    {
+      "case_id": "RTG-OBS-ID-0005",
+      "label": "State maintainer cannot govern quorum-boundary transition",
+      "observer_identity_class": "state_maintainer",
+      "transition_identity_class": "quorum_boundary_change",
+      "window_visibility": 0.88,
+      "classification_confidence": 0.82,
+      "emission_authority": 0.76,
+      "claimed_classification": true,
+      "claimed_emission": true,
+      "expected_coupling_state": "incompatible_observer"
+    },
+    {
+      "case_id": "RTG-OBS-ID-0006",
+      "label": "Quorum detector cannot govern root-boundary transition",
+      "observer_identity_class": "quorum_detector",
+      "transition_identity_class": "root_boundary_change",
+      "window_visibility": 0.92,
+      "classification_confidence": 0.86,
+      "emission_authority": 0.84,
+      "claimed_classification": true,
+      "claimed_emission": true,
+      "expected_coupling_state": "incompatible_observer"
+    },
+    {
+      "case_id": "RTG-OBS-ID-0007",
+      "label": "Root detector can emit root-boundary transition",
+      "observer_identity_class": "root_detector",
+      "transition_identity_class": "root_boundary_change",
+      "window_visibility": 0.94,
+      "classification_confidence": 0.88,
+      "emission_authority": 0.86,
+      "claimed_classification": true,
+      "claimed_emission": true,
+      "expected_coupling_state": "coupled_emittable"
+    },
+    {
+      "case_id": "RTG-OBS-ID-0008",
+      "label": "Compatible detector with low visibility still misses transition",
+      "observer_identity_class": "semantic_reviewer",
+      "transition_identity_class": "semantic_claim",
+      "window_visibility": 0.4,
+      "classification_confidence": 0.8,
+      "emission_authority": 0.8,
+      "claimed_classification": false,
+      "claimed_emission": false,
+      "expected_coupling_state": "missed_window"
+    }
+  ]
+}
