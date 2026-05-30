@@ -1,0 +1,69 @@
+name: RTG Repo Dispatcher
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "Declared task to run. Use 'all' to run every enabled task."
+        required: true
+        default: "all"
+      dry_run:
+        description: "List what would run without executing commands."
+        required: true
+        default: "false"
+  push:
+    branches:
+      - main
+    paths:
+      - "config/rtg_declared_tasks.json"
+      - "scripts/rtg_dispatcher.py"
+      - "scripts/verify_rtg_dispatcher.py"
+      - "tests/**"
+      - "fixtures/**"
+      - ".github/workflows/rtg-repo-dispatcher.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "config/rtg_declared_tasks.json"
+      - "scripts/rtg_dispatcher.py"
+      - "scripts/verify_rtg_dispatcher.py"
+      - "tests/**"
+      - "fixtures/**"
+      - ".github/workflows/rtg-repo-dispatcher.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rtg-repo-dispatcher-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    name: Dispatch declared RTG tasks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify dispatcher contract
+        run: python scripts/verify_rtg_dispatcher.py
+
+      - name: Dispatch selected task
+        env:
+          DISPATCH_TASK: ${{ github.event.inputs.task || 'all' }}
+          DISPATCH_DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: |
+          if [ "$DISPATCH_DRY_RUN" = "true" ]; then
+            python scripts/rtg_dispatcher.py --task "$DISPATCH_TASK" --dry-run
+          else
+            python scripts/rtg_dispatcher.py --task "$DISPATCH_TASK"
+          fi
