@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "window_capacity_formula": "average(window_scope,window_duration,window_resolution,observer_authority,evidence_access,confidence)",
+  "thresholds": {
+    "visibility_min": 0.35,
+    "missed_capacity_max": 0.3,
+    "classification_min": 0.5,
+    "emission_min": 0.72,
+    "authority_min_for_emission": 0.7,
+    "confidence_min_for_emission": 0.7,
+    "evidence_min_for_emission": 0.7
+  },
+  "cases": [
+    {
+      "case_id": "RTG-IW-0001",
+      "label": "Narrow weak window misses transition",
+      "window_scope": 0.2,
+      "window_duration": 0.2,
+      "window_resolution": 0.25,
+      "observer_authority": 0.2,
+      "evidence_access": 0.2,
+      "confidence": 0.15,
+      "target_visibility": 0.25,
+      "claimed_emission": false,
+      "expected_observation_state": "missed"
+    },
+    {
+      "case_id": "RTG-IW-0002",
+      "label": "Visible but weakly structured transition remains unclassified",
+      "window_scope": 0.45,
+      "window_duration": 0.35,
+      "window_resolution": 0.4,
+      "observer_authority": 0.35,
+      "evidence_access": 0.35,
+      "confidence": 0.3,
+      "target_visibility": 0.55,
+      "claimed_emission": false,
+      "expected_observation_state": "seen_unclassified"
+    },
+    {
+      "case_id": "RTG-IW-0003",
+      "label": "Classified transition is deferred because emission capacity is insufficient",
+      "window_scope": 0.62,
+      "window_duration": 0.58,
+      "window_resolution": 0.6,
+      "observer_authority": 0.55,
+      "evidence_access": 0.6,
+      "confidence": 0.58,
+      "target_visibility": 0.7,
+      "claimed_emission": false,
+      "expected_observation_state": "classified_deferred"
+    },
+    {
+      "case_id": "RTG-IW-0004",
+      "label": "Strong governed observer window supports emission",
+      "window_scope": 0.85,
+      "window_duration": 0.8,
+      "window_resolution": 0.82,
+      "observer_authority": 0.78,
+      "evidence_access": 0.76,
+      "confidence": 0.75,
+      "target_visibility": 0.88,
+      "claimed_emission": true,
+      "expected_observation_state": "classified_emittable"
+    },
+    {
+      "case_id": "RTG-IW-0005",
+      "label": "Observer overclaims emission with insufficient authority and evidence",
+      "window_scope": 0.72,
+      "window_duration": 0.68,
+      "window_resolution": 0.7,
+      "observer_authority": 0.48,
+      "evidence_access": 0.52,
+      "confidence": 0.54,
+      "target_visibility": 0.8,
+      "claimed_emission": true,
+      "expected_observation_state": "overclaimed"
+    }
+  ]
+}
