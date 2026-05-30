@@ -1,0 +1,21 @@
+{
+  "cell_id": "RTG-CELL-GEOM-0001",
+  "label": "First Coherent Local Geometry Fixture",
+  "maturity": "draft",
+  "shell_role": "f",
+  "function_class": "slow_growth",
+  "governance_posture": "unresolved",
+  "observation": 0.2,
+  "darkness": 0.8,
+  "evidence_density": 0.18,
+  "confidence": 0.16,
+  "admissibility_pressure": 0.68,
+  "risk_resistance": 0.61,
+  "stabilization": 0.24,
+  "emission_readiness": 0.07,
+  "notes": [
+    "This is a valid provisional RTG local geometry example.",
+    "It represents a mostly dark, low-confidence, unresolved f-like cell.",
+    "The cell has not stabilized enough for meaningful governed emission."
+  ]
+}
