@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "uncertainty_anomaly_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Uncertainty Anomaly Coherence",
+  "valid_states": [
+    "false_transition_quarantine",
+    "unknown_unknown_retained",
+    "unknown_unknown_widen_window",
+    "false_transition_replay_required",
+    "noise_discarded"
+  ],
+  "cases": [
+    {
+      "case_id": "UAC-001",
+      "uncertainty_class": "false_transition",
+      "anomaly_present": true,
+      "observer_gap": 0.2,
+      "replay_needed": false,
+      "expected_state": "false_transition_quarantine"
+    },
+    {
+      "case_id": "UAC-002",
+      "uncertainty_class": "unknown_unknown",
+      "anomaly_present": true,
+      "observer_gap": 0.3,
+      "replay_needed": false,
+      "expected_state": "unknown_unknown_retained"
+    },
+    {
+      "case_id": "UAC-003",
+      "uncertainty_class": "unknown_unknown",
+      "anomaly_present": true,
+      "observer_gap": 0.75,
+      "replay_needed": false,
+      "expected_state": "unknown_unknown_widen_window"
+    },
+    {
+      "case_id": "UAC-004",
+      "uncertainty_class": "false_transition",
+      "anomaly_present": true,
+      "observer_gap": 0.4,
+      "replay_needed": true,
+      "expected_state": "false_transition_replay_required"
+    },
+    {
+      "case_id": "UAC-005",
+      "uncertainty_class": "noise",
+      "anomaly_present": false,
+      "observer_gap": 0.1,
+      "replay_needed": false,
+      "expected_state": "noise_discarded"
+    }
+  ]
+}

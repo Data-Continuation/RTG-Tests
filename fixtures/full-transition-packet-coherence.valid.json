@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "full_transition_packet_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Full Transition Packet Coherence",
+  "valid_states": [
+    "packet_coherent",
+    "packet_authority_failure",
+    "packet_replay_failure",
+    "packet_lineage_failure",
+    "packet_export_failure",
+    "packet_quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "FTPC-001",
+      "authority": true,
+      "replay": true,
+      "lineage": true,
+      "export": true,
+      "risk": 0.2,
+      "expected_state": "packet_coherent"
+    },
+    {
+      "case_id": "FTPC-002",
+      "authority": false,
+      "replay": true,
+      "lineage": true,
+      "export": true,
+      "risk": 0.2,
+      "expected_state": "packet_authority_failure"
+    },
+    {
+      "case_id": "FTPC-003",
+      "authority": true,
+      "replay": false,
+      "lineage": true,
+      "export": true,
+      "risk": 0.2,
+      "expected_state": "packet_replay_failure"
+    },
+    {
+      "case_id": "FTPC-004",
+      "authority": true,
+      "replay": true,
+      "lineage": false,
+      "export": true,
+      "risk": 0.2,
+      "expected_state": "packet_lineage_failure"
+    },
+    {
+      "case_id": "FTPC-005",
+      "authority": true,
+      "replay": true,
+      "lineage": true,
+      "export": false,
+      "risk": 0.2,
+      "expected_state": "packet_export_failure"
+    },
+    {
+      "case_id": "FTPC-006",
+      "authority": true,
+      "replay": true,
+      "lineage": true,
+      "export": true,
+      "risk": 0.8,
+      "expected_state": "packet_quarantine"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "replay_authority_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Replay Authority Coherence",
+  "valid_states": [
+    "coherent_authorized_replay",
+    "replay_valid_authority_missing",
+    "authority_valid_replay_missing",
+    "both_missing",
+    "coherence_quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "RAC-001",
+      "replay_valid": true,
+      "authority_satisfied": true,
+      "receipt_conflict": false,
+      "known_invalid_signal": false,
+      "expected_state": "coherent_authorized_replay"
+    },
+    {
+      "case_id": "RAC-002",
+      "replay_valid": true,
+      "authority_satisfied": false,
+      "receipt_conflict": false,
+      "known_invalid_signal": false,
+      "expected_state": "replay_valid_authority_missing"
+    },
+    {
+      "case_id": "RAC-003",
+      "replay_valid": false,
+      "authority_satisfied": true,
+      "receipt_conflict": false,
+      "known_invalid_signal": false,
+      "expected_state": "authority_valid_replay_missing"
+    },
+    {
+      "case_id": "RAC-004",
+      "replay_valid": false,
+      "authority_satisfied": false,
+      "receipt_conflict": false,
+      "known_invalid_signal": false,
+      "expected_state": "both_missing"
+    },
+    {
+      "case_id": "RAC-005",
+      "replay_valid": true,
+      "authority_satisfied": true,
+      "receipt_conflict": true,
+      "known_invalid_signal": true,
+      "expected_state": "coherence_quarantine"
+    }
+  ]
+}

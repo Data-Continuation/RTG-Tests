@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "supersession_lineage_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Supersession Lineage Coherence",
+  "valid_states": [
+    "valid_supersession_lineage",
+    "older_attempt_blocked",
+    "missing_lineage_parent",
+    "same_version_conflict",
+    "lineage_supersession_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "SLC-001",
+      "new_version": 3,
+      "prior_version": 2,
+      "parent_present": true,
+      "lineage_confidence": 0.9,
+      "expected_state": "valid_supersession_lineage"
+    },
+    {
+      "case_id": "SLC-002",
+      "new_version": 1,
+      "prior_version": 2,
+      "parent_present": true,
+      "lineage_confidence": 0.9,
+      "expected_state": "older_attempt_blocked"
+    },
+    {
+      "case_id": "SLC-003",
+      "new_version": 3,
+      "prior_version": 2,
+      "parent_present": false,
+      "lineage_confidence": 0.9,
+      "expected_state": "missing_lineage_parent"
+    },
+    {
+      "case_id": "SLC-004",
+      "new_version": 2,
+      "prior_version": 2,
+      "parent_present": true,
+      "lineage_confidence": 0.9,
+      "expected_state": "same_version_conflict"
+    },
+    {
+      "case_id": "SLC-005",
+      "new_version": 3,
+      "prior_version": 2,
+      "parent_present": true,
+      "lineage_confidence": 0.45,
+      "expected_state": "lineage_supersession_provisional"
+    }
+  ]
+}

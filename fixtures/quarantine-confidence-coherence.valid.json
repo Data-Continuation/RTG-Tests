@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "quarantine_confidence_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Quarantine Confidence Coherence",
+  "valid_states": [
+    "release_after_confidence_upgrade",
+    "continue_quarantine_after_downgrade",
+    "escalate_after_rejection",
+    "provisional_release_review",
+    "retain_quarantine_stable"
+  ],
+  "cases": [
+    {
+      "case_id": "QCC-001",
+      "risk_score": 0.2,
+      "old_confidence": 0.55,
+      "new_confidence": 0.86,
+      "rejection_signal": false,
+      "expected_state": "release_after_confidence_upgrade"
+    },
+    {
+      "case_id": "QCC-002",
+      "risk_score": 0.35,
+      "old_confidence": 0.8,
+      "new_confidence": 0.45,
+      "rejection_signal": false,
+      "expected_state": "continue_quarantine_after_downgrade"
+    },
+    {
+      "case_id": "QCC-003",
+      "risk_score": 0.5,
+      "old_confidence": 0.7,
+      "new_confidence": 0.2,
+      "rejection_signal": true,
+      "expected_state": "escalate_after_rejection"
+    },
+    {
+      "case_id": "QCC-004",
+      "risk_score": 0.25,
+      "old_confidence": 0.5,
+      "new_confidence": 0.64,
+      "rejection_signal": false,
+      "expected_state": "provisional_release_review"
+    },
+    {
+      "case_id": "QCC-005",
+      "risk_score": 0.45,
+      "old_confidence": 0.7,
+      "new_confidence": 0.72,
+      "rejection_signal": false,
+      "expected_state": "retain_quarantine_stable"
+    }
+  ]
+}

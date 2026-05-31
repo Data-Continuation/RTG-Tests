@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "observer_detector_gap_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Observer Detector Gap Coherence",
+  "valid_states": [
+    "observable_covered",
+    "identity_incompatible",
+    "detector_gap",
+    "window_gap",
+    "coverage_overclaim"
+  ],
+  "cases": [
+    {
+      "case_id": "ODG-001",
+      "observer_compatible": true,
+      "detector_available": true,
+      "window_visible": true,
+      "claimed_coverage": true,
+      "expected_state": "observable_covered"
+    },
+    {
+      "case_id": "ODG-002",
+      "observer_compatible": false,
+      "detector_available": true,
+      "window_visible": true,
+      "claimed_coverage": false,
+      "expected_state": "identity_incompatible"
+    },
+    {
+      "case_id": "ODG-003",
+      "observer_compatible": true,
+      "detector_available": false,
+      "window_visible": true,
+      "claimed_coverage": false,
+      "expected_state": "detector_gap"
+    },
+    {
+      "case_id": "ODG-004",
+      "observer_compatible": true,
+      "detector_available": true,
+      "window_visible": false,
+      "claimed_coverage": false,
+      "expected_state": "window_gap"
+    },
+    {
+      "case_id": "ODG-005",
+      "observer_compatible": true,
+      "detector_available": false,
+      "window_visible": true,
+      "claimed_coverage": true,
+      "expected_state": "coverage_overclaim"
+    }
+  ]
+}

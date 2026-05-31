@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "coupling_zeno_replay_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Coupling Zeno Replay Coherence",
+  "valid_states": [
+    "coupled_transition_replay_valid",
+    "zeno_slowed_requires_replay",
+    "zeno_frozen_blocks_coupling",
+    "coupling_effect_mismatch",
+    "coupling_replay_quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "CZRC-001",
+      "coupling_effect_valid": true,
+      "zeno_state": "supported",
+      "replay_valid": true,
+      "invalid_signal": false,
+      "expected_state": "coupled_transition_replay_valid"
+    },
+    {
+      "case_id": "CZRC-002",
+      "coupling_effect_valid": true,
+      "zeno_state": "slowed",
+      "replay_valid": false,
+      "invalid_signal": false,
+      "expected_state": "zeno_slowed_requires_replay"
+    },
+    {
+      "case_id": "CZRC-003",
+      "coupling_effect_valid": true,
+      "zeno_state": "frozen",
+      "replay_valid": false,
+      "invalid_signal": false,
+      "expected_state": "zeno_frozen_blocks_coupling"
+    },
+    {
+      "case_id": "CZRC-004",
+      "coupling_effect_valid": false,
+      "zeno_state": "supported",
+      "replay_valid": true,
+      "invalid_signal": false,
+      "expected_state": "coupling_effect_mismatch"
+    },
+    {
+      "case_id": "CZRC-005",
+      "coupling_effect_valid": false,
+      "zeno_state": "slowed",
+      "replay_valid": false,
+      "invalid_signal": true,
+      "expected_state": "coupling_replay_quarantine"
+    }
+  ]
+}

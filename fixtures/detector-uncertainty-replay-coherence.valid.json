@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "detector_uncertainty_replay_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Detector Uncertainty Replay Coherence",
+  "valid_states": [
+    "detected_replay_valid",
+    "detector_gap_unknown_unknown",
+    "detector_gap_replay_deferred",
+    "false_transition_replay_rejected",
+    "coverage_overclaim_quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "DURC-001",
+      "detector_available": true,
+      "uncertainty_class": "none",
+      "replay_state": "valid_replay",
+      "claimed_coverage": true,
+      "expected_state": "detected_replay_valid"
+    },
+    {
+      "case_id": "DURC-002",
+      "detector_available": false,
+      "uncertainty_class": "unknown_unknown",
+      "replay_state": "unreplayable_provisional",
+      "claimed_coverage": false,
+      "expected_state": "detector_gap_unknown_unknown"
+    },
+    {
+      "case_id": "DURC-003",
+      "detector_available": false,
+      "uncertainty_class": "unknown_unknown",
+      "replay_state": "replay_required",
+      "claimed_coverage": false,
+      "expected_state": "detector_gap_replay_deferred"
+    },
+    {
+      "case_id": "DURC-004",
+      "detector_available": true,
+      "uncertainty_class": "false_transition",
+      "replay_state": "invalid_replay",
+      "claimed_coverage": true,
+      "expected_state": "false_transition_replay_rejected"
+    },
+    {
+      "case_id": "DURC-005",
+      "detector_available": false,
+      "uncertainty_class": "false_transition",
+      "replay_state": "receipt_conflict",
+      "claimed_coverage": true,
+      "expected_state": "coverage_overclaim_quarantine"
+    }
+  ]
+}

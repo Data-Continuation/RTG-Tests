@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "emission_governance_output_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Emission Governance Output Coherence",
+  "valid_states": [
+    "coherent_export_accept",
+    "export_block_requires_reject",
+    "quarantine_requires_quarantine_output",
+    "deferred_requires_defer_output",
+    "output_mismatch"
+  ],
+  "cases": [
+    {
+      "case_id": "EGC-001",
+      "emission_state": "export_allowed",
+      "declared_output": "accept",
+      "expected_state": "coherent_export_accept"
+    },
+    {
+      "case_id": "EGC-002",
+      "emission_state": "boundary_blocked",
+      "declared_output": "reject",
+      "expected_state": "export_block_requires_reject"
+    },
+    {
+      "case_id": "EGC-003",
+      "emission_state": "export_quarantined",
+      "declared_output": "quarantine",
+      "expected_state": "quarantine_requires_quarantine_output"
+    },
+    {
+      "case_id": "EGC-004",
+      "emission_state": "export_deferred",
+      "declared_output": "defer",
+      "expected_state": "deferred_requires_defer_output"
+    },
+    {
+      "case_id": "EGC-005",
+      "emission_state": "export_quarantined",
+      "declared_output": "accept",
+      "expected_state": "output_mismatch"
+    }
+  ]
+}
