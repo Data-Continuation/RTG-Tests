@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "cross-layer coherence",
+  "test_key": "supersession_quorum_replay_coherence",
+  "title": "Supersession Quorum Replay Coherence",
+  "valid_states": [
+    "coherent",
+    "identity_authority_block",
+    "replay_receipt_block",
+    "lineage_export_block",
+    "quarantine_required",
+    "provisional_review",
+    "finality_blocked",
+    "maturity_boundary"
+  ],
+  "cases": [
+    {
+      "case_id": "SUPERSESSION_QUORUM_REPLAY_COHERENCE-001",
+      "identity_authority": true,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.16,
+      "confidence": 0.9,
+      "finality_requested": true,
+      "finality_allowed": true,
+      "maturity_ready": true,
+      "expected_state": "coherent"
+    },
+    {
+      "case_id": "SUPERSESSION_QUORUM_REPLAY_COHERENCE-002",
+      "identity_authority": false,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.22,
+      "confidence": 0.86,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "maturity_ready": true,
+      "expected_state": "identity_authority_block"
+    },
+    {
+      "case_id": "SUPERSESSION_QUORUM_REPLAY_COHERENCE-003",
+      "identity_authority": true,
+      "replay_receipt": false,
+      "lineage_export": true,
+      "risk": 0.22,
+      "confidence": 0.84,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "maturity_ready": true,
+      "expected_state": "replay_receipt_block"
+    },
+    {
+      "case_id": "SUPERSESSION_QUORUM_REPLAY_COHERENCE-004",
+      "identity_authority": true,
+      "replay_receipt": true,
+      "lineage_export": false,
+      "risk": 0.22,
+      "confidence": 0.82,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "maturity_ready": true,
+      "expected_state": "lineage_export_block"
+    },
+    {
+      "case_id": "SUPERSESSION_QUORUM_REPLAY_COHERENCE-005",
+      "identity_authority": true,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.82,
+      "confidence": 0.8,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "maturity_ready": true,
+      "expected_state": "quarantine_required"
+    },
+    {
+      "case_id": "SUPERSESSION_QUORUM_REPLAY_COHERENCE-006",
+      "identity_authority": true,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.26,
+      "confidence": 0.55,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "maturity_ready": true,
+      "expected_state": "provisional_review"
+    },
+    {
+      "case_id": "SUPERSESSION_QUORUM_REPLAY_COHERENCE-007",
+      "identity_authority": true,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.24,
+      "confidence": 0.79,
+      "finality_requested": true,
+      "finality_allowed": false,
+      "maturity_ready": true,
+      "expected_state": "finality_blocked"
+    },
+    {
+      "case_id": "SUPERSESSION_QUORUM_REPLAY_COHERENCE-008",
+      "identity_authority": true,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.24,
+      "confidence": 0.79,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "maturity_ready": false,
+      "expected_state": "maturity_boundary"
+    }
+  ]
+}
