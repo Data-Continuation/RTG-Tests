@@ -182,3 +182,108 @@ This repository does not implement the Site presentation. It only provides early
 This repository does not claim that RTG is complete, proven, or mathematically final.
 
 It preserves a disciplined beginning.
+
+# RTG-Tests
+
+Generated: `2026-05-31T07:34:47Z`
+
+## Repository
+
+```text
+Org/Repo: Data-Continuation/RTG-Tests
+Formalism: Relative Transition Geometry
+Current baseline: 120 executable RTG tests + 1 dispatcher self-check
+Declared tasks total: 121
+Posture: provisional executable formalism / proof-harness
+```
+
+## Purpose
+
+`RTG-Tests` is the executable test harness for **Relative Transition Geometry**.
+
+RTG models transitions as governed events whose validity depends on observation, identity compatibility, admissibility, authority, replayability, receipt continuity, lineage, coupling, anomaly handling, confidence posture, quarantine posture, and export boundaries.
+
+The core distinction:
+
+```text
+A transition claim is not automatically a valid transition.
+A visible transition is not automatically admissible.
+An admissible transition is not automatically authorized to emit.
+An emitted transition is not automatically valid state evidence.
+```
+
+## Current Maturity Label
+
+```text
+RTG-Tests
+= provisional executable cross-layer formalism testing with 120 green RTG constraints and canonical dispatch integrity
+```
+
+## Running All Tests
+
+```bash
+python scripts/rtg_dispatcher.py --task all
+```
+
+In GitHub Actions, use:
+
+```text
+task = all
+dry_run = false
+```
+
+## Canonical Dispatch Rule
+
+```text
+fixture_smoke_tests â python tests/test_rtg_fixtures.py
+```
+
+## Documentation Map
+
+```text
+docs/RTG_REPO_STATUS.md
+docs/RTG_ARCHITECTURE.md
+docs/RTG_TEST_CATALOG.md
+docs/RTG_DISPATCH_AND_REGISTRY.md
+docs/RTG_FORMALISM_POSTURE.md
+docs/RTG_GOVERNANCE_MODEL.md
+docs/RTG_ROADMAP.md
+docs/CONTRIBUTING.md
+docs/rtg_status.json
+```
+
+## What This Repo Currently Tests
+
+```text
+cell geometry
+function-class behavior
+cell-to-cell coupling
+shell-role expectation
+dark-cell color emergence
+Zeno-prone transitions
+stabilization-bound emission
+observer-window constraints
+authority-bound emission
+uncertainty-class separation
+observer-identity coupling
+transition-replay validation
+receipt-chain continuity
+state-lineage integrity
+anomaly retention
+detector coverage gaps
+confidence regrading
+quarantine release
+supersession ordering
+governance-output consistency
+cross-layer coherence across authority, replay, lineage, receipts, export, confidence, quarantine, detector gaps, and commit finality
+```
+
+## What RTG Does Not Yet Claim
+
+This repo does **not** claim that RTG is mathematically complete.
+
+It does **not** claim that the current classifications are final.
+
+It does **not** claim that all possible transition classes, observer classes, detector classes, or governance outputs have been exhaustively modeled.
+
+It does claim that RTG now has a working executable proof-harness shape: every layer is encoded as a machine-checkable constraint that can be extended, disputed, refined, or replaced.
