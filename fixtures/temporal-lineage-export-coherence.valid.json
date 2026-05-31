@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "cross-layer coherence next-31",
+  "test_key": "temporal_lineage_export_coherence",
+  "title": "Temporal Lineage Export Coherence",
+  "valid_states": [
+    "temporal_export_valid",
+    "authority_failure",
+    "lineage_failure",
+    "replay_failure",
+    "risk_quarantine"
+  ],
+  "case_fields": [
+    "case_id",
+    "authority",
+    "lineage",
+    "replay",
+    "risk",
+    "secondary_ok",
+    "expected_state"
+  ],
+  "cases": [
+    {
+      "case_id": "N31-001",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "temporal_export_valid"
+    },
+    {
+      "case_id": "N31-002",
+      "authority": false,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "authority_failure"
+    },
+    {
+      "case_id": "N31-003",
+      "authority": true,
+      "lineage": false,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "lineage_failure"
+    },
+    {
+      "case_id": "N31-004",
+      "authority": true,
+      "lineage": true,
+      "replay": false,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "replay_failure"
+    },
+    {
+      "case_id": "N31-005",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.82,
+      "secondary_ok": true,
+      "expected_state": "risk_quarantine"
+    },
+    {
+      "case_id": "N31-006",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": false,
+      "expected_state": "replay_failure"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "cross-layer coherence next-31",
+  "test_key": "dark_cell_observer_consensus_coherence",
+  "title": "Dark Cell Observer Consensus Coherence",
+  "valid_states": [
+    "dark_observer_consensus_valid",
+    "observer_incompatible",
+    "consensus_failure",
+    "evidence_failure",
+    "risk_quarantine"
+  ],
+  "case_fields": [
+    "case_id",
+    "authority",
+    "lineage",
+    "replay",
+    "risk",
+    "secondary_ok",
+    "expected_state"
+  ],
+  "cases": [
+    {
+      "case_id": "N31-001",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "dark_observer_consensus_valid"
+    },
+    {
+      "case_id": "N31-002",
+      "authority": false,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "observer_incompatible"
+    },
+    {
+      "case_id": "N31-003",
+      "authority": true,
+      "lineage": false,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "consensus_failure"
+    },
+    {
+      "case_id": "N31-004",
+      "authority": true,
+      "lineage": true,
+      "replay": false,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "evidence_failure"
+    },
+    {
+      "case_id": "N31-005",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.82,
+      "secondary_ok": true,
+      "expected_state": "risk_quarantine"
+    },
+    {
+      "case_id": "N31-006",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": false,
+      "expected_state": "evidence_failure"
+    }
+  ]
+}

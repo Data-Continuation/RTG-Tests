@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "cross-layer coherence next-31",
+  "test_key": "identity_detector_authority_coherence",
+  "title": "Identity Detector Authority Coherence",
+  "valid_states": [
+    "identity_detected_authorized",
+    "detector_gap",
+    "identity_mismatch",
+    "authority_failure",
+    "risk_quarantine"
+  ],
+  "case_fields": [
+    "case_id",
+    "authority",
+    "lineage",
+    "replay",
+    "risk",
+    "secondary_ok",
+    "expected_state"
+  ],
+  "cases": [
+    {
+      "case_id": "N31-001",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "identity_detected_authorized"
+    },
+    {
+      "case_id": "N31-002",
+      "authority": false,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "detector_gap"
+    },
+    {
+      "case_id": "N31-003",
+      "authority": true,
+      "lineage": false,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "identity_mismatch"
+    },
+    {
+      "case_id": "N31-004",
+      "authority": true,
+      "lineage": true,
+      "replay": false,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "authority_failure"
+    },
+    {
+      "case_id": "N31-005",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.82,
+      "secondary_ok": true,
+      "expected_state": "risk_quarantine"
+    },
+    {
+      "case_id": "N31-006",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": false,
+      "expected_state": "authority_failure"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "cross-layer coherence next-31",
+  "test_key": "export_boundary_packet_coherence",
+  "title": "Export Boundary Packet Coherence",
+  "valid_states": [
+    "export_boundary_packet_valid",
+    "authority_failure",
+    "lineage_failure",
+    "export_failure",
+    "risk_quarantine"
+  ],
+  "case_fields": [
+    "case_id",
+    "authority",
+    "lineage",
+    "replay",
+    "risk",
+    "secondary_ok",
+    "expected_state"
+  ],
+  "cases": [
+    {
+      "case_id": "N31-001",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "export_boundary_packet_valid"
+    },
+    {
+      "case_id": "N31-002",
+      "authority": false,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "authority_failure"
+    },
+    {
+      "case_id": "N31-003",
+      "authority": true,
+      "lineage": false,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "lineage_failure"
+    },
+    {
+      "case_id": "N31-004",
+      "authority": true,
+      "lineage": true,
+      "replay": false,
+      "risk": 0.2,
+      "secondary_ok": true,
+      "expected_state": "export_failure"
+    },
+    {
+      "case_id": "N31-005",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.82,
+      "secondary_ok": true,
+      "expected_state": "risk_quarantine"
+    },
+    {
+      "case_id": "N31-006",
+      "authority": true,
+      "lineage": true,
+      "replay": true,
+      "risk": 0.2,
+      "secondary_ok": false,
+      "expected_state": "export_failure"
+    }
+  ]
+}
