@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "emission_quarantine_release_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Emission Quarantine Release Coherence",
+  "valid_states": [
+    "emission_release_allowed",
+    "emission_release_deferred",
+    "emission_release_blocked",
+    "emission_release_quarantine",
+    "emission_release_overclaim"
+  ],
+  "cases": [
+    {
+      "case_id": "EQR-001",
+      "release_allowed": true,
+      "emission_ready": true,
+      "risk": 0.2,
+      "claimed_emit": true,
+      "expected_state": "emission_release_allowed"
+    },
+    {
+      "case_id": "EQR-002",
+      "release_allowed": true,
+      "emission_ready": false,
+      "risk": 0.2,
+      "claimed_emit": false,
+      "expected_state": "emission_release_deferred"
+    },
+    {
+      "case_id": "EQR-003",
+      "release_allowed": false,
+      "emission_ready": true,
+      "risk": 0.2,
+      "claimed_emit": false,
+      "expected_state": "emission_release_blocked"
+    },
+    {
+      "case_id": "EQR-004",
+      "release_allowed": true,
+      "emission_ready": true,
+      "risk": 0.75,
+      "claimed_emit": false,
+      "expected_state": "emission_release_quarantine"
+    },
+    {
+      "case_id": "EQR-005",
+      "release_allowed": false,
+      "emission_ready": true,
+      "risk": 0.2,
+      "claimed_emit": true,
+      "expected_state": "emission_release_overclaim"
+    }
+  ]
+}

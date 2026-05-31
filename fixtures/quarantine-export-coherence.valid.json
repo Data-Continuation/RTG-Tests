@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "quarantine_export_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Quarantine Export Coherence",
+  "valid_states": [
+    "export_after_release",
+    "export_blocked_by_quarantine",
+    "export_quarantine_escalated",
+    "export_release_provisional",
+    "export_overclaim_quarantined"
+  ],
+  "cases": [
+    {
+      "case_id": "QEC-001",
+      "quarantine_released": true,
+      "export_requested": true,
+      "risk": 0.2,
+      "claimed_export": true,
+      "expected_state": "export_after_release"
+    },
+    {
+      "case_id": "QEC-002",
+      "quarantine_released": false,
+      "export_requested": true,
+      "risk": 0.4,
+      "claimed_export": false,
+      "expected_state": "export_blocked_by_quarantine"
+    },
+    {
+      "case_id": "QEC-003",
+      "quarantine_released": false,
+      "export_requested": true,
+      "risk": 0.8,
+      "claimed_export": false,
+      "expected_state": "export_quarantine_escalated"
+    },
+    {
+      "case_id": "QEC-004",
+      "quarantine_released": true,
+      "export_requested": true,
+      "risk": 0.55,
+      "claimed_export": true,
+      "expected_state": "export_release_provisional"
+    },
+    {
+      "case_id": "QEC-005",
+      "quarantine_released": false,
+      "export_requested": true,
+      "risk": 0.5,
+      "claimed_export": true,
+      "expected_state": "export_overclaim_quarantined"
+    }
+  ]
+}

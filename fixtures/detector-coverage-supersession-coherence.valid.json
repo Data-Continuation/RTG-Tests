@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "detector_coverage_supersession_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Detector Coverage Supersession Coherence",
+  "valid_states": [
+    "covered_supersession_valid",
+    "detector_gap_blocks_supersession",
+    "coverage_overclaim_supersession",
+    "older_covered_supersession_blocked",
+    "covered_supersession_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "DCS-001",
+      "detector_available": true,
+      "claimed_coverage": true,
+      "new_version": 3,
+      "prior_version": 2,
+      "confidence": 0.88,
+      "expected_state": "covered_supersession_valid"
+    },
+    {
+      "case_id": "DCS-002",
+      "detector_available": false,
+      "claimed_coverage": false,
+      "new_version": 3,
+      "prior_version": 2,
+      "confidence": 0.88,
+      "expected_state": "detector_gap_blocks_supersession"
+    },
+    {
+      "case_id": "DCS-003",
+      "detector_available": false,
+      "claimed_coverage": true,
+      "new_version": 3,
+      "prior_version": 2,
+      "confidence": 0.88,
+      "expected_state": "coverage_overclaim_supersession"
+    },
+    {
+      "case_id": "DCS-004",
+      "detector_available": true,
+      "claimed_coverage": true,
+      "new_version": 1,
+      "prior_version": 2,
+      "confidence": 0.88,
+      "expected_state": "older_covered_supersession_blocked"
+    },
+    {
+      "case_id": "DCS-005",
+      "detector_available": true,
+      "claimed_coverage": true,
+      "new_version": 3,
+      "prior_version": 2,
+      "confidence": 0.45,
+      "expected_state": "covered_supersession_provisional"
+    }
+  ]
+}

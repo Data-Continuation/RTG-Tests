@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "full_ecosystem_commit_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Full Ecosystem Commit Coherence",
+  "valid_states": [
+    "ecosystem_commit_valid",
+    "ecosystem_commit_blocked",
+    "ecosystem_commit_deferred",
+    "ecosystem_commit_quarantined",
+    "ecosystem_commit_superseded"
+  ],
+  "cases": [
+    {
+      "case_id": "FEC-001",
+      "authority": true,
+      "replay": true,
+      "lineage": true,
+      "export": true,
+      "risk": 0.2,
+      "superseded": false,
+      "expected_state": "ecosystem_commit_valid"
+    },
+    {
+      "case_id": "FEC-002",
+      "authority": false,
+      "replay": true,
+      "lineage": true,
+      "export": true,
+      "risk": 0.2,
+      "superseded": false,
+      "expected_state": "ecosystem_commit_blocked"
+    },
+    {
+      "case_id": "FEC-003",
+      "authority": true,
+      "replay": false,
+      "lineage": true,
+      "export": true,
+      "risk": 0.2,
+      "superseded": false,
+      "expected_state": "ecosystem_commit_deferred"
+    },
+    {
+      "case_id": "FEC-004",
+      "authority": true,
+      "replay": true,
+      "lineage": true,
+      "export": true,
+      "risk": 0.8,
+      "superseded": false,
+      "expected_state": "ecosystem_commit_quarantined"
+    },
+    {
+      "case_id": "FEC-005",
+      "authority": true,
+      "replay": true,
+      "lineage": true,
+      "export": true,
+      "risk": 0.2,
+      "superseded": true,
+      "expected_state": "ecosystem_commit_superseded"
+    }
+  ]
+}

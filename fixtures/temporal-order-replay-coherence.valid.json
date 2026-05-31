@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "temporal_order_replay_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Temporal Order Replay Coherence",
+  "valid_states": [
+    "temporal_replay_valid",
+    "out_of_order_replay_blocked",
+    "same_time_conflict",
+    "temporal_replay_missing",
+    "temporal_replay_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "TOR-001",
+      "prior_time": 1,
+      "transition_time": 2,
+      "result_time": 3,
+      "replay_valid": true,
+      "confidence": 0.9,
+      "expected_state": "temporal_replay_valid"
+    },
+    {
+      "case_id": "TOR-002",
+      "prior_time": 2,
+      "transition_time": 1,
+      "result_time": 3,
+      "replay_valid": true,
+      "confidence": 0.9,
+      "expected_state": "out_of_order_replay_blocked"
+    },
+    {
+      "case_id": "TOR-003",
+      "prior_time": 1,
+      "transition_time": 1,
+      "result_time": 2,
+      "replay_valid": true,
+      "confidence": 0.9,
+      "expected_state": "same_time_conflict"
+    },
+    {
+      "case_id": "TOR-004",
+      "prior_time": 1,
+      "transition_time": 2,
+      "result_time": 3,
+      "replay_valid": false,
+      "confidence": 0.9,
+      "expected_state": "temporal_replay_missing"
+    },
+    {
+      "case_id": "TOR-005",
+      "prior_time": 1,
+      "transition_time": 2,
+      "result_time": 3,
+      "replay_valid": true,
+      "confidence": 0.45,
+      "expected_state": "temporal_replay_provisional"
+    }
+  ]
+}

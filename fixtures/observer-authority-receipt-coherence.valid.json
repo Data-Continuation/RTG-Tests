@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "observer_authority_receipt_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Observer Authority Receipt Coherence",
+  "valid_states": [
+    "observer_authority_receipt_valid",
+    "observer_incompatible",
+    "authority_missing",
+    "receipt_missing",
+    "receipt_authority_quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "OAR-001",
+      "observer_compatible": true,
+      "authority_satisfied": true,
+      "receipt_present": true,
+      "receipt_conflict": false,
+      "expected_state": "observer_authority_receipt_valid"
+    },
+    {
+      "case_id": "OAR-002",
+      "observer_compatible": false,
+      "authority_satisfied": true,
+      "receipt_present": true,
+      "receipt_conflict": false,
+      "expected_state": "observer_incompatible"
+    },
+    {
+      "case_id": "OAR-003",
+      "observer_compatible": true,
+      "authority_satisfied": false,
+      "receipt_present": true,
+      "receipt_conflict": false,
+      "expected_state": "authority_missing"
+    },
+    {
+      "case_id": "OAR-004",
+      "observer_compatible": true,
+      "authority_satisfied": true,
+      "receipt_present": false,
+      "receipt_conflict": false,
+      "expected_state": "receipt_missing"
+    },
+    {
+      "case_id": "OAR-005",
+      "observer_compatible": true,
+      "authority_satisfied": false,
+      "receipt_present": true,
+      "receipt_conflict": true,
+      "expected_state": "receipt_authority_quarantine"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "zeno_stabilization_export_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Zeno Stabilization Export Coherence",
+  "valid_states": [
+    "stable_export_allowed",
+    "zeno_slow_export_deferred",
+    "zeno_freeze_export_blocked",
+    "unstable_export_blocked",
+    "zeno_export_quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "ZSE-001",
+      "zeno_state": "supported",
+      "stabilization": 0.86,
+      "export_requested": true,
+      "risk": 0.2,
+      "expected_state": "stable_export_allowed"
+    },
+    {
+      "case_id": "ZSE-002",
+      "zeno_state": "slowed",
+      "stabilization": 0.66,
+      "export_requested": true,
+      "risk": 0.2,
+      "expected_state": "zeno_slow_export_deferred"
+    },
+    {
+      "case_id": "ZSE-003",
+      "zeno_state": "frozen",
+      "stabilization": 0.4,
+      "export_requested": true,
+      "risk": 0.2,
+      "expected_state": "zeno_freeze_export_blocked"
+    },
+    {
+      "case_id": "ZSE-004",
+      "zeno_state": "supported",
+      "stabilization": 0.42,
+      "export_requested": true,
+      "risk": 0.2,
+      "expected_state": "unstable_export_blocked"
+    },
+    {
+      "case_id": "ZSE-005",
+      "zeno_state": "slowed",
+      "stabilization": 0.7,
+      "export_requested": true,
+      "risk": 0.78,
+      "expected_state": "zeno_export_quarantine"
+    }
+  ]
+}

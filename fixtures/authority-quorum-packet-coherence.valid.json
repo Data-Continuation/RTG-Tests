@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "authority_quorum_packet_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Authority Quorum Packet Coherence",
+  "valid_states": [
+    "quorum_packet_valid",
+    "authority_without_quorum_blocked",
+    "quorum_without_authority_blocked",
+    "quorum_packet_overclaim",
+    "quorum_packet_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "AQP-001",
+      "authority_satisfied": true,
+      "quorum_satisfied": true,
+      "claimed_commit": true,
+      "confidence": 0.9,
+      "expected_state": "quorum_packet_valid"
+    },
+    {
+      "case_id": "AQP-002",
+      "authority_satisfied": true,
+      "quorum_satisfied": false,
+      "claimed_commit": false,
+      "confidence": 0.85,
+      "expected_state": "authority_without_quorum_blocked"
+    },
+    {
+      "case_id": "AQP-003",
+      "authority_satisfied": false,
+      "quorum_satisfied": true,
+      "claimed_commit": false,
+      "confidence": 0.85,
+      "expected_state": "quorum_without_authority_blocked"
+    },
+    {
+      "case_id": "AQP-004",
+      "authority_satisfied": false,
+      "quorum_satisfied": false,
+      "claimed_commit": true,
+      "confidence": 0.7,
+      "expected_state": "quorum_packet_overclaim"
+    },
+    {
+      "case_id": "AQP-005",
+      "authority_satisfied": true,
+      "quorum_satisfied": true,
+      "claimed_commit": true,
+      "confidence": 0.5,
+      "expected_state": "quorum_packet_provisional"
+    }
+  ]
+}

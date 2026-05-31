@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "identity_surface_replay_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Identity Surface Replay Coherence",
+  "valid_states": [
+    "identity_replay_valid",
+    "identity_replay_mismatch",
+    "identity_missing_replay_valid",
+    "identity_spoof_quarantine",
+    "identity_replay_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "ISR-001",
+      "identity_match": true,
+      "replay_valid": true,
+      "spoof_signal": false,
+      "confidence": 0.9,
+      "expected_state": "identity_replay_valid"
+    },
+    {
+      "case_id": "ISR-002",
+      "identity_match": false,
+      "replay_valid": true,
+      "spoof_signal": false,
+      "confidence": 0.88,
+      "expected_state": "identity_replay_mismatch"
+    },
+    {
+      "case_id": "ISR-003",
+      "identity_match": true,
+      "replay_valid": false,
+      "spoof_signal": false,
+      "confidence": 0.85,
+      "expected_state": "identity_missing_replay_valid"
+    },
+    {
+      "case_id": "ISR-004",
+      "identity_match": false,
+      "replay_valid": false,
+      "spoof_signal": true,
+      "confidence": 0.75,
+      "expected_state": "identity_spoof_quarantine"
+    },
+    {
+      "case_id": "ISR-005",
+      "identity_match": true,
+      "replay_valid": true,
+      "spoof_signal": false,
+      "confidence": 0.45,
+      "expected_state": "identity_replay_provisional"
+    }
+  ]
+}

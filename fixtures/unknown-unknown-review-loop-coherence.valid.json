@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "unknown_unknown_review_loop_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Unknown Unknown Review Loop Coherence",
+  "valid_states": [
+    "review_loop_preserve",
+    "review_loop_widen",
+    "review_loop_regrade",
+    "review_loop_escalate",
+    "review_loop_close"
+  ],
+  "cases": [
+    {
+      "case_id": "UURL-001",
+      "unknown_unknown": true,
+      "observer_gap": 0.3,
+      "new_evidence": false,
+      "risk": 0.2,
+      "resolved": false,
+      "expected_state": "review_loop_preserve"
+    },
+    {
+      "case_id": "UURL-002",
+      "unknown_unknown": true,
+      "observer_gap": 0.8,
+      "new_evidence": false,
+      "risk": 0.2,
+      "resolved": false,
+      "expected_state": "review_loop_widen"
+    },
+    {
+      "case_id": "UURL-003",
+      "unknown_unknown": true,
+      "observer_gap": 0.3,
+      "new_evidence": true,
+      "risk": 0.2,
+      "resolved": false,
+      "expected_state": "review_loop_regrade"
+    },
+    {
+      "case_id": "UURL-004",
+      "unknown_unknown": true,
+      "observer_gap": 0.3,
+      "new_evidence": false,
+      "risk": 0.8,
+      "resolved": false,
+      "expected_state": "review_loop_escalate"
+    },
+    {
+      "case_id": "UURL-005",
+      "unknown_unknown": true,
+      "observer_gap": 0.3,
+      "new_evidence": true,
+      "risk": 0.2,
+      "resolved": true,
+      "expected_state": "review_loop_close"
+    }
+  ]
+}

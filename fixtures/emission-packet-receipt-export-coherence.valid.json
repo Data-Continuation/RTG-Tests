@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "emission_packet_receipt_export_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Emission Packet Receipt Export Coherence",
+  "valid_states": [
+    "packet_export_receipt_valid",
+    "emission_without_receipt_blocked",
+    "receipt_without_export_deferred",
+    "export_receipt_conflict",
+    "packet_export_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "EPR-001",
+      "emission_allowed": true,
+      "export_present": true,
+      "receipt_present": true,
+      "receipt_conflict": false,
+      "confidence": 0.9,
+      "expected_state": "packet_export_receipt_valid"
+    },
+    {
+      "case_id": "EPR-002",
+      "emission_allowed": true,
+      "export_present": true,
+      "receipt_present": false,
+      "receipt_conflict": false,
+      "confidence": 0.9,
+      "expected_state": "emission_without_receipt_blocked"
+    },
+    {
+      "case_id": "EPR-003",
+      "emission_allowed": true,
+      "export_present": false,
+      "receipt_present": true,
+      "receipt_conflict": false,
+      "confidence": 0.9,
+      "expected_state": "receipt_without_export_deferred"
+    },
+    {
+      "case_id": "EPR-004",
+      "emission_allowed": true,
+      "export_present": true,
+      "receipt_present": true,
+      "receipt_conflict": true,
+      "confidence": 0.9,
+      "expected_state": "export_receipt_conflict"
+    },
+    {
+      "case_id": "EPR-005",
+      "emission_allowed": true,
+      "export_present": true,
+      "receipt_present": true,
+      "receipt_conflict": false,
+      "confidence": 0.45,
+      "expected_state": "packet_export_provisional"
+    }
+  ]
+}

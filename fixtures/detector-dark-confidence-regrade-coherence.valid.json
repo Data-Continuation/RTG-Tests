@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "detector_dark_confidence_regrade_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Detector Dark Confidence Regrade Coherence",
+  "valid_states": [
+    "dark_confidence_upgraded",
+    "dark_confidence_downgraded",
+    "detector_missing_confidence_defer",
+    "colored_confidence_stable",
+    "dark_confidence_quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "DDCR-001",
+      "detector_available": true,
+      "color_intensity": 0.3,
+      "old_confidence": 0.4,
+      "new_confidence": 0.75,
+      "risk": 0.2,
+      "expected_state": "dark_confidence_upgraded"
+    },
+    {
+      "case_id": "DDCR-002",
+      "detector_available": true,
+      "color_intensity": 0.8,
+      "old_confidence": 0.8,
+      "new_confidence": 0.45,
+      "risk": 0.2,
+      "expected_state": "dark_confidence_downgraded"
+    },
+    {
+      "case_id": "DDCR-003",
+      "detector_available": false,
+      "color_intensity": 0.3,
+      "old_confidence": 0.5,
+      "new_confidence": 0.6,
+      "risk": 0.2,
+      "expected_state": "detector_missing_confidence_defer"
+    },
+    {
+      "case_id": "DDCR-004",
+      "detector_available": true,
+      "color_intensity": 0.8,
+      "old_confidence": 0.7,
+      "new_confidence": 0.72,
+      "risk": 0.2,
+      "expected_state": "colored_confidence_stable"
+    },
+    {
+      "case_id": "DDCR-005",
+      "detector_available": true,
+      "color_intensity": 0.3,
+      "old_confidence": 0.4,
+      "new_confidence": 0.75,
+      "risk": 0.8,
+      "expected_state": "dark_confidence_quarantine"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "receipt_confidence_regrade_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Receipt Confidence Regrade Coherence",
+  "valid_states": [
+    "receipt_confidence_accept",
+    "receipt_confidence_upgrade",
+    "receipt_confidence_downgrade",
+    "receipt_conflict_reject",
+    "receipt_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "RCR-001",
+      "receipt_consistent": true,
+      "old_confidence": 0.7,
+      "new_confidence": 0.73,
+      "receipt_conflict": false,
+      "expected_state": "receipt_confidence_accept"
+    },
+    {
+      "case_id": "RCR-002",
+      "receipt_consistent": true,
+      "old_confidence": 0.45,
+      "new_confidence": 0.82,
+      "receipt_conflict": false,
+      "expected_state": "receipt_confidence_upgrade"
+    },
+    {
+      "case_id": "RCR-003",
+      "receipt_consistent": true,
+      "old_confidence": 0.82,
+      "new_confidence": 0.5,
+      "receipt_conflict": false,
+      "expected_state": "receipt_confidence_downgrade"
+    },
+    {
+      "case_id": "RCR-004",
+      "receipt_consistent": false,
+      "old_confidence": 0.7,
+      "new_confidence": 0.2,
+      "receipt_conflict": true,
+      "expected_state": "receipt_conflict_reject"
+    },
+    {
+      "case_id": "RCR-005",
+      "receipt_consistent": true,
+      "old_confidence": 0.5,
+      "new_confidence": 0.58,
+      "receipt_conflict": false,
+      "expected_state": "receipt_provisional"
+    }
+  ]
+}

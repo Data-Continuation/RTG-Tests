@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "confidence_authority_escalation_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Confidence Authority Escalation Coherence",
+  "valid_states": [
+    "authority_accept",
+    "confidence_requires_escalation",
+    "authority_requires_escalation",
+    "both_require_escalation",
+    "authority_confidence_reject"
+  ],
+  "cases": [
+    {
+      "case_id": "CAE-001",
+      "authority_level": 3,
+      "required_authority": 2,
+      "confidence": 0.85,
+      "reject_signal": false,
+      "expected_state": "authority_accept"
+    },
+    {
+      "case_id": "CAE-002",
+      "authority_level": 3,
+      "required_authority": 2,
+      "confidence": 0.45,
+      "reject_signal": false,
+      "expected_state": "confidence_requires_escalation"
+    },
+    {
+      "case_id": "CAE-003",
+      "authority_level": 1,
+      "required_authority": 2,
+      "confidence": 0.85,
+      "reject_signal": false,
+      "expected_state": "authority_requires_escalation"
+    },
+    {
+      "case_id": "CAE-004",
+      "authority_level": 1,
+      "required_authority": 2,
+      "confidence": 0.45,
+      "reject_signal": false,
+      "expected_state": "both_require_escalation"
+    },
+    {
+      "case_id": "CAE-005",
+      "authority_level": 3,
+      "required_authority": 2,
+      "confidence": 0.2,
+      "reject_signal": true,
+      "expected_state": "authority_confidence_reject"
+    }
+  ]
+}

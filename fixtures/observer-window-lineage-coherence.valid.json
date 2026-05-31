@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "observer_window_lineage_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Observer Window Lineage Coherence",
+  "valid_states": [
+    "lineage_observed_valid",
+    "lineage_missed_window",
+    "lineage_observed_parent_missing",
+    "lineage_observed_conflict",
+    "lineage_observation_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "OWL-001",
+      "window_visible": true,
+      "parent_present": true,
+      "lineage_conflict": false,
+      "confidence": 0.88,
+      "expected_state": "lineage_observed_valid"
+    },
+    {
+      "case_id": "OWL-002",
+      "window_visible": false,
+      "parent_present": true,
+      "lineage_conflict": false,
+      "confidence": 0.88,
+      "expected_state": "lineage_missed_window"
+    },
+    {
+      "case_id": "OWL-003",
+      "window_visible": true,
+      "parent_present": false,
+      "lineage_conflict": false,
+      "confidence": 0.8,
+      "expected_state": "lineage_observed_parent_missing"
+    },
+    {
+      "case_id": "OWL-004",
+      "window_visible": true,
+      "parent_present": true,
+      "lineage_conflict": true,
+      "confidence": 0.8,
+      "expected_state": "lineage_observed_conflict"
+    },
+    {
+      "case_id": "OWL-005",
+      "window_visible": true,
+      "parent_present": true,
+      "lineage_conflict": false,
+      "confidence": 0.45,
+      "expected_state": "lineage_observation_provisional"
+    }
+  ]
+}

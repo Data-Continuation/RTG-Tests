@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "receipt_chain_anomaly_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Receipt Chain Anomaly Coherence",
+  "valid_states": [
+    "receipt_chain_anomaly_free",
+    "receipt_chain_anomaly_retained",
+    "receipt_chain_anomaly_quarantine",
+    "receipt_chain_missing_anomaly",
+    "receipt_chain_resolved_anomaly"
+  ],
+  "cases": [
+    {
+      "case_id": "RCA-001",
+      "receipt_chain_valid": true,
+      "anomaly_present": false,
+      "anomaly_resolved": false,
+      "risk": 0.2,
+      "expected_state": "receipt_chain_anomaly_free"
+    },
+    {
+      "case_id": "RCA-002",
+      "receipt_chain_valid": true,
+      "anomaly_present": true,
+      "anomaly_resolved": false,
+      "risk": 0.3,
+      "expected_state": "receipt_chain_anomaly_retained"
+    },
+    {
+      "case_id": "RCA-003",
+      "receipt_chain_valid": true,
+      "anomaly_present": true,
+      "anomaly_resolved": false,
+      "risk": 0.8,
+      "expected_state": "receipt_chain_anomaly_quarantine"
+    },
+    {
+      "case_id": "RCA-004",
+      "receipt_chain_valid": false,
+      "anomaly_present": true,
+      "anomaly_resolved": false,
+      "risk": 0.3,
+      "expected_state": "receipt_chain_missing_anomaly"
+    },
+    {
+      "case_id": "RCA-005",
+      "receipt_chain_valid": true,
+      "anomaly_present": true,
+      "anomaly_resolved": true,
+      "risk": 0.3,
+      "expected_state": "receipt_chain_resolved_anomaly"
+    }
+  ]
+}

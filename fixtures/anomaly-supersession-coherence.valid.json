@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "anomaly_supersession_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Anomaly Supersession Coherence",
+  "valid_states": [
+    "supersession_with_resolved_anomaly",
+    "supersession_blocked_by_anomaly",
+    "supersession_quarantine_anomaly",
+    "older_anomaly_attempt_blocked",
+    "supersession_anomaly_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "ASC-001",
+      "new_version": 3,
+      "prior_version": 2,
+      "anomaly_present": true,
+      "anomaly_resolved": true,
+      "risk": 0.2,
+      "expected_state": "supersession_with_resolved_anomaly"
+    },
+    {
+      "case_id": "ASC-002",
+      "new_version": 3,
+      "prior_version": 2,
+      "anomaly_present": true,
+      "anomaly_resolved": false,
+      "risk": 0.3,
+      "expected_state": "supersession_blocked_by_anomaly"
+    },
+    {
+      "case_id": "ASC-003",
+      "new_version": 3,
+      "prior_version": 2,
+      "anomaly_present": true,
+      "anomaly_resolved": false,
+      "risk": 0.8,
+      "expected_state": "supersession_quarantine_anomaly"
+    },
+    {
+      "case_id": "ASC-004",
+      "new_version": 1,
+      "prior_version": 2,
+      "anomaly_present": true,
+      "anomaly_resolved": true,
+      "risk": 0.2,
+      "expected_state": "older_anomaly_attempt_blocked"
+    },
+    {
+      "case_id": "ASC-005",
+      "new_version": 3,
+      "prior_version": 2,
+      "anomaly_present": false,
+      "anomaly_resolved": false,
+      "risk": 0.2,
+      "expected_state": "supersession_anomaly_provisional"
+    }
+  ]
+}

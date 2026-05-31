@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "lineage_export_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Lineage Export Coherence",
+  "valid_states": [
+    "lineage_export_valid",
+    "lineage_missing_blocks_export",
+    "lineage_conflict_quarantine",
+    "export_missing_after_lineage",
+    "lineage_export_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "LEC-001",
+      "lineage_valid": true,
+      "lineage_conflict": false,
+      "export_present": true,
+      "confidence": 0.88,
+      "expected_state": "lineage_export_valid"
+    },
+    {
+      "case_id": "LEC-002",
+      "lineage_valid": false,
+      "lineage_conflict": false,
+      "export_present": true,
+      "confidence": 0.82,
+      "expected_state": "lineage_missing_blocks_export"
+    },
+    {
+      "case_id": "LEC-003",
+      "lineage_valid": false,
+      "lineage_conflict": true,
+      "export_present": true,
+      "confidence": 0.8,
+      "expected_state": "lineage_conflict_quarantine"
+    },
+    {
+      "case_id": "LEC-004",
+      "lineage_valid": true,
+      "lineage_conflict": false,
+      "export_present": false,
+      "confidence": 0.86,
+      "expected_state": "export_missing_after_lineage"
+    },
+    {
+      "case_id": "LEC-005",
+      "lineage_valid": true,
+      "lineage_conflict": false,
+      "export_present": true,
+      "confidence": 0.5,
+      "expected_state": "lineage_export_provisional"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "coupling_anomaly_retention_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Coupling Anomaly Retention Coherence",
+  "valid_states": [
+    "coupling_anomaly_retained",
+    "coupling_anomaly_quarantined",
+    "coupling_anomaly_resolved",
+    "coupling_no_anomaly",
+    "coupling_anomaly_widen_window"
+  ],
+  "cases": [
+    {
+      "case_id": "CAR-001",
+      "coupling_effect_valid": false,
+      "anomaly_present": true,
+      "resolved": false,
+      "observer_gap": 0.3,
+      "expected_state": "coupling_anomaly_retained"
+    },
+    {
+      "case_id": "CAR-002",
+      "coupling_effect_valid": false,
+      "anomaly_present": true,
+      "resolved": false,
+      "observer_gap": 0.8,
+      "expected_state": "coupling_anomaly_widen_window"
+    },
+    {
+      "case_id": "CAR-003",
+      "coupling_effect_valid": false,
+      "anomaly_present": true,
+      "resolved": true,
+      "observer_gap": 0.3,
+      "expected_state": "coupling_anomaly_resolved"
+    },
+    {
+      "case_id": "CAR-004",
+      "coupling_effect_valid": true,
+      "anomaly_present": false,
+      "resolved": false,
+      "observer_gap": 0.2,
+      "expected_state": "coupling_no_anomaly"
+    },
+    {
+      "case_id": "CAR-005",
+      "coupling_effect_valid": true,
+      "anomaly_present": true,
+      "resolved": false,
+      "observer_gap": 0.3,
+      "expected_state": "coupling_anomaly_quarantined"
+    }
+  ]
+}

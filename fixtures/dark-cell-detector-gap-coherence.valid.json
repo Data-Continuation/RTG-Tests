@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "dark_cell_detector_gap_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Dark Cell Detector Gap Coherence",
+  "valid_states": [
+    "dark_detector_gap",
+    "dark_observable_uncolored",
+    "colored_detector_covered",
+    "colored_detector_gap",
+    "dark_gap_anomaly"
+  ],
+  "cases": [
+    {
+      "case_id": "DDG-001",
+      "color_intensity": 0.2,
+      "detector_available": false,
+      "anomaly_present": false,
+      "evidence_density": 0.2,
+      "expected_state": "dark_detector_gap"
+    },
+    {
+      "case_id": "DDG-002",
+      "color_intensity": 0.2,
+      "detector_available": true,
+      "anomaly_present": false,
+      "evidence_density": 0.7,
+      "expected_state": "dark_observable_uncolored"
+    },
+    {
+      "case_id": "DDG-003",
+      "color_intensity": 0.8,
+      "detector_available": true,
+      "anomaly_present": false,
+      "evidence_density": 0.82,
+      "expected_state": "colored_detector_covered"
+    },
+    {
+      "case_id": "DDG-004",
+      "color_intensity": 0.8,
+      "detector_available": false,
+      "anomaly_present": false,
+      "evidence_density": 0.82,
+      "expected_state": "colored_detector_gap"
+    },
+    {
+      "case_id": "DDG-005",
+      "color_intensity": 0.2,
+      "detector_available": false,
+      "anomaly_present": true,
+      "evidence_density": 0.4,
+      "expected_state": "dark_gap_anomaly"
+    }
+  ]
+}

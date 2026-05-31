@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "multi_observer_consensus_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Multi Observer Consensus Coherence",
+  "valid_states": [
+    "consensus_accept",
+    "consensus_defer",
+    "consensus_reject",
+    "minority_report_preserved",
+    "consensus_quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "MOC-001",
+      "compatible_observers": 3,
+      "required_observers": 2,
+      "reject_votes": 0,
+      "quarantine_signal": false,
+      "expected_state": "consensus_accept"
+    },
+    {
+      "case_id": "MOC-002",
+      "compatible_observers": 1,
+      "required_observers": 2,
+      "reject_votes": 0,
+      "quarantine_signal": false,
+      "expected_state": "consensus_defer"
+    },
+    {
+      "case_id": "MOC-003",
+      "compatible_observers": 3,
+      "required_observers": 2,
+      "reject_votes": 2,
+      "quarantine_signal": false,
+      "expected_state": "consensus_reject"
+    },
+    {
+      "case_id": "MOC-004",
+      "compatible_observers": 3,
+      "required_observers": 2,
+      "reject_votes": 1,
+      "quarantine_signal": false,
+      "expected_state": "minority_report_preserved"
+    },
+    {
+      "case_id": "MOC-005",
+      "compatible_observers": 3,
+      "required_observers": 2,
+      "reject_votes": 0,
+      "quarantine_signal": true,
+      "expected_state": "consensus_quarantine"
+    }
+  ]
+}

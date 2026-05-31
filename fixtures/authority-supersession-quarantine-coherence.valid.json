@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "authority_supersession_quarantine_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Authority Supersession Quarantine Coherence",
+  "valid_states": [
+    "authorized_supersession_release",
+    "authority_missing_supersession_blocked",
+    "supersession_quarantine_continue",
+    "supersession_quarantine_escalate",
+    "supersession_release_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "ASQ-001",
+      "authority_satisfied": true,
+      "supersession_valid": true,
+      "quarantine_risk": 0.2,
+      "confidence": 0.88,
+      "expected_state": "authorized_supersession_release"
+    },
+    {
+      "case_id": "ASQ-002",
+      "authority_satisfied": false,
+      "supersession_valid": true,
+      "quarantine_risk": 0.2,
+      "confidence": 0.88,
+      "expected_state": "authority_missing_supersession_blocked"
+    },
+    {
+      "case_id": "ASQ-003",
+      "authority_satisfied": true,
+      "supersession_valid": true,
+      "quarantine_risk": 0.55,
+      "confidence": 0.88,
+      "expected_state": "supersession_quarantine_continue"
+    },
+    {
+      "case_id": "ASQ-004",
+      "authority_satisfied": true,
+      "supersession_valid": true,
+      "quarantine_risk": 0.82,
+      "confidence": 0.88,
+      "expected_state": "supersession_quarantine_escalate"
+    },
+    {
+      "case_id": "ASQ-005",
+      "authority_satisfied": true,
+      "supersession_valid": true,
+      "quarantine_risk": 0.2,
+      "confidence": 0.45,
+      "expected_state": "supersession_release_provisional"
+    }
+  ]
+}

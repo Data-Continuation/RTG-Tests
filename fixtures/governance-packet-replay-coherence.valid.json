@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "governance_packet_replay_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Governance Packet Replay Coherence",
+  "valid_states": [
+    "governance_replay_accept",
+    "governance_replay_defer",
+    "governance_replay_reject",
+    "governance_replay_quarantine",
+    "governance_replay_output_mismatch"
+  ],
+  "cases": [
+    {
+      "case_id": "GPR-001",
+      "replay_state": "valid_replay",
+      "declared_output": "accept",
+      "expected_state": "governance_replay_accept"
+    },
+    {
+      "case_id": "GPR-002",
+      "replay_state": "replay_required",
+      "declared_output": "defer",
+      "expected_state": "governance_replay_defer"
+    },
+    {
+      "case_id": "GPR-003",
+      "replay_state": "invalid_replay",
+      "declared_output": "reject",
+      "expected_state": "governance_replay_reject"
+    },
+    {
+      "case_id": "GPR-004",
+      "replay_state": "receipt_conflict",
+      "declared_output": "quarantine",
+      "expected_state": "governance_replay_quarantine"
+    },
+    {
+      "case_id": "GPR-005",
+      "replay_state": "invalid_replay",
+      "declared_output": "accept",
+      "expected_state": "governance_replay_output_mismatch"
+    }
+  ]
+}

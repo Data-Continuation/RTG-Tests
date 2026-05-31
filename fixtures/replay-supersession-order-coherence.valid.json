@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "test_key": "replay_supersession_order_coherence",
+  "layer_type": "cross-layer coherence",
+  "title": "Replay Supersession Order Coherence",
+  "valid_states": [
+    "replay_supersession_valid",
+    "supersession_replay_missing",
+    "older_replay_blocked",
+    "same_version_replay_conflict",
+    "replay_supersession_provisional"
+  ],
+  "cases": [
+    {
+      "case_id": "RSO-001",
+      "new_version": 3,
+      "prior_version": 2,
+      "replay_valid": true,
+      "confidence": 0.9,
+      "expected_state": "replay_supersession_valid"
+    },
+    {
+      "case_id": "RSO-002",
+      "new_version": 3,
+      "prior_version": 2,
+      "replay_valid": false,
+      "confidence": 0.85,
+      "expected_state": "supersession_replay_missing"
+    },
+    {
+      "case_id": "RSO-003",
+      "new_version": 1,
+      "prior_version": 2,
+      "replay_valid": true,
+      "confidence": 0.9,
+      "expected_state": "older_replay_blocked"
+    },
+    {
+      "case_id": "RSO-004",
+      "new_version": 2,
+      "prior_version": 2,
+      "replay_valid": true,
+      "confidence": 0.9,
+      "expected_state": "same_version_replay_conflict"
+    },
+    {
+      "case_id": "RSO-005",
+      "new_version": 3,
+      "prior_version": 2,
+      "replay_valid": true,
+      "confidence": 0.45,
+      "expected_state": "replay_supersession_provisional"
+    }
+  ]
+}
