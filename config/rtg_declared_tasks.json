@@ -1,12 +1,12 @@
 {
-  "schema_version": "1.194",
+  "schema_version": "1.206",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
     "This registry declares tasks the repo dispatcher is allowed to run.",
     "The dispatcher rejects undeclared task names.",
-    "Schema version 1.145 through 1.194 add 50 RTG cross-layer coherence tests, reaching 250 executable RTG tests.",
+    "Schema version 1.195 through 1.206 add 12 semantic-differentiation RTG tests.",
     "Registry integrity remains declared.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
@@ -2259,6 +2259,114 @@
       "command": [
         "python",
         "tests/test_rtg_250_milestone_integrity_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_window_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG observer window semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "authority_boundary_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG authority boundary semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_boundary_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "false_transition_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG false transition semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_transition_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG unknown unknown semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "zeno_pressure_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG zeno pressure semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_pressure_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "dark_cell_color_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG dark cell color semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_color_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "quarantine_release_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG quarantine release semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_release_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "confidence_regrade_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG confidence regrade semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_regrade_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "supersession_lineage_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG supersession lineage semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_lineage_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "emission_export_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG emission export semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_export_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "multi_entity_boundary_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG multi entity boundary semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_entity_boundary_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "purpose_convergence_boundary_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG purpose convergence boundary semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_purpose_convergence_boundary_semantic_behavior.py"
       ]
     },
     {
