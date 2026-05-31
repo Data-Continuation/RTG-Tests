@@ -16,7 +16,7 @@
       "enabled": true,
       "command": [
         "python",
-        "tests/test_fixture_smoke.py"
+        "tests/test_rtg_fixtures.py"
       ]
     },
     {
