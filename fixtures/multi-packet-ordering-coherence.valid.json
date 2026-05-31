@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "cross-layer coherence",
+  "test_key": "multi_packet_ordering_coherence",
+  "title": "Multi Packet Ordering Coherence",
+  "valid_states": [
+    "coherent",
+    "authority_failure",
+    "replay_failure",
+    "lineage_or_receipt_failure",
+    "quarantine_required",
+    "provisional_review"
+  ],
+  "cases": [
+    {
+      "case_id": "MULTI_PACKET_ORDERING_COHERENCE-001",
+      "authority": true,
+      "replay": true,
+      "lineage_or_receipt": true,
+      "risk": 0.2,
+      "confidence": 0.88,
+      "expected_state": "coherent"
+    },
+    {
+      "case_id": "MULTI_PACKET_ORDERING_COHERENCE-002",
+      "authority": false,
+      "replay": true,
+      "lineage_or_receipt": true,
+      "risk": 0.2,
+      "confidence": 0.86,
+      "expected_state": "authority_failure"
+    },
+    {
+      "case_id": "MULTI_PACKET_ORDERING_COHERENCE-003",
+      "authority": true,
+      "replay": false,
+      "lineage_or_receipt": true,
+      "risk": 0.2,
+      "confidence": 0.84,
+      "expected_state": "replay_failure"
+    },
+    {
+      "case_id": "MULTI_PACKET_ORDERING_COHERENCE-004",
+      "authority": true,
+      "replay": true,
+      "lineage_or_receipt": false,
+      "risk": 0.2,
+      "confidence": 0.82,
+      "expected_state": "lineage_or_receipt_failure"
+    },
+    {
+      "case_id": "MULTI_PACKET_ORDERING_COHERENCE-005",
+      "authority": true,
+      "replay": true,
+      "lineage_or_receipt": true,
+      "risk": 0.76,
+      "confidence": 0.8,
+      "expected_state": "quarantine_required"
+    },
+    {
+      "case_id": "MULTI_PACKET_ORDERING_COHERENCE-006",
+      "authority": true,
+      "replay": true,
+      "lineage_or_receipt": true,
+      "risk": 0.3,
+      "confidence": 0.52,
+      "expected_state": "provisional_review"
+    }
+  ]
+}
