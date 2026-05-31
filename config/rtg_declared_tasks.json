@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.22",
+  "schema_version": "1.32",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -7,39 +7,39 @@
     "This registry declares tasks the repo dispatcher is allowed to run.",
     "The dispatcher rejects undeclared task names.",
     "Commands are intentionally simple and repo-local.",
-    "Schema version 1.13 through 1.22 add the next ten provisional RTG test layers."
+    "Schema version 1.23 through 1.32 add the first ten RTG cross-layer coherence tests."
   ],
   "tasks": [
     {
       "name": "fixture_smoke_tests",
-      "description": "Validate provisional RTG fixture shape and allowed values.",
+      "description": "Validate provisional RTG fixture-smoke behavior.",
       "enabled": true,
       "command": [
         "python",
-        "tests/test_rtg_fixtures.py"
+        "tests/test_fixture_smoke.py"
       ]
     },
     {
       "name": "cell_geometry_smoke_tests",
-      "description": "Validate first provisional RTG cell-geometry invariants.",
+      "description": "Validate provisional RTG cell-geometry-smoke behavior.",
       "enabled": true,
       "command": [
         "python",
-        "tests/test_cell_geometry.py"
+        "tests/test_cell_geometry_smoke.py"
       ]
     },
     {
       "name": "function_class_behavior_tests",
-      "description": "Validate provisional RTG function-class behavior profiles.",
+      "description": "Validate provisional RTG function-class-behavior behavior.",
       "enabled": true,
       "command": [
         "python",
-        "tests/test_function_classes.py"
+        "tests/test_function_class_behavior.py"
       ]
     },
     {
       "name": "coupling_translation_tests",
-      "description": "Validate provisional RTG translated coupling effects between cells.",
+      "description": "Validate provisional RTG coupling-translation behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -48,34 +48,34 @@
     },
     {
       "name": "shell_role_expectation_tests",
-      "description": "Validate provisional RTG s/p/d/f shell-role behavior expectations.",
+      "description": "Validate provisional RTG shell-role-expectation behavior.",
       "enabled": true,
       "command": [
         "python",
-        "tests/test_shell_roles.py"
+        "tests/test_shell_role_expectation.py"
       ]
     },
     {
       "name": "dark_cell_color_emergence_tests",
-      "description": "Validate provisional RTG dark-cell color emergence behavior.",
+      "description": "Validate provisional RTG dark-cell-color-emergence behavior.",
       "enabled": true,
       "command": [
         "python",
-        "tests/test_dark_cell_color.py"
+        "tests/test_dark_cell_color_emergence.py"
       ]
     },
     {
       "name": "zeno_transition_tests",
-      "description": "Validate provisional RTG Zeno-prone transition behavior.",
+      "description": "Validate provisional RTG zeno-transition behavior.",
       "enabled": true,
       "command": [
         "python",
-        "tests/test_zeno_transitions.py"
+        "tests/test_zeno_transition.py"
       ]
     },
     {
       "name": "stabilization_emission_tests",
-      "description": "Validate provisional RTG stabilization-to-emission threshold behavior.",
+      "description": "Validate provisional RTG stabilization-emission behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -84,16 +84,16 @@
     },
     {
       "name": "observer_window_tests",
-      "description": "Validate provisional RTG observer-window visibility, classification, and emission behavior.",
+      "description": "Validate provisional RTG observer-window behavior.",
       "enabled": true,
       "command": [
         "python",
-        "tests/test_observer_windows.py"
+        "tests/test_observer_window.py"
       ]
     },
     {
       "name": "authority_bound_emission_tests",
-      "description": "Validate provisional RTG authority-bound emission behavior.",
+      "description": "Validate provisional RTG authority-bound-emission behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -102,7 +102,7 @@
     },
     {
       "name": "uncertainty_class_separation_tests",
-      "description": "Validate provisional RTG separation of false transitions from unknown unknowns.",
+      "description": "Validate provisional RTG uncertainty-class-separation behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -111,7 +111,7 @@
     },
     {
       "name": "observer_identity_coupling_tests",
-      "description": "Validate provisional RTG observer identity compatibility with transition identity classes.",
+      "description": "Validate provisional RTG observer-identity-coupling behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -120,7 +120,7 @@
     },
     {
       "name": "transition_replay_validation_tests",
-      "description": "Validate provisional RTG replay and receipt consistency for transition claims.",
+      "description": "Validate provisional RTG transition-replay-validation behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -129,7 +129,7 @@
     },
     {
       "name": "receipt_chain_continuity_tests",
-      "description": "Validate provisional RTG receipt-chain continuity behavior.",
+      "description": "Validate provisional RTG receipt-chain-continuity behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -138,7 +138,7 @@
     },
     {
       "name": "state_lineage_integrity_tests",
-      "description": "Validate provisional RTG state-lineage integrity behavior.",
+      "description": "Validate provisional RTG state-lineage-integrity behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -147,7 +147,7 @@
     },
     {
       "name": "coupling_replay_consistency_tests",
-      "description": "Validate provisional RTG coupling-replay consistency behavior.",
+      "description": "Validate provisional RTG coupling-replay-consistency behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -156,7 +156,7 @@
     },
     {
       "name": "emission_export_boundary_tests",
-      "description": "Validate provisional RTG emission-export boundary behavior.",
+      "description": "Validate provisional RTG emission-export-boundary behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -165,7 +165,7 @@
     },
     {
       "name": "anomaly_retention_tests",
-      "description": "Validate provisional RTG anomaly retention behavior.",
+      "description": "Validate provisional RTG anomaly-retention behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -174,7 +174,7 @@
     },
     {
       "name": "detector_coverage_gap_tests",
-      "description": "Validate provisional RTG detector coverage gap behavior.",
+      "description": "Validate provisional RTG detector-coverage-gap behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -183,7 +183,7 @@
     },
     {
       "name": "confidence_regrade_tests",
-      "description": "Validate provisional RTG confidence regrade behavior.",
+      "description": "Validate provisional RTG confidence-regrade behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -192,7 +192,7 @@
     },
     {
       "name": "quarantine_release_tests",
-      "description": "Validate provisional RTG quarantine release behavior.",
+      "description": "Validate provisional RTG quarantine-release behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -201,7 +201,7 @@
     },
     {
       "name": "supersession_ordering_tests",
-      "description": "Validate provisional RTG supersession ordering behavior.",
+      "description": "Validate provisional RTG supersession-ordering behavior.",
       "enabled": true,
       "command": [
         "python",
@@ -210,11 +210,101 @@
     },
     {
       "name": "governance_output_consistency_tests",
-      "description": "Validate provisional RTG governance-output consistency behavior.",
+      "description": "Validate provisional RTG governance-output-consistency behavior.",
       "enabled": true,
       "command": [
         "python",
         "tests/test_governance_output_consistency.py"
+      ]
+    },
+    {
+      "name": "replay_authority_coherence_tests",
+      "description": "Validate provisional RTG replay authority coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_replay_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_detector_gap_coherence_tests",
+      "description": "Validate provisional RTG observer detector gap coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_detector_gap_coherence.py"
+      ]
+    },
+    {
+      "name": "uncertainty_anomaly_coherence_tests",
+      "description": "Validate provisional RTG uncertainty anomaly coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_uncertainty_anomaly_coherence.py"
+      ]
+    },
+    {
+      "name": "supersession_lineage_coherence_tests",
+      "description": "Validate provisional RTG supersession lineage coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_lineage_coherence.py"
+      ]
+    },
+    {
+      "name": "quarantine_confidence_coherence_tests",
+      "description": "Validate provisional RTG quarantine confidence coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_confidence_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_governance_output_coherence_tests",
+      "description": "Validate provisional RTG emission governance output coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_governance_output_coherence.py"
+      ]
+    },
+    {
+      "name": "coupling_zeno_replay_coherence_tests",
+      "description": "Validate provisional RTG coupling zeno replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_coupling_zeno_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "dark_cell_emission_coherence_tests",
+      "description": "Validate provisional RTG dark cell emission coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_emission_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_uncertainty_replay_coherence_tests",
+      "description": "Validate provisional RTG detector uncertainty replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_uncertainty_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "full_transition_packet_coherence_tests",
+      "description": "Validate provisional RTG full transition packet coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_full_transition_packet_coherence.py"
       ]
     },
     {
