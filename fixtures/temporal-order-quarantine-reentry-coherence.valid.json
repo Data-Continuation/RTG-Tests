@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "cross-layer coherence",
+  "test_key": "temporal_order_quarantine_reentry_coherence",
+  "title": "Temporal Order Quarantine Reentry Coherence",
+  "valid_states": [
+    "coherent",
+    "authority_or_identity_failure",
+    "replay_or_receipt_failure",
+    "lineage_or_export_failure",
+    "quarantine_required",
+    "provisional_review",
+    "finality_blocked"
+  ],
+  "cases": [
+    {
+      "case_id": "TEMPORAL_ORDER_QUARANTINE_REENTRY_COHERENCE-001",
+      "authority_identity": true,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.18,
+      "confidence": 0.88,
+      "finality_requested": true,
+      "finality_allowed": true,
+      "expected_state": "coherent"
+    },
+    {
+      "case_id": "TEMPORAL_ORDER_QUARANTINE_REENTRY_COHERENCE-002",
+      "authority_identity": false,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.22,
+      "confidence": 0.86,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "expected_state": "authority_or_identity_failure"
+    },
+    {
+      "case_id": "TEMPORAL_ORDER_QUARANTINE_REENTRY_COHERENCE-003",
+      "authority_identity": true,
+      "replay_receipt": false,
+      "lineage_export": true,
+      "risk": 0.22,
+      "confidence": 0.84,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "expected_state": "replay_or_receipt_failure"
+    },
+    {
+      "case_id": "TEMPORAL_ORDER_QUARANTINE_REENTRY_COHERENCE-004",
+      "authority_identity": true,
+      "replay_receipt": true,
+      "lineage_export": false,
+      "risk": 0.22,
+      "confidence": 0.82,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "expected_state": "lineage_or_export_failure"
+    },
+    {
+      "case_id": "TEMPORAL_ORDER_QUARANTINE_REENTRY_COHERENCE-005",
+      "authority_identity": true,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.78,
+      "confidence": 0.8,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "expected_state": "quarantine_required"
+    },
+    {
+      "case_id": "TEMPORAL_ORDER_QUARANTINE_REENTRY_COHERENCE-006",
+      "authority_identity": true,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.25,
+      "confidence": 0.54,
+      "finality_requested": false,
+      "finality_allowed": false,
+      "expected_state": "provisional_review"
+    },
+    {
+      "case_id": "TEMPORAL_ORDER_QUARANTINE_REENTRY_COHERENCE-007",
+      "authority_identity": true,
+      "replay_receipt": true,
+      "lineage_export": true,
+      "risk": 0.25,
+      "confidence": 0.78,
+      "finality_requested": true,
+      "finality_allowed": false,
+      "expected_state": "finality_blocked"
+    }
+  ]
+}
