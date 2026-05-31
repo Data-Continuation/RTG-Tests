@@ -1,74 +1,57 @@
 # RTG Formalism Posture
 
-## Status
+## Maturity
 
-Relative Transition Geometry is currently a **draft / speculative formalism family**.
-
-It is structured enough to scaffold but not mature enough to overclaim.
-
-## Done for This Seed
-
-This seed is done when it provides:
+RTG is currently:
 
 ```text
-a repo-level README
-a clear maturity posture
-a provisional cell model
-a provisional shell-role model
-a provisional coupling model
-machine-readable example fixtures
-a runnable smoke test
+draft
+speculative
+provisional
+executable
+testable
+not proof-complete
 ```
 
-## Not Done
+## What The Tests Mean
 
-This seed does not provide:
+The tests do not prove that RTG is final.
+
+They prove that specific RTG behavioral claims have been converted into machine-checkable constraints.
+
+That is the important transition:
 
 ```text
-final equations
-complete proof machinery
-full transition-table integration
-formal verification
-Site rendering logic
-production governance logic
+conceptual claim
+→ fixture
+→ executable classifier
+→ expected governance state
+→ green/failed result
 ```
 
-## Maturity Labels
+## What The Tests Do Not Mean
 
-RTG should use explicit maturity labels.
+The tests do not mean:
 
 ```text
-DRAFT
-    concept named and bounded
-
-SPECULATIVE
-    useful model, not validated
-
-PROVISIONAL
-    defined enough for examples and limited tests
-
-TESTED
-    covered by fixtures and repeatable checks
-
-PROVEN
-    formally demonstrated under stated assumptions
-
-DEPRECATED
-    superseded or invalidated
+all transition classes are known
+all observer classes are complete
+all detector compatibility rules are final
+all governance outputs are final
+all mathematics is complete
 ```
-
-Current RTG posture:
-
-```text
-DRAFT / SPECULATIVE
-```
-
-## Core Constraint
-
-StegVerse should be allowed to discover mathematics without prematurely claiming mathematical completion.
 
 ## Formalism Boundary
 
-RTG is concerned with how transition cells behave under observation, admissibility pressure, stabilization requirements, emission thresholds, and translated coupling.
+The repo should preserve the distinction between:
 
-RTG does not replace GCAT, BCAT, ECAT, ICAT, inference-window, or other existing StegVerse formalism families. It may eventually interact with them.
+```text
+false_transition
+unknown_unknown
+```
+
+A false transition is a bad or invalid transition claim.
+
+An unknown unknown is a model limitation or hidden condition.
+
+They require different governance outcomes.
