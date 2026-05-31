@@ -1,0 +1,62 @@
+{
+  "cases": [
+    {
+      "case_id": "AB-001",
+      "role_match": true,
+      "scope_match": true,
+      "quorum": 2,
+      "required_quorum": 2,
+      "revoked": false,
+      "expected_state": "authorized"
+    },
+    {
+      "case_id": "AB-002",
+      "role_match": false,
+      "scope_match": true,
+      "quorum": 3,
+      "required_quorum": 2,
+      "revoked": false,
+      "expected_state": "role_mismatch"
+    },
+    {
+      "case_id": "AB-003",
+      "role_match": true,
+      "scope_match": false,
+      "quorum": 3,
+      "required_quorum": 2,
+      "revoked": false,
+      "expected_state": "scope_mismatch"
+    },
+    {
+      "case_id": "AB-004",
+      "role_match": true,
+      "scope_match": true,
+      "quorum": 1,
+      "required_quorum": 2,
+      "revoked": false,
+      "expected_state": "quorum_shortfall"
+    },
+    {
+      "case_id": "AB-005",
+      "role_match": true,
+      "scope_match": true,
+      "quorum": 3,
+      "required_quorum": 2,
+      "revoked": true,
+      "expected_state": "revoked_authority"
+    }
+  ],
+  "valid_states": [
+    "authorized",
+    "role_mismatch",
+    "scope_mismatch",
+    "quorum_shortfall",
+    "revoked_authority"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "authority_boundary_semantic_behavior",
+  "title": "Authority Boundary Semantic Behavior",
+  "rule": "Authority-boundary behavior separates matching role, scope, quorum, and revocation state."
+}

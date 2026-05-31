@@ -1,0 +1,57 @@
+{
+  "cases": [
+    {
+      "case_id": "QR-001",
+      "risk": 0.2,
+      "replay_repaired": true,
+      "authority_restored": true,
+      "unresolved_anomaly": false,
+      "expected_state": "release"
+    },
+    {
+      "case_id": "QR-002",
+      "risk": 0.75,
+      "replay_repaired": true,
+      "authority_restored": true,
+      "unresolved_anomaly": false,
+      "expected_state": "hold_risk"
+    },
+    {
+      "case_id": "QR-003",
+      "risk": 0.2,
+      "replay_repaired": false,
+      "authority_restored": true,
+      "unresolved_anomaly": false,
+      "expected_state": "hold_replay"
+    },
+    {
+      "case_id": "QR-004",
+      "risk": 0.2,
+      "replay_repaired": true,
+      "authority_restored": false,
+      "unresolved_anomaly": false,
+      "expected_state": "hold_authority"
+    },
+    {
+      "case_id": "QR-005",
+      "risk": 0.2,
+      "replay_repaired": true,
+      "authority_restored": true,
+      "unresolved_anomaly": true,
+      "expected_state": "hold_anomaly"
+    }
+  ],
+  "valid_states": [
+    "release",
+    "hold_risk",
+    "hold_replay",
+    "hold_authority",
+    "hold_anomaly"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "quarantine_release_semantic_behavior",
+  "title": "Quarantine Release Semantic Behavior",
+  "rule": "Quarantine release requires risk decay, replay repair, authority restoration, and no unresolved anomaly."
+}

@@ -1,0 +1,62 @@
+{
+  "cases": [
+    {
+      "case_id": "CR-001",
+      "base_confidence": 0.5,
+      "corroboration": 3,
+      "contradictions": 0,
+      "detector_quality": 0.9,
+      "source_drift": 0.05,
+      "expected_state": "upgrade"
+    },
+    {
+      "case_id": "CR-002",
+      "base_confidence": 0.75,
+      "corroboration": 0,
+      "contradictions": 2,
+      "detector_quality": 0.9,
+      "source_drift": 0.05,
+      "expected_state": "downgrade"
+    },
+    {
+      "case_id": "CR-003",
+      "base_confidence": 0.6,
+      "corroboration": 1,
+      "contradictions": 0,
+      "detector_quality": 0.4,
+      "source_drift": 0.05,
+      "expected_state": "defer"
+    },
+    {
+      "case_id": "CR-004",
+      "base_confidence": 0.7,
+      "corroboration": 2,
+      "contradictions": 0,
+      "detector_quality": 0.9,
+      "source_drift": 0.5,
+      "expected_state": "source_drift_review"
+    },
+    {
+      "case_id": "CR-005",
+      "base_confidence": 0.7,
+      "corroboration": 1,
+      "contradictions": 0,
+      "detector_quality": 0.8,
+      "source_drift": 0.1,
+      "expected_state": "maintain"
+    }
+  ],
+  "valid_states": [
+    "upgrade",
+    "downgrade",
+    "defer",
+    "source_drift_review",
+    "maintain"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "confidence_regrade_semantic_behavior",
+  "title": "Confidence Regrade Semantic Behavior",
+  "rule": "Confidence regrade behavior changes confidence based on corroboration, contradiction, detector quality, and source drift."
+}

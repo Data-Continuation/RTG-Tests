@@ -1,0 +1,48 @@
+{
+  "cases": [
+    {
+      "case_id": "MB-001",
+      "entity_a_authority": true,
+      "entity_b_authority": true,
+      "interference": 0.1,
+      "recoverability": 0.9,
+      "expected_state": "coupled_admissible"
+    },
+    {
+      "case_id": "MB-002",
+      "entity_a_authority": false,
+      "entity_b_authority": true,
+      "interference": 0.1,
+      "recoverability": 0.9,
+      "expected_state": "authority_asymmetry"
+    },
+    {
+      "case_id": "MB-003",
+      "entity_a_authority": true,
+      "entity_b_authority": true,
+      "interference": 0.8,
+      "recoverability": 0.9,
+      "expected_state": "interference_block"
+    },
+    {
+      "case_id": "MB-004",
+      "entity_a_authority": true,
+      "entity_b_authority": true,
+      "interference": 0.2,
+      "recoverability": 0.3,
+      "expected_state": "recoverability_failure"
+    }
+  ],
+  "valid_states": [
+    "coupled_admissible",
+    "authority_asymmetry",
+    "interference_block",
+    "recoverability_failure"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "multi_entity_boundary_semantic_behavior",
+  "title": "Multi Entity Boundary Semantic Behavior",
+  "rule": "Multi-entity boundary behavior evaluates coupled authority, interference, and recoverability among interacting entities."
+}

@@ -1,0 +1,57 @@
+{
+  "cases": [
+    {
+      "case_id": "SL-001",
+      "same_parent": true,
+      "newer": true,
+      "receipt_strength_delta": 0.2,
+      "authority_conflict": false,
+      "expected_state": "supersede"
+    },
+    {
+      "case_id": "SL-002",
+      "same_parent": false,
+      "newer": true,
+      "receipt_strength_delta": 0.2,
+      "authority_conflict": false,
+      "expected_state": "fork_detected"
+    },
+    {
+      "case_id": "SL-003",
+      "same_parent": true,
+      "newer": false,
+      "receipt_strength_delta": 0.2,
+      "authority_conflict": false,
+      "expected_state": "stale_update"
+    },
+    {
+      "case_id": "SL-004",
+      "same_parent": true,
+      "newer": true,
+      "receipt_strength_delta": -0.1,
+      "authority_conflict": false,
+      "expected_state": "weak_receipt"
+    },
+    {
+      "case_id": "SL-005",
+      "same_parent": true,
+      "newer": true,
+      "receipt_strength_delta": 0.2,
+      "authority_conflict": true,
+      "expected_state": "authority_conflict"
+    }
+  ],
+  "valid_states": [
+    "supersede",
+    "fork_detected",
+    "stale_update",
+    "weak_receipt",
+    "authority_conflict"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "supersession_lineage_semantic_behavior",
+  "title": "Supersession Lineage Semantic Behavior",
+  "rule": "Supersession-lineage behavior depends on parent continuity, newer timestamp, stronger receipt, and non-conflicting authority."
+}

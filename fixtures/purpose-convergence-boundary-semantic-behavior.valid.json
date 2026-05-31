@@ -1,0 +1,48 @@
+{
+  "cases": [
+    {
+      "case_id": "PC-001",
+      "harm_reduction": 0.8,
+      "target_convergence": 0.85,
+      "maintenance_cost": 0.2,
+      "recoverability": 0.9,
+      "expected_state": "purpose_aligned"
+    },
+    {
+      "case_id": "PC-002",
+      "harm_reduction": 0.85,
+      "target_convergence": 0.2,
+      "maintenance_cost": 0.8,
+      "recoverability": 0.7,
+      "expected_state": "purpose_inverting"
+    },
+    {
+      "case_id": "PC-003",
+      "harm_reduction": 0.4,
+      "target_convergence": 0.7,
+      "maintenance_cost": 0.2,
+      "recoverability": 0.9,
+      "expected_state": "insufficient_protection"
+    },
+    {
+      "case_id": "PC-004",
+      "harm_reduction": 0.8,
+      "target_convergence": 0.75,
+      "maintenance_cost": 0.3,
+      "recoverability": 0.3,
+      "expected_state": "nonrecoverable_boundary"
+    }
+  ],
+  "valid_states": [
+    "purpose_aligned",
+    "purpose_inverting",
+    "insufficient_protection",
+    "nonrecoverable_boundary"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "purpose_convergence_boundary_semantic_behavior",
+  "title": "Purpose Convergence Boundary Semantic Behavior",
+  "rule": "Purpose-convergence behavior detects boundaries that prevent harm while defeating the state they were meant to support."
+}

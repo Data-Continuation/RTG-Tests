@@ -1,0 +1,62 @@
+{
+  "cases": [
+    {
+      "case_id": "FT-001",
+      "signature_valid": true,
+      "source_known": true,
+      "evidence_count": 3,
+      "contradiction_count": 0,
+      "claim_strength": 0.7,
+      "expected_state": "valid_transition"
+    },
+    {
+      "case_id": "FT-002",
+      "signature_valid": false,
+      "source_known": true,
+      "evidence_count": 3,
+      "contradiction_count": 0,
+      "claim_strength": 0.7,
+      "expected_state": "spoofed_transition"
+    },
+    {
+      "case_id": "FT-003",
+      "signature_valid": true,
+      "source_known": false,
+      "evidence_count": 2,
+      "contradiction_count": 0,
+      "claim_strength": 0.5,
+      "expected_state": "unattributed_claim"
+    },
+    {
+      "case_id": "FT-004",
+      "signature_valid": true,
+      "source_known": true,
+      "evidence_count": 3,
+      "contradiction_count": 2,
+      "claim_strength": 0.6,
+      "expected_state": "contradicted_transition"
+    },
+    {
+      "case_id": "FT-005",
+      "signature_valid": true,
+      "source_known": true,
+      "evidence_count": 1,
+      "contradiction_count": 0,
+      "claim_strength": 0.95,
+      "expected_state": "overclaimed_transition"
+    }
+  ],
+  "valid_states": [
+    "valid_transition",
+    "spoofed_transition",
+    "unattributed_claim",
+    "contradicted_transition",
+    "overclaimed_transition"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "false_transition_semantic_behavior",
+  "title": "False Transition Semantic Behavior",
+  "rule": "False-transition behavior distinguishes spoofing, contradiction, unsupported overclaim, and valid evidence."
+}

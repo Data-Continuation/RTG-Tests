@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "case_id": "ZP-001",
+      "attempts": 2,
+      "avg_delta_to_threshold": 0.3,
+      "stabilized": true,
+      "expected_state": "stabilized"
+    },
+    {
+      "case_id": "ZP-002",
+      "attempts": 12,
+      "avg_delta_to_threshold": 0.02,
+      "stabilized": false,
+      "expected_state": "zeno_lock"
+    },
+    {
+      "case_id": "ZP-003",
+      "attempts": 9,
+      "avg_delta_to_threshold": 0.2,
+      "stabilized": false,
+      "expected_state": "retry_pressure"
+    },
+    {
+      "case_id": "ZP-004",
+      "attempts": 3,
+      "avg_delta_to_threshold": 0.05,
+      "stabilized": false,
+      "expected_state": "near_threshold"
+    }
+  ],
+  "valid_states": [
+    "stabilized",
+    "zeno_lock",
+    "retry_pressure",
+    "near_threshold"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "zeno_pressure_semantic_behavior",
+  "title": "Zeno Pressure Semantic Behavior",
+  "rule": "Zeno-pressure behavior identifies repeated near-commit attempts that consume transition opportunity without stabilizing."
+}

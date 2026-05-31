@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "case_id": "DC-001",
+      "evidence_density": 0.05,
+      "observer_coverage": 0.1,
+      "classification_stability": 0.1,
+      "expected_state": "dark"
+    },
+    {
+      "case_id": "DC-002",
+      "evidence_density": 0.35,
+      "observer_coverage": 0.25,
+      "classification_stability": 0.3,
+      "expected_state": "dim"
+    },
+    {
+      "case_id": "DC-003",
+      "evidence_density": 0.7,
+      "observer_coverage": 0.6,
+      "classification_stability": 0.65,
+      "expected_state": "colored"
+    },
+    {
+      "case_id": "DC-004",
+      "evidence_density": 0.9,
+      "observer_coverage": 0.85,
+      "classification_stability": 0.88,
+      "expected_state": "saturated"
+    }
+  ],
+  "valid_states": [
+    "dark",
+    "dim",
+    "colored",
+    "saturated"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "dark_cell_color_semantic_behavior",
+  "title": "Dark Cell Color Semantic Behavior",
+  "rule": "Dark-cell behavior is driven by evidence density, observer coverage, and classification stability."
+}

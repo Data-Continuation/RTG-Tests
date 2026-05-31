@@ -1,0 +1,57 @@
+{
+  "cases": [
+    {
+      "case_id": "EE-001",
+      "local_emit": true,
+      "export_allowed": true,
+      "contains_sensitive": false,
+      "recipient_authorized": true,
+      "expected_state": "export"
+    },
+    {
+      "case_id": "EE-002",
+      "local_emit": true,
+      "export_allowed": false,
+      "contains_sensitive": false,
+      "recipient_authorized": true,
+      "expected_state": "local_only"
+    },
+    {
+      "case_id": "EE-003",
+      "local_emit": true,
+      "export_allowed": true,
+      "contains_sensitive": true,
+      "recipient_authorized": true,
+      "expected_state": "redact_then_export"
+    },
+    {
+      "case_id": "EE-004",
+      "local_emit": true,
+      "export_allowed": true,
+      "contains_sensitive": false,
+      "recipient_authorized": false,
+      "expected_state": "recipient_block"
+    },
+    {
+      "case_id": "EE-005",
+      "local_emit": false,
+      "export_allowed": true,
+      "contains_sensitive": false,
+      "recipient_authorized": true,
+      "expected_state": "no_emission"
+    }
+  ],
+  "valid_states": [
+    "export",
+    "local_only",
+    "redact_then_export",
+    "recipient_block",
+    "no_emission"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "emission_export_semantic_behavior",
+  "title": "Emission Export Semantic Behavior",
+  "rule": "Emission/export behavior separates local emission, export eligibility, redaction requirement, and export block."
+}

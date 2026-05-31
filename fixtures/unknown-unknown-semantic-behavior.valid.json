@@ -1,0 +1,44 @@
+{
+  "cases": [
+    {
+      "case_id": "UU-001",
+      "model_coverage": 0.9,
+      "unexplained_variance": 0.05,
+      "external_signal": false,
+      "expected_state": "modeled"
+    },
+    {
+      "case_id": "UU-002",
+      "model_coverage": 0.4,
+      "unexplained_variance": 0.2,
+      "external_signal": false,
+      "expected_state": "coverage_gap"
+    },
+    {
+      "case_id": "UU-003",
+      "model_coverage": 0.8,
+      "unexplained_variance": 0.45,
+      "external_signal": false,
+      "expected_state": "preserve_anomaly"
+    },
+    {
+      "case_id": "UU-004",
+      "model_coverage": 0.8,
+      "unexplained_variance": 0.2,
+      "external_signal": true,
+      "expected_state": "widen_observer_window"
+    }
+  ],
+  "valid_states": [
+    "modeled",
+    "coverage_gap",
+    "preserve_anomaly",
+    "widen_observer_window"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "unknown_unknown_semantic_behavior",
+  "title": "Unknown Unknown Semantic Behavior",
+  "rule": "Unknown-unknown behavior does not reject a claim as false; it lowers posture, widens review, or preserves anomaly."
+}

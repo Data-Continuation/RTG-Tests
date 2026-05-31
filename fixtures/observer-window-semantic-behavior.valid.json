@@ -1,0 +1,56 @@
+{
+  "cases": [
+    {
+      "case_id": "OW-001",
+      "event_start": 10,
+      "event_end": 20,
+      "window_start": 5,
+      "window_end": 25,
+      "latency": 1,
+      "min_dwell": 4,
+      "expected_state": "observable"
+    },
+    {
+      "case_id": "OW-002",
+      "event_start": 10,
+      "event_end": 20,
+      "window_start": 21,
+      "window_end": 30,
+      "latency": 0,
+      "min_dwell": 1,
+      "expected_state": "outside_window"
+    },
+    {
+      "case_id": "OW-003",
+      "event_start": 10,
+      "event_end": 20,
+      "window_start": 5,
+      "window_end": 25,
+      "latency": 12,
+      "min_dwell": 2,
+      "expected_state": "latency_blind"
+    },
+    {
+      "case_id": "OW-004",
+      "event_start": 10,
+      "event_end": 12,
+      "window_start": 11,
+      "window_end": 20,
+      "latency": 0,
+      "min_dwell": 3,
+      "expected_state": "insufficient_dwell"
+    }
+  ],
+  "valid_states": [
+    "observable",
+    "outside_window",
+    "latency_blind",
+    "insufficient_dwell"
+  ],
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "observer_window_semantic_behavior",
+  "title": "Observer Window Semantic Behavior",
+  "rule": "Observer-window behavior is governed by overlap among event time, observer aperture, detector latency, and minimum dwell time."
+}
