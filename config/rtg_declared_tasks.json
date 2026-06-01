@@ -1,12 +1,12 @@
 {
-  "schema_version": "1.256.2",
+  "schema_version": "1.256.3",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema version 1.256.2 adds the RTG math-solver bridge export test.",
-    "The bridge exports semantic fixture cases to solver-ready JSON cases.",
-    "Target workflow reference: GCAT-BCAT-Engine/workflows/math-solver.",
+    "Schema version 1.256.3 adds the RTG math-solver adapter layer.",
+    "The adapter builds solver-run manifests consumable by GCAT-BCAT-Engine/workflows/math-solver.",
+    "The bridge exports solver cases; the adapter groups those cases into a solver-run contract.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -2825,6 +2825,15 @@
       "command": [
         "python",
         "tests/test_rtg_solver_case_export.py"
+      ]
+    },
+    {
+      "name": "rtg_math_solver_adapter_tests",
+      "description": "Validate RTG math-solver adapter manifests and input/output contract.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_math_solver_adapter.py"
       ]
     },
     {

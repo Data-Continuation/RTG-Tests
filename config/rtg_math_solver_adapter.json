@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "adapter_name": "RTG math-solver adapter",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "target_workflow_reference": "GCAT-BCAT-Engine/workflows/math-solver",
+  "solver_case_input_directory": "build/solver-cases",
+  "solver_run_manifest_directory": "build/solver-runs",
+  "solver_case_schema": "schemas/rtg_solver_case.schema.json",
+  "solver_run_manifest_schema": "schemas/rtg_solver_run_manifest.schema.json",
+  "expected_outputs": {
+    "solver_results_json": "build/solver-results/solver_results.json",
+    "solver_summary_json": "build/solver-results/solver_summary.json",
+    "formal_posture_json": "build/solver-results/rtg_formal_posture.json"
+  }
+}
