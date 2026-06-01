@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse.local/schemas/rtg_solver_run_manifest.schema.json",
+  "title": "RTG Solver Run Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "source_repo",
+    "target_workflow_reference",
+    "solver_case_schema",
+    "input_cases",
+    "expected_outputs",
+    "adapter_posture"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_workflow_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "solver_case_schema": {
+      "type": "string",
+      "minLength": 1
+    },
+    "input_cases": {
+      "type": "array"
+    },
+    "expected_outputs": {
+      "type": "object"
+    },
+    "adapter_posture": {
+      "type": "string",
+      "enum": [
+        "ready_for_workflow",
+        "needs_solver_binding",
+        "blocked"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
