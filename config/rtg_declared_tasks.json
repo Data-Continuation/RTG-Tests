@@ -1,12 +1,10 @@
 {
-  "schema_version": "1.206",
+  "schema_version": "1.306",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "This registry declares tasks the repo dispatcher is allowed to run.",
-    "The dispatcher rejects undeclared task names.",
-    "Schema version 1.195 through 1.206 add 12 semantic-differentiation RTG tests.",
+    "Schema version 1.257 through 1.306 add the next 50 semantic-differentiation RTG tests.",
     "Registry integrity remains declared.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
@@ -2367,6 +2365,906 @@
       "command": [
         "python",
         "tests/test_purpose_convergence_boundary_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "observer_window_phase_shift_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG observer window phase shift semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_phase_shift_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "observer_window_dwell_threshold_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG observer window dwell threshold semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_dwell_threshold_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "authority_delegation_chain_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG authority delegation chain semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_delegation_chain_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "authority_revocation_latency_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG authority revocation latency semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_revocation_latency_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "false_transition_signature_collision_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG false transition signature collision semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_transition_signature_collision_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "false_transition_replay_spoof_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG false transition replay spoof semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_transition_replay_spoof_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_detector_blindspot_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG unknown unknown detector blindspot semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_detector_blindspot_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_model_boundary_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG unknown unknown model boundary semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_model_boundary_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "zeno_retry_budget_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG zeno retry budget semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_retry_budget_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "zeno_threshold_oscillation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG zeno threshold oscillation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_threshold_oscillation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "dark_cell_evidence_accumulation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG dark cell evidence accumulation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_evidence_accumulation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "dark_cell_observer_coverage_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG dark cell observer coverage semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_observer_coverage_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "quarantine_decay_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG quarantine decay semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_decay_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "quarantine_reentry_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG quarantine reentry semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_reentry_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "confidence_corroboration_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG confidence corroboration semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_corroboration_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "confidence_contradiction_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG confidence contradiction semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_contradiction_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "supersession_parentage_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG supersession parentage semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_parentage_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "supersession_authority_conflict_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG supersession authority conflict semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_authority_conflict_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "emission_redaction_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG emission redaction semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_redaction_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "emission_recipient_authority_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG emission recipient authority semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_recipient_authority_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "multi_entity_interference_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG multi entity interference semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_entity_interference_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "multi_entity_recoverability_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG multi entity recoverability semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_entity_recoverability_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "purpose_convergence_cost_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG purpose convergence cost semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_purpose_convergence_cost_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "purpose_convergence_inversion_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG purpose convergence inversion semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_purpose_convergence_inversion_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "receipt_chain_gap_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG receipt chain gap semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_chain_gap_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "receipt_hash_continuity_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG receipt hash continuity semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_hash_continuity_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "state_lineage_fork_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG state lineage fork semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_lineage_fork_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "state_lineage_repair_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG state lineage repair semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_lineage_repair_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "detector_upgrade_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG detector upgrade semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_upgrade_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "detector_disagreement_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG detector disagreement semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_disagreement_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "export_boundary_redaction_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG export boundary redaction semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_boundary_redaction_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "export_boundary_master_record_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG export boundary master record semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_boundary_master_record_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "identity_surface_drift_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG identity surface drift semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_drift_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "identity_surface_match_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG identity surface match semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_match_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "maturity_boundary_promotion_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG maturity boundary promotion semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_maturity_boundary_promotion_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "maturity_boundary_refusal_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG maturity boundary refusal semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_maturity_boundary_refusal_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "admissibility_pressure_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG admissibility pressure semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_pressure_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "admissibility_floor_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG admissibility floor semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_floor_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_escalation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG risk pressure escalation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_escalation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_release_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG risk pressure release semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_release_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "finality_gate_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG finality gate semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_finality_gate_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "finality_reversal_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG finality reversal semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_finality_reversal_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_density_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG semantic claim density semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_density_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_overreach_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG semantic claim overreach semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_overreach_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "transition_packet_completeness_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG transition packet completeness semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_packet_completeness_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "transition_packet_conflict_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG transition packet conflict semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_packet_conflict_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "governance_output_consistency_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG governance output consistency semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_consistency_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "governance_output_block_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG governance output block semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_block_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "master_record_export_integrity_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG master record export integrity semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_master_record_export_integrity_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "ecosystem_reentry_review_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG ecosystem reentry review semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_ecosystem_reentry_review_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "observer_window_nested_aperture_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG observer window nested aperture semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_nested_aperture_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "observer_window_sampling_alias_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG observer window sampling alias semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_sampling_alias_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "authority_split_quorum_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG authority split quorum semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_split_quorum_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "authority_scope_intersection_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG authority scope intersection semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_scope_intersection_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "false_evidence_collision_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG false evidence collision semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_evidence_collision_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "false_authority_impersonation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG false authority impersonation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_authority_impersonation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "unknown_external_perturbation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG unknown external perturbation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_external_perturbation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "unknown_late_explanation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG unknown late explanation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_late_explanation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "zeno_commit_starvation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG zeno commit starvation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_commit_starvation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "zeno_boundary_recursion_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG zeno boundary recursion semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_boundary_recursion_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "dark_classification_stability_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG dark classification stability semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_classification_stability_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "dark_evidence_saturation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG dark evidence saturation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_evidence_saturation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "quarantine_supersession_hold_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG quarantine supersession hold semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_supersession_hold_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "quarantine_release_regression_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG quarantine release regression semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_release_regression_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "confidence_source_drift_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG confidence source drift semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_source_drift_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "confidence_detector_quality_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG confidence detector quality semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_detector_quality_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "supersession_receipt_strength_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG supersession receipt strength semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_receipt_strength_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "supersession_temporal_order_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG supersession temporal order semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_temporal_order_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "emission_local_only_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG emission local only semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_local_only_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "emission_finality_block_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG emission finality block semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_finality_block_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "multi_entity_authority_asymmetry_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG multi entity authority asymmetry semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_entity_authority_asymmetry_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "multi_entity_coupled_reentry_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG multi entity coupled reentry semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_entity_coupled_reentry_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "purpose_convergence_recoverability_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG purpose convergence recoverability semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_purpose_convergence_recoverability_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "purpose_convergence_support_failure_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG purpose convergence support failure semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_purpose_convergence_support_failure_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "receipt_chain_branch_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG receipt chain branch semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_chain_branch_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "receipt_repair_window_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG receipt repair window semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_repair_window_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "state_lineage_orphan_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG state lineage orphan semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_lineage_orphan_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "state_lineage_merge_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG state lineage merge semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_lineage_merge_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "detector_identity_compatibility_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG detector identity compatibility semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_identity_compatibility_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "detector_coverage_threshold_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG detector coverage threshold semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_coverage_threshold_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "export_boundary_recipient_class_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG export boundary recipient class semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_boundary_recipient_class_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "export_boundary_receipt_packet_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG export boundary receipt packet semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_boundary_receipt_packet_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "identity_surface_rebinding_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG identity surface rebinding semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_rebinding_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "identity_surface_phantom_trust_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG identity surface phantom trust semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_phantom_trust_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "maturity_boundary_evidence_floor_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG maturity boundary evidence floor semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_maturity_boundary_evidence_floor_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "maturity_boundary_semantic_lock_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG maturity boundary semantic lock semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_maturity_boundary_semantic_lock_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "admissibility_pressure_gradient_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG admissibility pressure gradient semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_pressure_gradient_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "admissibility_recoverability_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG admissibility recoverability semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_recoverability_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_containment_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG risk pressure containment semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_containment_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_decay_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG risk pressure decay semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_decay_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "finality_commit_lock_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG finality commit lock semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_finality_commit_lock_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "finality_reopen_review_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG finality reopen review semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_finality_reopen_review_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_scope_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG semantic claim scope semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_scope_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_evidence_alignment_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG semantic claim evidence alignment semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_evidence_alignment_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "transition_packet_authority_surface_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG transition packet authority surface semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_packet_authority_surface_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "transition_packet_replay_surface_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG transition packet replay surface semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_packet_replay_surface_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "governance_output_receipt_binding_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG governance output receipt binding semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_receipt_binding_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "governance_output_quarantine_binding_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG governance output quarantine binding semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_quarantine_binding_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "master_record_reconstruction_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG master record reconstruction semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_master_record_reconstruction_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "ecosystem_state_rejoin_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG ecosystem state rejoin semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_ecosystem_state_rejoin_semantic_behavior.py"
       ]
     },
     {
