@@ -1,10 +1,10 @@
 {
-  "schema_version": "1.306",
+  "schema_version": "1.306.1",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema version 1.257 through 1.306 add the next 50 semantic-differentiation RTG tests.",
+    "Hotfix schema 1.306.1 adds the next 50 semantic-differentiation RTG tests with deterministic self-contained test execution.",
     "Registry integrity remains declared.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
