@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse.local/schemas/rtg_solver_case.schema.json",
+  "title": "RTG Solver Case",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "source_fixture",
+    "rtg_mechanism",
+    "formal_variables",
+    "constraints",
+    "expected_solver_posture",
+    "export_posture"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_fixture": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rtg_mechanism": {
+      "type": "object"
+    },
+    "formal_variables": {
+      "type": "object"
+    },
+    "constraints": {
+      "type": "array"
+    },
+    "expected_solver_posture": {
+      "type": "string",
+      "enum": [
+        "satisfiable",
+        "contradictory",
+        "underconstrained",
+        "overconstrained",
+        "equivalent_to_prior_case",
+        "requires_new_axiom_or_operator"
+      ]
+    },
+    "export_posture": {
+      "type": "string",
+      "enum": [
+        "ready_for_solver",
+        "needs_review",
+        "blocked"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
