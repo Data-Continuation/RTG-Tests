@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "governance_output_block_semantic_behavior",
+  "mechanism_group": "semantic",
+  "title": "Governance Output Block Semantic Behavior",
+  "valid_states": [
+    "bounded",
+    "overreach",
+    "low_density",
+    "review"
+  ],
+  "cases": [
+    {
+      "case_id": "GOVERNANCE_OUTPUT_BLOCK_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "bounded"
+    },
+    {
+      "case_id": "GOVERNANCE_OUTPUT_BLOCK_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "overreach"
+    },
+    {
+      "case_id": "GOVERNANCE_OUTPUT_BLOCK_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "low_density"
+    },
+    {
+      "case_id": "GOVERNANCE_OUTPUT_BLOCK_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "review"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "maturity_boundary_promotion_semantic_behavior",
+  "mechanism_group": "maturity",
+  "title": "Maturity Boundary Promotion Semantic Behavior",
+  "valid_states": [
+    "promote",
+    "refuse",
+    "provisional",
+    "review"
+  ],
+  "cases": [
+    {
+      "case_id": "MATURITY_BOUNDARY_PROMOTION_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "promote"
+    },
+    {
+      "case_id": "MATURITY_BOUNDARY_PROMOTION_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "refuse"
+    },
+    {
+      "case_id": "MATURITY_BOUNDARY_PROMOTION_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "provisional"
+    },
+    {
+      "case_id": "MATURITY_BOUNDARY_PROMOTION_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "review"
+    }
+  ]
+}

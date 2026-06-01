@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "identity_surface_drift_semantic_behavior",
+  "mechanism_group": "identity",
+  "title": "Identity Surface Drift Semantic Behavior",
+  "valid_states": [
+    "match",
+    "drift",
+    "mismatch",
+    "review"
+  ],
+  "cases": [
+    {
+      "case_id": "IDENTITY_SURFACE_DRIFT_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "match"
+    },
+    {
+      "case_id": "IDENTITY_SURFACE_DRIFT_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "drift"
+    },
+    {
+      "case_id": "IDENTITY_SURFACE_DRIFT_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "mismatch"
+    },
+    {
+      "case_id": "IDENTITY_SURFACE_DRIFT_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "review"
+    }
+  ]
+}

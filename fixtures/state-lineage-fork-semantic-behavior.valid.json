@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "state_lineage_fork_semantic_behavior",
+  "mechanism_group": "state",
+  "title": "State Lineage Fork Semantic Behavior",
+  "valid_states": [
+    "linear",
+    "fork",
+    "repair",
+    "invalid_parent"
+  ],
+  "cases": [
+    {
+      "case_id": "STATE_LINEAGE_FORK_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "linear"
+    },
+    {
+      "case_id": "STATE_LINEAGE_FORK_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "fork"
+    },
+    {
+      "case_id": "STATE_LINEAGE_FORK_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "repair"
+    },
+    {
+      "case_id": "STATE_LINEAGE_FORK_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "invalid_parent"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "observer_window_phase_shift_semantic_behavior",
+  "mechanism_group": "observer",
+  "title": "Observer Window Phase Shift Semantic Behavior",
+  "valid_states": [
+    "pass",
+    "phase_miss",
+    "dwell_short",
+    "latency_blind"
+  ],
+  "cases": [
+    {
+      "case_id": "OBSERVER_WINDOW_PHASE_SHIFT_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "pass"
+    },
+    {
+      "case_id": "OBSERVER_WINDOW_PHASE_SHIFT_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "phase_miss"
+    },
+    {
+      "case_id": "OBSERVER_WINDOW_PHASE_SHIFT_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "dwell_short"
+    },
+    {
+      "case_id": "OBSERVER_WINDOW_PHASE_SHIFT_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "latency_blind"
+    }
+  ]
+}

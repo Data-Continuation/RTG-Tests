@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "dark_cell_observer_coverage_semantic_behavior",
+  "mechanism_group": "observer",
+  "title": "Dark Cell Observer Coverage Semantic Behavior",
+  "valid_states": [
+    "pass",
+    "phase_miss",
+    "dwell_short",
+    "latency_blind"
+  ],
+  "cases": [
+    {
+      "case_id": "DARK_CELL_OBSERVER_COVERAGE_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "pass"
+    },
+    {
+      "case_id": "DARK_CELL_OBSERVER_COVERAGE_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "phase_miss"
+    },
+    {
+      "case_id": "DARK_CELL_OBSERVER_COVERAGE_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "dwell_short"
+    },
+    {
+      "case_id": "DARK_CELL_OBSERVER_COVERAGE_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "latency_blind"
+    }
+  ]
+}

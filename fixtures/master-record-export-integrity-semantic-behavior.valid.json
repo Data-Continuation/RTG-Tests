@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "master_record_export_integrity_semantic_behavior",
+  "mechanism_group": "export",
+  "title": "Master Record Export Integrity Semantic Behavior",
+  "valid_states": [
+    "export",
+    "redact",
+    "master_record_only",
+    "blocked"
+  ],
+  "cases": [
+    {
+      "case_id": "MASTER_RECORD_EXPORT_INTEGRITY_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "export"
+    },
+    {
+      "case_id": "MASTER_RECORD_EXPORT_INTEGRITY_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "redact"
+    },
+    {
+      "case_id": "MASTER_RECORD_EXPORT_INTEGRITY_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "master_record_only"
+    },
+    {
+      "case_id": "MASTER_RECORD_EXPORT_INTEGRITY_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "blocked"
+    }
+  ]
+}

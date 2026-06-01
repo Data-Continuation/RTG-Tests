@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "risk_pressure_release_semantic_behavior",
+  "mechanism_group": "risk",
+  "title": "Risk Pressure Release Semantic Behavior",
+  "valid_states": [
+    "normal",
+    "escalate",
+    "release",
+    "quarantine"
+  ],
+  "cases": [
+    {
+      "case_id": "RISK_PRESSURE_RELEASE_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "normal"
+    },
+    {
+      "case_id": "RISK_PRESSURE_RELEASE_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "escalate"
+    },
+    {
+      "case_id": "RISK_PRESSURE_RELEASE_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "release"
+    },
+    {
+      "case_id": "RISK_PRESSURE_RELEASE_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "quarantine"
+    }
+  ]
+}

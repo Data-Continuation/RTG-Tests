@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "admissibility_pressure_semantic_behavior",
+  "mechanism_group": "admissibility",
+  "title": "Admissibility Pressure Semantic Behavior",
+  "valid_states": [
+    "admissible",
+    "floor_failure",
+    "pressure_excess",
+    "review"
+  ],
+  "cases": [
+    {
+      "case_id": "ADMISSIBILITY_PRESSURE_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "admissible"
+    },
+    {
+      "case_id": "ADMISSIBILITY_PRESSURE_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "floor_failure"
+    },
+    {
+      "case_id": "ADMISSIBILITY_PRESSURE_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "pressure_excess"
+    },
+    {
+      "case_id": "ADMISSIBILITY_PRESSURE_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "review"
+    }
+  ]
+}

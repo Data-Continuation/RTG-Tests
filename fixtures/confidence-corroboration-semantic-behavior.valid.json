@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "confidence_corroboration_semantic_behavior",
+  "mechanism_group": "confidence",
+  "title": "Confidence Corroboration Semantic Behavior",
+  "valid_states": [
+    "upgrade",
+    "downgrade",
+    "defer",
+    "maintain"
+  ],
+  "cases": [
+    {
+      "case_id": "CONFIDENCE_CORROBORATION_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "expected_state": "upgrade"
+    },
+    {
+      "case_id": "CONFIDENCE_CORROBORATION_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "expected_state": "downgrade"
+    },
+    {
+      "case_id": "CONFIDENCE_CORROBORATION_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "expected_state": "defer"
+    },
+    {
+      "case_id": "CONFIDENCE_CORROBORATION_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "expected_state": "maintain"
+    }
+  ]
+}
