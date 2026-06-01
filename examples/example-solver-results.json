@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "target_workflow_reference": "GCAT-BCAT-Engine/workflows/math-solver",
+  "solver_run_id": "example-rtg-solver-run",
+  "case_results": [
+    {
+      "case_id": "EXAMPLE-OBSERVER-WINDOW-PHASE-SHIFT-001",
+      "solver_posture": "satisfiable",
+      "solver_confidence": 0.97
+    }
+  ]
+}
