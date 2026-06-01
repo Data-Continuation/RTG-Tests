@@ -1,16 +1,17 @@
 # RTG Repo Status
 
-Generated: `2026-06-01T01:31:25Z`
+Generated: `2026-06-01T17:28:26Z`
 
 ```text
-362 executable RTG tests
+312 executable RTG tests
++ 1 RTG math-solver bridge test
 + 1 registry integrity test
 + 1 dispatcher self-check
-= 364 declared tasks total
+= 315 declared tasks total
 ```
 
-## Phase
+## New Capability
 
 ```text
-semantic differentiation expansion run 2 hotfix
+RTG fixtures can now be exported as solver-ready formal constraint cases.
 ```
