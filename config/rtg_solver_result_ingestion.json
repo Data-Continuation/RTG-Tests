@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "ingestion_name": "RTG solver result ingestion",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "target_workflow_reference": "GCAT-BCAT-Engine/workflows/math-solver",
+  "solver_results_input": "build/solver-results/solver_results.json",
+  "formal_posture_output": "build/solver-results/rtg_formal_posture.json",
+  "formal_posture_schema": "schemas/rtg_formal_posture.schema.json"
+}
