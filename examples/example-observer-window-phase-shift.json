@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "case_id": "EXAMPLE-OBSERVER-WINDOW-PHASE-SHIFT-001",
+  "source_fixture": "fixtures/observer-window-phase-shift-semantic-behavior.valid.json",
+  "rtg_mechanism": {
+    "test_key": "observer_window_phase_shift_semantic_behavior",
+    "mechanism_group": "observer",
+    "layer_type": "semantic differentiation",
+    "maturity": "provisional"
+  },
+  "formal_variables": {
+    "state": "phase_miss",
+    "signal": 2,
+    "confidence": 0.5,
+    "risk": 0.5
+  },
+  "constraints": [
+    {
+      "name": "state_membership",
+      "operator": "in",
+      "value": [
+        "pass",
+        "phase_miss",
+        "dwell_short",
+        "latency_blind"
+      ]
+    }
+  ],
+  "expected_solver_posture": "satisfiable",
+  "export_posture": "ready_for_solver"
+}
