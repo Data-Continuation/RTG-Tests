@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Semantic-differentiated RTG test for **detector identity compatibility semantic behavior**.
+This semantic-differentiation hotfix test adds mechanism-specific behavior for **detector identity compatibility semantic behavior**.
 
 ## Mechanism Group
 
@@ -16,4 +16,15 @@ detector
 fixtures/detector-identity-compatibility-semantic-behavior.valid.json exists
 tests/test_detector_identity_compatibility_semantic_behavior.py exists
 config/rtg_declared_tasks.json declares detector_identity_compatibility_semantic_behavior_tests
+python tests/test_detector_identity_compatibility_semantic_behavior.py passes
+python scripts/rtg_dispatcher.py --task detector_identity_compatibility_semantic_behavior_tests passes
+python scripts/rtg_dispatcher.py --task all passes in GitHub Actions
 ```
+
+## Core Rule
+
+This hotfix keeps the intended semantic-differentiated state vocabulary while making the test execution path deterministic and self-contained.
+
+## Non-Claim
+
+This test does not prove final RTG mathematics.

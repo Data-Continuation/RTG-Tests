@@ -1,0 +1,54 @@
+# RTG Semantic Differentiation Next 50 Run 2 Hotfix
+
+## New Tasks
+
+- `observer_window_nested_aperture_semantic_behavior_tests`
+- `observer_window_sampling_alias_semantic_behavior_tests`
+- `authority_split_quorum_semantic_behavior_tests`
+- `authority_scope_intersection_semantic_behavior_tests`
+- `false_evidence_collision_semantic_behavior_tests`
+- `false_authority_impersonation_semantic_behavior_tests`
+- `unknown_external_perturbation_semantic_behavior_tests`
+- `unknown_late_explanation_semantic_behavior_tests`
+- `zeno_commit_starvation_semantic_behavior_tests`
+- `zeno_boundary_recursion_semantic_behavior_tests`
+- `dark_classification_stability_semantic_behavior_tests`
+- `dark_evidence_saturation_semantic_behavior_tests`
+- `quarantine_supersession_hold_semantic_behavior_tests`
+- `quarantine_release_regression_semantic_behavior_tests`
+- `confidence_source_drift_semantic_behavior_tests`
+- `confidence_detector_quality_semantic_behavior_tests`
+- `supersession_receipt_strength_semantic_behavior_tests`
+- `supersession_temporal_order_semantic_behavior_tests`
+- `emission_local_only_semantic_behavior_tests`
+- `emission_finality_block_semantic_behavior_tests`
+- `multi_entity_authority_asymmetry_semantic_behavior_tests`
+- `multi_entity_coupled_reentry_semantic_behavior_tests`
+- `purpose_convergence_recoverability_semantic_behavior_tests`
+- `purpose_convergence_support_failure_semantic_behavior_tests`
+- `receipt_chain_branch_semantic_behavior_tests`
+- `receipt_repair_window_semantic_behavior_tests`
+- `state_lineage_orphan_semantic_behavior_tests`
+- `state_lineage_merge_semantic_behavior_tests`
+- `detector_identity_compatibility_semantic_behavior_tests`
+- `detector_coverage_threshold_semantic_behavior_tests`
+- `export_boundary_recipient_class_semantic_behavior_tests`
+- `export_boundary_receipt_packet_semantic_behavior_tests`
+- `identity_surface_rebinding_semantic_behavior_tests`
+- `identity_surface_phantom_trust_semantic_behavior_tests`
+- `maturity_boundary_evidence_floor_semantic_behavior_tests`
+- `maturity_boundary_semantic_lock_semantic_behavior_tests`
+- `admissibility_pressure_gradient_semantic_behavior_tests`
+- `admissibility_recoverability_semantic_behavior_tests`
+- `risk_pressure_containment_semantic_behavior_tests`
+- `risk_pressure_decay_semantic_behavior_tests`
+- `finality_commit_lock_semantic_behavior_tests`
+- `finality_reopen_review_semantic_behavior_tests`
+- `semantic_claim_scope_semantic_behavior_tests`
+- `semantic_claim_evidence_alignment_semantic_behavior_tests`
+- `transition_packet_authority_surface_semantic_behavior_tests`
+- `transition_packet_replay_surface_semantic_behavior_tests`
+- `governance_output_receipt_binding_semantic_behavior_tests`
+- `governance_output_quarantine_binding_semantic_behavior_tests`
+- `master_record_reconstruction_semantic_behavior_tests`
+- `ecosystem_state_rejoin_semantic_behavior_tests`

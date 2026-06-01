@@ -1,15 +1,23 @@
 {
   "repo": "Data-Continuation/RTG-Tests",
-  "generated": "2026-06-01T01:18:53Z",
+  "generated": "2026-06-01T01:31:25Z",
   "formalism": "Relative Transition Geometry",
   "executable_rtg_tests": 362,
   "semantic_differentiated_tests": 112,
   "registry_integrity_tests": 1,
   "dispatcher_self_checks": 1,
   "declared_tasks_total": 364,
-  "phase": "semantic differentiation expansion run 2",
+  "phase": "semantic differentiation expansion run 2 hotfix",
   "canonical_fixture_smoke_command": [
     "python",
     "tests/test_rtg_fixtures.py"
+  ],
+  "registry_integrity_command": [
+    "python",
+    "tests/test_registry_task_file_integrity.py"
+  ],
+  "dispatcher_self_check_command": [
+    "python",
+    "scripts/verify_rtg_dispatcher.py"
   ]
 }
