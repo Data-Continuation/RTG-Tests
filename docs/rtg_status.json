@@ -1,13 +1,7 @@
 {
   "repo": "Data-Continuation/RTG-Tests",
-  "generated": "2026-06-01T17:44:49Z",
-  "formalism": "Relative Transition Geometry",
-  "executable_rtg_tests": 312,
-  "math_solver_bridge_tests": 1,
-  "math_solver_adapter_tests": 1,
-  "registry_integrity_tests": 1,
-  "dispatcher_self_checks": 1,
-  "declared_tasks_total": 316,
-  "phase": "RTG math-solver adapter layer",
+  "generated": "2026-06-01T20:21:01Z",
+  "declared_tasks_total": 317,
+  "phase": "RTG solver result ingestion layer",
   "target_workflow_reference": "GCAT-BCAT-Engine/workflows/math-solver"
 }

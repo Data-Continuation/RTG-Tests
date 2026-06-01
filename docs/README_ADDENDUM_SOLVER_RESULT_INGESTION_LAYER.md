@@ -1,6 +1,12 @@
-# RTG Repo Status
+# RTG Solver Result Ingestion Layer Addendum
 
-Generated: `2026-06-01T20:21:01Z`
+## New Declared Task
+
+```text
+rtg_solver_result_ingestion_tests → python tests/test_rtg_solver_result_ingestion.py
+```
+
+## Expected Declared Task Count
 
 ```text
 312 executable RTG tests
