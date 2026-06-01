@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "finality_commit_lock_semantic_behavior",
+  "mechanism_group": "finality",
+  "title": "Finality Commit Lock Semantic Behavior",
+  "valid_states": [
+    "final",
+    "commit_lock",
+    "reopen_review",
+    "blocked"
+  ],
+  "cases": [
+    {
+      "case_id": "FINALITY_COMMIT_LOCK_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "risk": 0.23,
+      "confidence": 0.85,
+      "expected_state": "final"
+    },
+    {
+      "case_id": "FINALITY_COMMIT_LOCK_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "risk": 0.36,
+      "confidence": 0.76,
+      "expected_state": "commit_lock"
+    },
+    {
+      "case_id": "FINALITY_COMMIT_LOCK_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "risk": 0.49,
+      "confidence": 0.6699999999999999,
+      "expected_state": "reopen_review"
+    },
+    {
+      "case_id": "FINALITY_COMMIT_LOCK_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "risk": 0.62,
+      "confidence": 0.58,
+      "expected_state": "blocked"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "emission_finality_block_semantic_behavior",
+  "mechanism_group": "emission",
+  "title": "Emission Finality Block Semantic Behavior",
+  "valid_states": [
+    "emit",
+    "local_only",
+    "finality_block",
+    "redact",
+    "block"
+  ],
+  "cases": [
+    {
+      "case_id": "EMISSION_FINALITY_BLOCK_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "risk": 0.23,
+      "confidence": 0.85,
+      "expected_state": "emit"
+    },
+    {
+      "case_id": "EMISSION_FINALITY_BLOCK_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "risk": 0.36,
+      "confidence": 0.76,
+      "expected_state": "local_only"
+    },
+    {
+      "case_id": "EMISSION_FINALITY_BLOCK_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "risk": 0.49,
+      "confidence": 0.6699999999999999,
+      "expected_state": "finality_block"
+    },
+    {
+      "case_id": "EMISSION_FINALITY_BLOCK_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "risk": 0.62,
+      "confidence": 0.58,
+      "expected_state": "redact"
+    },
+    {
+      "case_id": "EMISSION_FINALITY_BLOCK_SEMANTIC_BEHAVIOR-005",
+      "semantic_signal": 5,
+      "risk": 0.75,
+      "confidence": 0.49,
+      "expected_state": "block"
+    }
+  ]
+}

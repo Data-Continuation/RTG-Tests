@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "zeno_commit_starvation_semantic_behavior",
+  "mechanism_group": "zeno",
+  "title": "Zeno Commit Starvation Semantic Behavior",
+  "valid_states": [
+    "stable",
+    "commit_starvation",
+    "boundary_recursion",
+    "retry_limit"
+  ],
+  "cases": [
+    {
+      "case_id": "ZENO_COMMIT_STARVATION_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "risk": 0.23,
+      "confidence": 0.85,
+      "expected_state": "stable"
+    },
+    {
+      "case_id": "ZENO_COMMIT_STARVATION_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "risk": 0.36,
+      "confidence": 0.76,
+      "expected_state": "commit_starvation"
+    },
+    {
+      "case_id": "ZENO_COMMIT_STARVATION_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "risk": 0.49,
+      "confidence": 0.6699999999999999,
+      "expected_state": "boundary_recursion"
+    },
+    {
+      "case_id": "ZENO_COMMIT_STARVATION_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "risk": 0.62,
+      "confidence": 0.58,
+      "expected_state": "retry_limit"
+    }
+  ]
+}

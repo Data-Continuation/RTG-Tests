@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "maturity": "provisional",
+  "layer_type": "semantic differentiation",
+  "test_key": "receipt_repair_window_semantic_behavior",
+  "mechanism_group": "receipt",
+  "title": "Receipt Repair Window Semantic Behavior",
+  "valid_states": [
+    "continuous",
+    "branch_detected",
+    "repair_window_open",
+    "repair_window_closed"
+  ],
+  "cases": [
+    {
+      "case_id": "RECEIPT_REPAIR_WINDOW_SEMANTIC_BEHAVIOR-001",
+      "semantic_signal": 1,
+      "risk": 0.23,
+      "confidence": 0.85,
+      "expected_state": "continuous"
+    },
+    {
+      "case_id": "RECEIPT_REPAIR_WINDOW_SEMANTIC_BEHAVIOR-002",
+      "semantic_signal": 2,
+      "risk": 0.36,
+      "confidence": 0.76,
+      "expected_state": "branch_detected"
+    },
+    {
+      "case_id": "RECEIPT_REPAIR_WINDOW_SEMANTIC_BEHAVIOR-003",
+      "semantic_signal": 3,
+      "risk": 0.49,
+      "confidence": 0.6699999999999999,
+      "expected_state": "repair_window_open"
+    },
+    {
+      "case_id": "RECEIPT_REPAIR_WINDOW_SEMANTIC_BEHAVIOR-004",
+      "semantic_signal": 4,
+      "risk": 0.62,
+      "confidence": 0.58,
+      "expected_state": "repair_window_closed"
+    }
+  ]
+}
