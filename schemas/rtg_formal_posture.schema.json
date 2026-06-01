@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse.local/schemas/rtg_formal_posture.schema.json",
+  "title": "RTG Formal Posture Record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_repo",
+    "solver_run_id",
+    "source_solver_results",
+    "formal_posture",
+    "case_postures",
+    "admissibility_summary",
+    "receipt"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "source_repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "solver_run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_solver_results": {
+      "type": "string",
+      "minLength": 1
+    },
+    "formal_posture": {
+      "type": "string",
+      "enum": [
+        "formally_consistent",
+        "formally_inconsistent",
+        "underconstrained",
+        "mixed_or_requires_review",
+        "blocked"
+      ]
+    },
+    "case_postures": {
+      "type": "array"
+    },
+    "admissibility_summary": {
+      "type": "object"
+    },
+    "receipt": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
