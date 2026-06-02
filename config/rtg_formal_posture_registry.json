@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "registry_name": "RTG formal posture registry",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "formal_posture_input_glob": "build/solver-results/**/*.json",
+  "formal_posture_output": "build/formal-posture-registry/rtg_formal_posture_registry.json",
+  "formal_posture_registry_schema": "schemas/rtg_formal_posture_registry.schema.json",
+  "indexed_postures": [
+    "formally_consistent",
+    "formally_inconsistent",
+    "underconstrained",
+    "mixed_or_requires_review",
+    "blocked"
+  ]
+}

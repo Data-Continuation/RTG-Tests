@@ -1,11 +1,12 @@
 {
-  "schema_version": "1.256.4",
+  "schema_version": "1.256.5",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema version 1.256.4 adds the RTG solver result ingestion layer.",
-    "The ingestion layer converts math-solver result JSON into RTG formal posture records.",
+    "Schema version 1.256.5 adds the RTG formal posture registry layer.",
+    "The registry layer persists solver-ingested formal posture records as indexed RTG evidence.",
+    "The bridge exports solver cases; the adapter groups solver runs; ingestion creates posture records; registry persists posture evidence.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -2842,6 +2843,15 @@
       "command": [
         "python",
         "tests/test_rtg_solver_result_ingestion.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_posture_registry_tests",
+      "description": "Validate registration and summary of RTG formal posture records.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_posture_registry.py"
       ]
     },
     {
