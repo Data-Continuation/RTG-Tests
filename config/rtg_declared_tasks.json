@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.256.9",
+  "schema_version": "1.257.2",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema versions 1.256.7 through 1.256.9 add RTG formal claim receipt, replay, and audit layers.",
-    "Formal claim gate decisions can now be receipt-bound, replayed, and audited.",
+    "Schema versions 1.257.0 through 1.257.2 add RTG axiom extraction, operator extraction, and invariant validation layers.",
+    "This starts formalism construction from registered formal posture evidence.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -2887,6 +2887,33 @@
       "command": [
         "python",
         "tests/test_rtg_formal_claim_audit.py"
+      ]
+    },
+    {
+      "name": "rtg_axiom_extraction_tests",
+      "description": "Validate extraction of candidate RTG axioms from formal posture registry evidence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_axiom_extraction.py"
+      ]
+    },
+    {
+      "name": "rtg_operator_extraction_tests",
+      "description": "Validate extraction of RTG transition operators from candidate axioms and semantic mechanisms.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_operator_extraction.py"
+      ]
+    },
+    {
+      "name": "rtg_invariant_validation_tests",
+      "description": "Validate RTG invariants across extracted operators and candidate axioms.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_invariant_validation.py"
       ]
     },
     {
