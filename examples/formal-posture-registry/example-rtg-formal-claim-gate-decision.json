@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-06-02T02:16:26Z",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "claim_type": "local_formal_progress",
+  "decision": "allow_formal_claim",
+  "reason": "registry evidence satisfies formal claim thresholds",
+  "thresholds": {
+    "minimum_record_count": 1,
+    "minimum_total_case_count": 1,
+    "required_ready_for_formal_claim_count": 1,
+    "maximum_formally_inconsistent_count": 0,
+    "maximum_blocked_count": 0
+  },
+  "registry_summary": {
+    "record_count": 1,
+    "total_case_count": 1,
+    "formal_posture_counts": {
+      "formally_consistent": 1
+    },
+    "ready_for_formal_claim_count": 1,
+    "review_required_count": 0
+  },
+  "receipt": {
+    "gate_surface": "rtg_formal_claim_gate",
+    "formal_posture_registry_path": "build/formal-posture-registry/rtg_formal_posture_registry.json",
+    "formal_posture_registry_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+  }
+}
