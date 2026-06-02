@@ -1,6 +1,6 @@
 # RTG Repo Status
 
-Generated: `2026-06-02T02:16:26Z`
+Generated: `2026-06-02T03:47:49Z`
 
 ```text
 312 executable RTG tests
@@ -9,13 +9,13 @@ Generated: `2026-06-02T02:16:26Z`
 + 1 RTG solver result ingestion test
 + 1 RTG formal posture registry test
 + 1 RTG formal claim gate test
++ 1 RTG formal claim receipt test
++ 1 RTG formal claim replay test
++ 1 RTG formal claim audit test
++ 1 RTG axiom extraction test
++ 1 RTG operator extraction test
++ 1 RTG invariant validation test
 + 1 registry integrity test
 + 1 dispatcher self-check
-= 319 declared tasks total
-```
-
-## Phase
-
-```text
-RTG formal claim gate layer
+= 325 declared tasks total
 ```
