@@ -1,11 +1,10 @@
 {
-  "schema_version": "1.262.23",
+  "schema_version": "1.262.28",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Extends the compact formalism-instruction bridge into a 381-task repeatable solver loop.",
-    "Adds actual RTG solver instruction artifact generation, problem spec YAML generation, candidate vector seeds, upload manifest, handoff receipt, returned artifact ingestion, claim/cost confirmation, round-trip audit, next-instruction selection, delta tracking, loop state update, readiness gate, and repeatable cycle contract.",
+    "Adds actual upload-ready RTG math-solver package for GCAT-BCAT-Engine/workflows.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -3418,6 +3417,51 @@
       "command": [
         "python",
         "tests/test_rtg_repeatable_solver_cycle_contract.py"
+      ]
+    },
+    {
+      "name": "rtg_upload_ready_instruction_artifact_tests",
+      "description": "Validate rtg upload ready instruction artifact tests.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_upload_ready_instruction_artifact.py"
+      ]
+    },
+    {
+      "name": "rtg_upload_ready_problem_spec_yaml_tests",
+      "description": "Validate rtg upload ready problem spec yaml tests.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_upload_ready_problem_spec_yaml.py"
+      ]
+    },
+    {
+      "name": "rtg_upload_ready_candidate_vectors_tests",
+      "description": "Validate rtg upload ready candidate vectors tests.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_upload_ready_candidate_vectors.py"
+      ]
+    },
+    {
+      "name": "rtg_upload_ready_manifest_tests",
+      "description": "Validate rtg upload ready manifest tests.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_upload_ready_manifest.py"
+      ]
+    },
+    {
+      "name": "rtg_upload_ready_readme_tests",
+      "description": "Validate rtg upload ready readme tests.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_upload_ready_readme.py"
       ]
     },
     {

@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "target_solver_repo": "GCAT-BCAT-Engine/workflows",
+  "workflow_target": ".github/workflows/validation_run_inline.yml",
+  "run_id": "RTG-381-SOLVER-INSTRUCTION-001",
+  "declared_tasks_total": 386
+}
