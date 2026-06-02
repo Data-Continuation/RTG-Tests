@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "layers": [
+    "counterexample_search",
+    "contradiction_classification",
+    "equivalence_reduction",
+    "axiom_independence",
+    "proof_obligation_registry",
+    "coverage_geometry_scoring"
+  ]
+}

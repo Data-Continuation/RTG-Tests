@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.257.2",
+  "schema_version": "1.257.8",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema versions 1.257.0 through 1.257.2 add RTG axiom extraction, operator extraction, and invariant validation layers.",
-    "This starts formalism construction from registered formal posture evidence.",
+    "Schema versions 1.257.3 through 1.257.8 add six RTG formal hardening layers.",
+    "Adds counterexample search, contradiction classification, equivalence reduction, axiom independence, proof obligations, and coverage geometry scoring.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -2914,6 +2914,60 @@
       "command": [
         "python",
         "tests/test_rtg_invariant_validation.py"
+      ]
+    },
+    {
+      "name": "rtg_counterexample_search_tests",
+      "description": "Validate RTG counterexample search over candidate axioms, operators, and invariants.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_counterexample_search.py"
+      ]
+    },
+    {
+      "name": "rtg_contradiction_classification_tests",
+      "description": "Validate RTG contradiction classification from counterexample evidence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_contradiction_classification.py"
+      ]
+    },
+    {
+      "name": "rtg_equivalence_reduction_tests",
+      "description": "Validate RTG equivalence-class reduction across candidate axioms and operators.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_equivalence_reduction.py"
+      ]
+    },
+    {
+      "name": "rtg_axiom_independence_tests",
+      "description": "Validate candidate RTG axiom independence checks.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_axiom_independence.py"
+      ]
+    },
+    {
+      "name": "rtg_proof_obligation_registry_tests",
+      "description": "Validate RTG proof-obligation registry creation from invariants, contradictions, and independence checks.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_proof_obligation_registry.py"
+      ]
+    },
+    {
+      "name": "rtg_coverage_geometry_scoring_tests",
+      "description": "Validate RTG coverage geometry scoring across formal construction evidence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_coverage_geometry_scoring.py"
       ]
     },
     {
