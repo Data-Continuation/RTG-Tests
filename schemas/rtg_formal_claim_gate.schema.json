@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse.local/schemas/rtg_formal_claim_gate.schema.json",
+  "title": "RTG Formal Claim Gate Decision",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_repo",
+    "claim_type",
+    "decision",
+    "reason",
+    "thresholds",
+    "registry_summary",
+    "receipt"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "source_repo": {
+      "type": "string"
+    },
+    "claim_type": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "allow_formal_claim",
+        "defer_claim",
+        "block_claim"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "thresholds": {
+      "type": "object"
+    },
+    "registry_summary": {
+      "type": "object"
+    },
+    "receipt": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
