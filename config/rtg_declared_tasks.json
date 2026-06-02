@@ -1,12 +1,11 @@
 {
-  "schema_version": "1.261.5",
+  "schema_version": "1.262.8",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema versions 1.261.1 through 1.261.5 add actual solver-result return and ingestion loop layers.",
-    "Adds TV/TVC broker receipt fixture, real solver-run request materialization, returned artifact contract validation, actual solver-results ingestion bridge, and formal posture update.",
-    "This continues from the green TV/TVC authority-bound math-solver execution baseline.",
+    "Adds compact formalism-instruction bridge to the demonstrated math-solver upload/spec/artifact pattern.",
+    "Avoids task-count accumulation; focuses on packaging RTG formalism state into a governed instruction artifact and ingesting returned paper/report artifacts.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -3212,6 +3211,78 @@
       "command": [
         "python",
         "tests/test_rtg_formal_posture_update_from_solver_result.py"
+      ]
+    },
+    {
+      "name": "rtg_formalism_instruction_packet_tests",
+      "description": "Validate rtg formalism instruction packet.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formalism_instruction_packet.py"
+      ]
+    },
+    {
+      "name": "rtg_math_solver_upload_spec_contract_tests",
+      "description": "Validate rtg math solver upload spec contract.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_math_solver_upload_spec_contract.py"
+      ]
+    },
+    {
+      "name": "rtg_solver_paper_artifact_contract_tests",
+      "description": "Validate rtg solver paper artifact contract.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_solver_paper_artifact_contract.py"
+      ]
+    },
+    {
+      "name": "rtg_solver_claim_boundary_mapping_tests",
+      "description": "Validate rtg solver claim boundary mapping.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_solver_claim_boundary_mapping.py"
+      ]
+    },
+    {
+      "name": "rtg_solver_cost_and_status_receipt_tests",
+      "description": "Validate rtg solver cost and status receipt.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_solver_cost_and_status_receipt.py"
+      ]
+    },
+    {
+      "name": "rtg_solver_publication_artifact_gate_tests",
+      "description": "Validate rtg solver publication artifact gate.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_solver_publication_artifact_gate.py"
+      ]
+    },
+    {
+      "name": "rtg_solver_reconstruction_vs_solution_boundary_tests",
+      "description": "Validate rtg solver reconstruction vs solution boundary.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_solver_reconstruction_vs_solution_boundary.py"
+      ]
+    },
+    {
+      "name": "rtg_solver_next_instruction_generation_tests",
+      "description": "Validate rtg solver next instruction generation.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_solver_next_instruction_generation.py"
       ]
     },
     {

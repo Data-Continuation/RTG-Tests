@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0",
+  "target_solver_repo": "GCAT-BCAT-Engine/workflows",
+  "bridge_type": "formalism_instruction_to_upload_spec_to_artifact_ingestion",
+  "declared_tasks_total": 366
+}
