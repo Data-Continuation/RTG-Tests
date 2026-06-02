@@ -1,0 +1,20 @@
+{
+  "presentation_thesis": "The admissible optimization is the cheapest run that preserves task identity.",
+  "status": "Final Draft",
+  "executive_summary": {
+    "total_api_spend_usd": 0.1095,
+    "total_runs": 4
+  },
+  "claim_boundary": {
+    "what_this_paper_proves": [
+      "Cost reduction under preserved task identity and auditability."
+    ],
+    "what_this_paper_does_not_claim": [
+      "Autonomous theorem proving without human verification."
+    ]
+  },
+  "results": {
+    "total_cost_usd": 0.035,
+    "cross_domain_validated": true
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "formalism": "Relative Transition Geometry",
+  "formalism_state_id": "RTG-STATE-358",
+  "declared_task_count": 358,
+  "problem_statement": "Package RTG formalism state into a governed math-solver instruction artifact.",
+  "known_boundaries": [
+    "candidate_generation_not_autonomous_theorem_proving"
+  ],
+  "open_obligations": [
+    "source_grounding",
+    "artifact_ingestion",
+    "claim_boundary_mapping"
+  ]
+}
