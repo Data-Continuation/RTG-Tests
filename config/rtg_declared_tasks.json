@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.256.6",
+  "schema_version": "1.256.9",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema version 1.256.6 adds the RTG formal claim gate layer.",
-    "The claim gate prevents formal claims unless registry evidence satisfies threshold rules.",
+    "Schema versions 1.256.7 through 1.256.9 add RTG formal claim receipt, replay, and audit layers.",
+    "Formal claim gate decisions can now be receipt-bound, replayed, and audited.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -2860,6 +2860,33 @@
       "command": [
         "python",
         "tests/test_rtg_formal_claim_gate.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_claim_receipt_tests",
+      "description": "Validate receipt binding for RTG formal claim gate decisions.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_claim_receipt.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_claim_replay_tests",
+      "description": "Validate replay of RTG formal claim receipt decisions against registry evidence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_claim_replay.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_claim_audit_tests",
+      "description": "Validate audit summaries across RTG formal claim receipts and replay results.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_claim_audit.py"
       ]
     },
     {
