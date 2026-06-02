@@ -1,6 +1,6 @@
 # RTG Repo Status
 
-Generated: `2026-06-02T05:08:08Z`
+Generated: `2026-06-02T05:48:07Z`
 
 ```text
 312 executable RTG tests
@@ -8,13 +8,8 @@ Generated: `2026-06-02T05:08:08Z`
 + 5 actual math-solver wiring tests
 + 5 TV/TVC authority-bound execution tests
 + 5 solver-result ingestion loop tests
++ 8 compact formalism-instruction bridge tests
 + 1 registry integrity test
 + 1 dispatcher self-check
-= 358 declared tasks total
-```
-
-## Phase
-
-```text
-actual solver-result return and ingestion loop
+= 366 declared tasks total
 ```

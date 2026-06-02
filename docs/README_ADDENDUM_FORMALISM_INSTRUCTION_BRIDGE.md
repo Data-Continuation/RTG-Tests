@@ -1,0 +1,12 @@
+# RTG Formalism Instruction Bridge Addendum
+
+```text
+rtg_formalism_instruction_packet_tests → python tests/test_rtg_formalism_instruction_packet.py
+rtg_math_solver_upload_spec_contract_tests → python tests/test_rtg_math_solver_upload_spec_contract.py
+rtg_solver_paper_artifact_contract_tests → python tests/test_rtg_solver_paper_artifact_contract.py
+rtg_solver_claim_boundary_mapping_tests → python tests/test_rtg_solver_claim_boundary_mapping.py
+rtg_solver_cost_and_status_receipt_tests → python tests/test_rtg_solver_cost_and_status_receipt.py
+rtg_solver_publication_artifact_gate_tests → python tests/test_rtg_solver_publication_artifact_gate.py
+rtg_solver_reconstruction_vs_solution_boundary_tests → python tests/test_rtg_solver_reconstruction_vs_solution_boundary.py
+rtg_solver_next_instruction_generation_tests → python tests/test_rtg_solver_next_instruction_generation.py
+```
