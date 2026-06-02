@@ -1,0 +1,27 @@
+# RTG Repeatable Solver Loop Addendum
+
+## New Declared Tasks
+
+```text
+rtg_actual_instruction_artifact_generation_tests → python tests/test_rtg_actual_instruction_artifact_generation.py
+rtg_actual_problem_spec_yaml_generation_tests → python tests/test_rtg_actual_problem_spec_yaml_generation.py
+rtg_actual_candidate_vector_seed_generation_tests → python tests/test_rtg_actual_candidate_vector_seed_generation.py
+rtg_actual_solver_upload_bundle_manifest_tests → python tests/test_rtg_actual_solver_upload_bundle_manifest.py
+rtg_actual_solver_run_handoff_receipt_tests → python tests/test_rtg_actual_solver_run_handoff_receipt.py
+rtg_returned_solver_artifact_collection_tests → python tests/test_rtg_returned_solver_artifact_collection.py
+rtg_returned_solver_artifact_ingestion_tests → python tests/test_rtg_returned_solver_artifact_ingestion.py
+rtg_returned_claim_boundary_confirmation_tests → python tests/test_rtg_returned_claim_boundary_confirmation.py
+rtg_returned_cost_status_receipt_confirmation_tests → python tests/test_rtg_returned_cost_status_receipt_confirmation.py
+rtg_returned_round_trip_audit_record_tests → python tests/test_rtg_returned_round_trip_audit_record.py
+rtg_repeat_next_instruction_selection_tests → python tests/test_rtg_repeat_next_instruction_selection.py
+rtg_repeat_instruction_delta_tests → python tests/test_rtg_repeat_instruction_delta.py
+rtg_repeat_solver_loop_state_update_tests → python tests/test_rtg_repeat_solver_loop_state_update.py
+rtg_repeat_solver_loop_readiness_gate_tests → python tests/test_rtg_repeat_solver_loop_readiness_gate.py
+rtg_repeatable_solver_cycle_contract_tests → python tests/test_rtg_repeatable_solver_cycle_contract.py
+```
+
+## Expected Declared Task Count
+
+```text
+381 declared tasks total
+```

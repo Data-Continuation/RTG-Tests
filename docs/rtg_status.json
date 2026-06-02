@@ -1,6 +1,6 @@
 {
   "repo": "Data-Continuation/RTG-Tests",
-  "generated": "2026-06-02T05:48:07Z",
-  "declared_tasks_total": 366,
-  "phase": "compact formalism-instruction bridge"
+  "generated": "2026-06-02T06:01:35Z",
+  "declared_tasks_total": 381,
+  "phase": "repeatable RTG solver loop"
 }
