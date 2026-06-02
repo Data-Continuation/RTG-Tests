@@ -1,6 +1,12 @@
-# RTG Repo Status
+# RTG Formal Claim Gate Layer Addendum
 
-Generated: `2026-06-02T02:16:26Z`
+## New Declared Task
+
+```text
+rtg_formal_claim_gate_tests → python tests/test_rtg_formal_claim_gate.py
+```
+
+## Expected Declared Task Count
 
 ```text
 312 executable RTG tests
@@ -12,10 +18,4 @@ Generated: `2026-06-02T02:16:26Z`
 + 1 registry integrity test
 + 1 dispatcher self-check
 = 319 declared tasks total
-```
-
-## Phase
-
-```text
-RTG formal claim gate layer
 ```
