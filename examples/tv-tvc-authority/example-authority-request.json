@@ -1,0 +1,5 @@
+{
+  "schema_version": "1.0",
+  "authority_surface": "rtg_tv_tvc_authority_request",
+  "credential_boundary": "tv_tvc_brokered"
+}
