@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "coverage_geometry": {
+    "coverage_score": 100,
+    "coverage_posture": "formal_coverage_candidate"
+  }
+}
