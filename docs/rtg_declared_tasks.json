@@ -1,0 +1,2911 @@
+{
+  "schema_version": "1.256.9",
+  "repo": "Data-Continuation/RTG-Tests",
+  "dispatcher": "rtg-repo-dispatcher",
+  "posture": "repo-local-only",
+  "notes": [
+    "Schema versions 1.256.7 through 1.256.9 add RTG formal claim receipt, replay, and audit layers.",
+    "Formal claim gate decisions can now be receipt-bound, replayed, and audited.",
+    "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
+  ],
+  "tasks": [
+    {
+      "name": "fixture_smoke_tests",
+      "description": "Validate provisional RTG fixture shape and allowed values.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_fixtures.py"
+      ]
+    },
+    {
+      "name": "cell_geometry_smoke_tests",
+      "description": "Validate first provisional RTG cell-geometry invariants.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_cell_geometry.py"
+      ]
+    },
+    {
+      "name": "function_class_behavior_tests",
+      "description": "Validate provisional RTG function-class behavior profiles.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_function_classes.py"
+      ]
+    },
+    {
+      "name": "coupling_translation_tests",
+      "description": "Validate provisional RTG translated coupling effects between cells.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_coupling_translation.py"
+      ]
+    },
+    {
+      "name": "shell_role_expectation_tests",
+      "description": "Validate provisional RTG s/p/d/f shell-role behavior expectations.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_shell_roles.py"
+      ]
+    },
+    {
+      "name": "dark_cell_color_emergence_tests",
+      "description": "Validate provisional RTG dark-cell color emergence behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_color.py"
+      ]
+    },
+    {
+      "name": "zeno_transition_tests",
+      "description": "Validate provisional RTG Zeno-prone transition behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_transitions.py"
+      ]
+    },
+    {
+      "name": "stabilization_emission_tests",
+      "description": "Validate provisional RTG stabilization-to-emission threshold behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_stabilization_emission.py"
+      ]
+    },
+    {
+      "name": "observer_window_tests",
+      "description": "Validate provisional RTG observer-window visibility, classification, and emission behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_windows.py"
+      ]
+    },
+    {
+      "name": "authority_bound_emission_tests",
+      "description": "Validate provisional RTG authority-bound emission behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_bound_emission.py"
+      ]
+    },
+    {
+      "name": "uncertainty_class_separation_tests",
+      "description": "Validate provisional RTG separation of false transitions from unknown unknowns.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_uncertainty_class_separation.py"
+      ]
+    },
+    {
+      "name": "observer_identity_coupling_tests",
+      "description": "Validate provisional RTG observer identity compatibility with transition identity classes.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_identity_coupling.py"
+      ]
+    },
+    {
+      "name": "transition_replay_validation_tests",
+      "description": "Validate provisional RTG replay and receipt consistency for transition claims.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_replay_validation.py"
+      ]
+    },
+    {
+      "name": "receipt_chain_continuity_tests",
+      "description": "Validate provisional RTG receipt-chain continuity behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_chain_continuity.py"
+      ]
+    },
+    {
+      "name": "state_lineage_integrity_tests",
+      "description": "Validate provisional RTG state-lineage integrity behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_lineage_integrity.py"
+      ]
+    },
+    {
+      "name": "coupling_replay_consistency_tests",
+      "description": "Validate provisional RTG coupling-replay consistency behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_coupling_replay_consistency.py"
+      ]
+    },
+    {
+      "name": "emission_export_boundary_tests",
+      "description": "Validate provisional RTG emission-export boundary behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_export_boundary.py"
+      ]
+    },
+    {
+      "name": "anomaly_retention_tests",
+      "description": "Validate provisional RTG anomaly retention behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_anomaly_retention.py"
+      ]
+    },
+    {
+      "name": "detector_coverage_gap_tests",
+      "description": "Validate provisional RTG detector coverage gap behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_coverage_gap.py"
+      ]
+    },
+    {
+      "name": "confidence_regrade_tests",
+      "description": "Validate provisional RTG confidence regrade behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_regrade.py"
+      ]
+    },
+    {
+      "name": "quarantine_release_tests",
+      "description": "Validate provisional RTG quarantine release behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_release.py"
+      ]
+    },
+    {
+      "name": "supersession_ordering_tests",
+      "description": "Validate provisional RTG supersession ordering behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_ordering.py"
+      ]
+    },
+    {
+      "name": "governance_output_consistency_tests",
+      "description": "Validate provisional RTG governance-output consistency behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_consistency.py"
+      ]
+    },
+    {
+      "name": "replay_authority_coherence_tests",
+      "description": "Validate provisional RTG replay authority coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_replay_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_detector_gap_coherence_tests",
+      "description": "Validate provisional RTG observer detector gap coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_detector_gap_coherence.py"
+      ]
+    },
+    {
+      "name": "uncertainty_anomaly_coherence_tests",
+      "description": "Validate provisional RTG uncertainty anomaly coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_uncertainty_anomaly_coherence.py"
+      ]
+    },
+    {
+      "name": "supersession_lineage_coherence_tests",
+      "description": "Validate provisional RTG supersession lineage coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_lineage_coherence.py"
+      ]
+    },
+    {
+      "name": "quarantine_confidence_coherence_tests",
+      "description": "Validate provisional RTG quarantine confidence coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_confidence_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_governance_output_coherence_tests",
+      "description": "Validate provisional RTG emission governance output coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_governance_output_coherence.py"
+      ]
+    },
+    {
+      "name": "coupling_zeno_replay_coherence_tests",
+      "description": "Validate provisional RTG coupling Zeno replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_coupling_zeno_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "dark_cell_emission_coherence_tests",
+      "description": "Validate provisional RTG dark cell emission coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_emission_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_uncertainty_replay_coherence_tests",
+      "description": "Validate provisional RTG detector uncertainty replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_uncertainty_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "full_transition_packet_coherence_tests",
+      "description": "Validate provisional RTG full transition packet coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_full_transition_packet_coherence.py"
+      ]
+    },
+    {
+      "name": "anomaly_supersession_coherence_tests",
+      "description": "Validate provisional RTG anomaly supersession coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_anomaly_supersession_coherence.py"
+      ]
+    },
+    {
+      "name": "authority_quorum_packet_coherence_tests",
+      "description": "Validate provisional RTG authority quorum packet coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_quorum_packet_coherence.py"
+      ]
+    },
+    {
+      "name": "authority_supersession_quarantine_coherence_tests",
+      "description": "Validate provisional RTG authority supersession quarantine coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_supersession_quarantine_coherence.py"
+      ]
+    },
+    {
+      "name": "confidence_authority_escalation_coherence_tests",
+      "description": "Validate provisional RTG confidence authority escalation coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_authority_escalation_coherence.py"
+      ]
+    },
+    {
+      "name": "coupling_anomaly_retention_coherence_tests",
+      "description": "Validate provisional RTG coupling anomaly retention coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_coupling_anomaly_retention_coherence.py"
+      ]
+    },
+    {
+      "name": "dark_cell_detector_gap_coherence_tests",
+      "description": "Validate provisional RTG dark cell detector gap coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_detector_gap_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_coverage_supersession_coherence_tests",
+      "description": "Validate provisional RTG detector coverage supersession coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_coverage_supersession_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_dark_confidence_regrade_coherence_tests",
+      "description": "Validate provisional RTG detector dark confidence regrade coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_dark_confidence_regrade_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_packet_receipt_export_coherence_tests",
+      "description": "Validate provisional RTG emission packet receipt export coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_packet_receipt_export_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_quarantine_release_coherence_tests",
+      "description": "Validate provisional RTG emission quarantine release coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_quarantine_release_coherence.py"
+      ]
+    },
+    {
+      "name": "full_ecosystem_commit_coherence_tests",
+      "description": "Validate provisional RTG full ecosystem commit coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_full_ecosystem_commit_coherence.py"
+      ]
+    },
+    {
+      "name": "governance_packet_replay_coherence_tests",
+      "description": "Validate provisional RTG governance packet replay coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_packet_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "identity_surface_replay_coherence_tests",
+      "description": "Validate provisional RTG identity surface replay coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "lineage_export_coherence_tests",
+      "description": "Validate provisional RTG lineage export coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_lineage_export_coherence.py"
+      ]
+    },
+    {
+      "name": "multi_observer_consensus_coherence_tests",
+      "description": "Validate provisional RTG multi observer consensus coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_observer_consensus_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_authority_receipt_coherence_tests",
+      "description": "Validate provisional RTG observer authority receipt coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_authority_receipt_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_replay_dark_cell_coherence_tests",
+      "description": "Validate provisional RTG observer replay dark cell coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_replay_dark_cell_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_window_lineage_coherence_tests",
+      "description": "Validate provisional RTG observer window lineage coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_lineage_coherence.py"
+      ]
+    },
+    {
+      "name": "quarantine_export_coherence_tests",
+      "description": "Validate provisional RTG quarantine export coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_export_coherence.py"
+      ]
+    },
+    {
+      "name": "receipt_chain_anomaly_coherence_tests",
+      "description": "Validate provisional RTG receipt chain anomaly coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_chain_anomaly_coherence.py"
+      ]
+    },
+    {
+      "name": "receipt_confidence_regrade_coherence_tests",
+      "description": "Validate provisional RTG receipt confidence regrade coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_confidence_regrade_coherence.py"
+      ]
+    },
+    {
+      "name": "replay_supersession_order_coherence_tests",
+      "description": "Validate provisional RTG replay supersession order coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_replay_supersession_order_coherence.py"
+      ]
+    },
+    {
+      "name": "temporal_order_replay_coherence_tests",
+      "description": "Validate provisional RTG temporal order replay coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_temporal_order_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_review_loop_coherence_tests",
+      "description": "Validate provisional RTG unknown unknown review loop coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_review_loop_coherence.py"
+      ]
+    },
+    {
+      "name": "zeno_stabilization_export_coherence_tests",
+      "description": "Validate provisional RTG zeno stabilization export coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_stabilization_export_coherence.py"
+      ]
+    },
+    {
+      "name": "authority_demotion_supersession_coherence_tests",
+      "description": "Validate provisional RTG authority demotion supersession coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_demotion_supersession_coherence.py"
+      ]
+    },
+    {
+      "name": "classification_emission_receipt_coherence_tests",
+      "description": "Validate provisional RTG classification emission receipt coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_classification_emission_receipt_coherence.py"
+      ]
+    },
+    {
+      "name": "commit_authority_lineage_replay_coherence_tests",
+      "description": "Validate provisional RTG commit authority lineage replay coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_commit_authority_lineage_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "confidence_receipt_authority_coherence_tests",
+      "description": "Validate provisional RTG confidence receipt authority coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_receipt_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "dark_cell_observer_consensus_coherence_tests",
+      "description": "Validate provisional RTG dark cell observer consensus coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_observer_consensus_coherence.py"
+      ]
+    },
+    {
+      "name": "dark_cell_quarantine_supersession_coherence_tests",
+      "description": "Validate provisional RTG dark cell quarantine supersession coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_quarantine_supersession_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_gap_anomaly_replay_coherence_tests",
+      "description": "Validate provisional RTG detector gap anomaly replay coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_gap_anomaly_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_quorum_export_coherence_tests",
+      "description": "Validate provisional RTG detector quorum export coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_quorum_export_coherence.py"
+      ]
+    },
+    {
+      "name": "ecosystem_reentry_review_coherence_tests",
+      "description": "Validate provisional RTG ecosystem reentry review coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_ecosystem_reentry_review_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_threshold_lineage_coherence_tests",
+      "description": "Validate provisional RTG emission threshold lineage coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_threshold_lineage_coherence.py"
+      ]
+    },
+    {
+      "name": "export_boundary_packet_coherence_tests",
+      "description": "Validate provisional RTG export boundary packet coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_boundary_packet_coherence.py"
+      ]
+    },
+    {
+      "name": "false_transition_receipt_quarantine_coherence_tests",
+      "description": "Validate provisional RTG false transition receipt quarantine coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_transition_receipt_quarantine_coherence.py"
+      ]
+    },
+    {
+      "name": "governance_loop_supersession_coherence_tests",
+      "description": "Validate provisional RTG governance loop supersession coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_loop_supersession_coherence.py"
+      ]
+    },
+    {
+      "name": "governed_emission_reversibility_coherence_tests",
+      "description": "Validate provisional RTG governed emission reversibility coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governed_emission_reversibility_coherence.py"
+      ]
+    },
+    {
+      "name": "identity_detector_authority_coherence_tests",
+      "description": "Validate provisional RTG identity detector authority coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_detector_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "lineage_fork_quarantine_coherence_tests",
+      "description": "Validate provisional RTG lineage fork quarantine coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_lineage_fork_quarantine_coherence.py"
+      ]
+    },
+    {
+      "name": "master_record_export_coherence_tests",
+      "description": "Validate provisional RTG master record export coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_master_record_export_coherence.py"
+      ]
+    },
+    {
+      "name": "multi_layer_anomaly_review_coherence_tests",
+      "description": "Validate provisional RTG multi layer anomaly review coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_layer_anomaly_review_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_consensus_replay_coherence_tests",
+      "description": "Validate provisional RTG observer consensus replay coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_consensus_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_identity_packet_replay_coherence_tests",
+      "description": "Validate provisional RTG observer identity packet replay coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_identity_packet_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "quarantine_replay_release_coherence_tests",
+      "description": "Validate provisional RTG quarantine replay release coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_replay_release_coherence.py"
+      ]
+    },
+    {
+      "name": "quorum_detector_replay_coherence_tests",
+      "description": "Validate provisional RTG quorum detector replay coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quorum_detector_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "receipt_export_authority_coherence_tests",
+      "description": "Validate provisional RTG receipt export authority coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_export_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "receipt_hash_continuity_coherence_tests",
+      "description": "Validate provisional RTG receipt hash continuity coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_hash_continuity_coherence.py"
+      ]
+    },
+    {
+      "name": "stabilization_receipt_export_coherence_tests",
+      "description": "Validate provisional RTG stabilization receipt export coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_stabilization_receipt_export_coherence.py"
+      ]
+    },
+    {
+      "name": "state_evidence_packet_coherence_tests",
+      "description": "Validate provisional RTG state evidence packet coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_evidence_packet_coherence.py"
+      ]
+    },
+    {
+      "name": "state_packet_supersession_export_coherence_tests",
+      "description": "Validate provisional RTG state packet supersession export coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_packet_supersession_export_coherence.py"
+      ]
+    },
+    {
+      "name": "temporal_lineage_export_coherence_tests",
+      "description": "Validate provisional RTG temporal lineage export coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_temporal_lineage_export_coherence.py"
+      ]
+    },
+    {
+      "name": "transition_packet_finality_coherence_tests",
+      "description": "Validate provisional RTG transition packet finality coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_packet_finality_coherence.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_confidence_recovery_coherence_tests",
+      "description": "Validate provisional RTG unknown unknown confidence recovery coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_confidence_recovery_coherence.py"
+      ]
+    },
+    {
+      "name": "zeno_replay_authority_coherence_tests",
+      "description": "Validate provisional RTG zeno replay authority coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_replay_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "admissibility_receipt_drift_coherence_tests",
+      "description": "Validate provisional RTG admissibility receipt drift coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_receipt_drift_coherence.py"
+      ]
+    },
+    {
+      "name": "authority_decay_replay_coherence_tests",
+      "description": "Validate provisional RTG authority decay replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_decay_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "cell_color_confidence_emission_coherence_tests",
+      "description": "Validate provisional RTG cell color confidence emission coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_cell_color_confidence_emission_coherence.py"
+      ]
+    },
+    {
+      "name": "commit_packet_quarantine_reentry_coherence_tests",
+      "description": "Validate provisional RTG commit packet quarantine reentry coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_commit_packet_quarantine_reentry_coherence.py"
+      ]
+    },
+    {
+      "name": "consensus_detector_lineage_coherence_tests",
+      "description": "Validate provisional RTG consensus detector lineage coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_consensus_detector_lineage_coherence.py"
+      ]
+    },
+    {
+      "name": "cross_observer_false_positive_coherence_tests",
+      "description": "Validate provisional RTG cross observer false positive coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_cross_observer_false_positive_coherence.py"
+      ]
+    },
+    {
+      "name": "deferred_emission_supersession_coherence_tests",
+      "description": "Validate provisional RTG deferred emission supersession coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_deferred_emission_supersession_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_upgrade_anomaly_resolution_coherence_tests",
+      "description": "Validate provisional RTG detector upgrade anomaly resolution coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_upgrade_anomaly_resolution_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_reversal_receipt_coherence_tests",
+      "description": "Validate provisional RTG emission reversal receipt coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_reversal_receipt_coherence.py"
+      ]
+    },
+    {
+      "name": "export_receipt_master_record_coherence_tests",
+      "description": "Validate provisional RTG export receipt master record coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_receipt_master_record_coherence.py"
+      ]
+    },
+    {
+      "name": "identity_surface_demotion_coherence_tests",
+      "description": "Validate provisional RTG identity surface demotion coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_demotion_coherence.py"
+      ]
+    },
+    {
+      "name": "lineage_repair_confidence_coherence_tests",
+      "description": "Validate provisional RTG lineage repair confidence coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_lineage_repair_confidence_coherence.py"
+      ]
+    },
+    {
+      "name": "multi_packet_ordering_coherence_tests",
+      "description": "Validate provisional RTG multi packet ordering coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_packet_ordering_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_identity_authority_escalation_coherence_tests",
+      "description": "Validate provisional RTG observer identity authority escalation coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_identity_authority_escalation_coherence.py"
+      ]
+    },
+    {
+      "name": "provisional_state_promotion_coherence_tests",
+      "description": "Validate provisional RTG provisional state promotion coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_provisional_state_promotion_coherence.py"
+      ]
+    },
+    {
+      "name": "quarantine_decay_review_coherence_tests",
+      "description": "Validate provisional RTG quarantine decay review coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_decay_review_coherence.py"
+      ]
+    },
+    {
+      "name": "receipt_gap_replay_repair_coherence_tests",
+      "description": "Validate provisional RTG receipt gap replay repair coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_gap_replay_repair_coherence.py"
+      ]
+    },
+    {
+      "name": "reentry_supersession_authority_coherence_tests",
+      "description": "Validate provisional RTG reentry supersession authority coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_reentry_supersession_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_emission_coherence_tests",
+      "description": "Validate provisional RTG risk pressure emission coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_emission_coherence.py"
+      ]
+    },
+    {
+      "name": "root_boundary_packet_coherence_tests",
+      "description": "Validate provisional RTG root boundary packet coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_root_boundary_packet_coherence.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_detector_authority_coherence_tests",
+      "description": "Validate provisional RTG semantic claim detector authority coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_detector_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "shadow_transition_replay_coherence_tests",
+      "description": "Validate provisional RTG shadow transition replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_shadow_transition_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "source_target_hash_coupling_coherence_tests",
+      "description": "Validate provisional RTG source target hash coupling coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_source_target_hash_coupling_coherence.py"
+      ]
+    },
+    {
+      "name": "stabilization_confidence_packet_coherence_tests",
+      "description": "Validate provisional RTG stabilization confidence packet coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_stabilization_confidence_packet_coherence.py"
+      ]
+    },
+    {
+      "name": "temporal_window_detector_coherence_tests",
+      "description": "Validate provisional RTG temporal window detector coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_temporal_window_detector_coherence.py"
+      ]
+    },
+    {
+      "name": "transition_claim_evidence_density_coherence_tests",
+      "description": "Validate provisional RTG transition claim evidence density coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_claim_evidence_density_coherence.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_detector_upgrade_coherence_tests",
+      "description": "Validate provisional RTG unknown unknown detector upgrade coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_detector_upgrade_coherence.py"
+      ]
+    },
+    {
+      "name": "validity_chain_export_coherence_tests",
+      "description": "Validate provisional RTG validity chain export coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_validity_chain_export_coherence.py"
+      ]
+    },
+    {
+      "name": "zeno_pressure_confidence_regrade_coherence_tests",
+      "description": "Validate provisional RTG zeno pressure confidence regrade coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_pressure_confidence_regrade_coherence.py"
+      ]
+    },
+    {
+      "name": "quorum_authority_packet_finality_coherence_tests",
+      "description": "Validate provisional RTG quorum authority packet finality coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quorum_authority_packet_finality_coherence.py"
+      ]
+    },
+    {
+      "name": "ecosystem_commit_receipt_integrity_coherence_tests",
+      "description": "Validate provisional RTG ecosystem commit receipt integrity coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_ecosystem_commit_receipt_integrity_coherence.py"
+      ]
+    },
+    {
+      "name": "admissibility_pressure_replay_packet_coherence_tests",
+      "description": "Validate provisional RTG admissibility pressure replay packet coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_pressure_replay_packet_coherence.py"
+      ]
+    },
+    {
+      "name": "authority_receipt_decay_coherence_tests",
+      "description": "Validate provisional RTG authority receipt decay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_receipt_decay_coherence.py"
+      ]
+    },
+    {
+      "name": "cell_shell_coupling_export_coherence_tests",
+      "description": "Validate provisional RTG cell shell coupling export coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_cell_shell_coupling_export_coherence.py"
+      ]
+    },
+    {
+      "name": "classification_quarantine_replay_loop_coherence_tests",
+      "description": "Validate provisional RTG classification quarantine replay loop coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_classification_quarantine_replay_loop_coherence.py"
+      ]
+    },
+    {
+      "name": "commit_finality_reversal_boundary_coherence_tests",
+      "description": "Validate provisional RTG commit finality reversal boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_commit_finality_reversal_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "confidence_drift_detector_upgrade_coherence_tests",
+      "description": "Validate provisional RTG confidence drift detector upgrade coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_drift_detector_upgrade_coherence.py"
+      ]
+    },
+    {
+      "name": "consensus_receipt_hash_repair_coherence_tests",
+      "description": "Validate provisional RTG consensus receipt hash repair coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_consensus_receipt_hash_repair_coherence.py"
+      ]
+    },
+    {
+      "name": "dark_cell_master_record_export_coherence_tests",
+      "description": "Validate provisional RTG dark cell master record export coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_master_record_export_coherence.py"
+      ]
+    },
+    {
+      "name": "deferred_state_lineage_repair_coherence_tests",
+      "description": "Validate provisional RTG deferred state lineage repair coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_deferred_state_lineage_repair_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_identity_surface_packet_coherence_tests",
+      "description": "Validate provisional RTG detector identity surface packet coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_identity_surface_packet_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_authority_demotion_coherence_tests",
+      "description": "Validate provisional RTG emission authority demotion coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_authority_demotion_coherence.py"
+      ]
+    },
+    {
+      "name": "export_quorum_receipt_coherence_tests",
+      "description": "Validate provisional RTG export quorum receipt coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_quorum_receipt_coherence.py"
+      ]
+    },
+    {
+      "name": "false_positive_detector_replay_coherence_tests",
+      "description": "Validate provisional RTG false positive detector replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_positive_detector_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "governance_output_reversal_coherence_tests",
+      "description": "Validate provisional RTG governance output reversal coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_reversal_coherence.py"
+      ]
+    },
+    {
+      "name": "identity_surface_quarantine_release_coherence_tests",
+      "description": "Validate provisional RTG identity surface quarantine release coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_quarantine_release_coherence.py"
+      ]
+    },
+    {
+      "name": "lineage_packet_receipt_gap_coherence_tests",
+      "description": "Validate provisional RTG lineage packet receipt gap coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_lineage_packet_receipt_gap_coherence.py"
+      ]
+    },
+    {
+      "name": "master_record_reentry_authority_coherence_tests",
+      "description": "Validate provisional RTG master record reentry authority coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_master_record_reentry_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "multi_observer_detector_disagreement_coherence_tests",
+      "description": "Validate provisional RTG multi observer detector disagreement coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_observer_detector_disagreement_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_window_confidence_decay_coherence_tests",
+      "description": "Validate provisional RTG observer window confidence decay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_confidence_decay_coherence.py"
+      ]
+    },
+    {
+      "name": "packet_evidence_density_quarantine_coherence_tests",
+      "description": "Validate provisional RTG packet evidence density quarantine coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_packet_evidence_density_quarantine_coherence.py"
+      ]
+    },
+    {
+      "name": "provisional_commit_export_coherence_tests",
+      "description": "Validate provisional RTG provisional commit export coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_provisional_commit_export_coherence.py"
+      ]
+    },
+    {
+      "name": "quarantine_supersession_replay_coherence_tests",
+      "description": "Validate provisional RTG quarantine supersession replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_supersession_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "receipt_chain_reversal_coherence_tests",
+      "description": "Validate provisional RTG receipt chain reversal coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_chain_reversal_coherence.py"
+      ]
+    },
+    {
+      "name": "replay_detector_coverage_gap_coherence_tests",
+      "description": "Validate provisional RTG replay detector coverage gap coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_replay_detector_coverage_gap_coherence.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_quorum_escalation_coherence_tests",
+      "description": "Validate provisional RTG risk pressure quorum escalation coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_quorum_escalation_coherence.py"
+      ]
+    },
+    {
+      "name": "root_boundary_reentry_review_coherence_tests",
+      "description": "Validate provisional RTG root boundary reentry review coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_root_boundary_reentry_review_coherence.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_false_transition_coherence_tests",
+      "description": "Validate provisional RTG semantic claim false transition coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_false_transition_coherence.py"
+      ]
+    },
+    {
+      "name": "shadow_transition_detector_upgrade_coherence_tests",
+      "description": "Validate provisional RTG shadow transition detector upgrade coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_shadow_transition_detector_upgrade_coherence.py"
+      ]
+    },
+    {
+      "name": "source_identity_receipt_export_coherence_tests",
+      "description": "Validate provisional RTG source identity receipt export coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_source_identity_receipt_export_coherence.py"
+      ]
+    },
+    {
+      "name": "stabilization_pressure_lineage_coherence_tests",
+      "description": "Validate provisional RTG stabilization pressure lineage coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_stabilization_pressure_lineage_coherence.py"
+      ]
+    },
+    {
+      "name": "state_evidence_authority_decay_coherence_tests",
+      "description": "Validate provisional RTG state evidence authority decay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_evidence_authority_decay_coherence.py"
+      ]
+    },
+    {
+      "name": "supersession_master_record_export_coherence_tests",
+      "description": "Validate provisional RTG supersession master record export coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_master_record_export_coherence.py"
+      ]
+    },
+    {
+      "name": "temporal_order_quarantine_reentry_coherence_tests",
+      "description": "Validate provisional RTG temporal order quarantine reentry coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_temporal_order_quarantine_reentry_coherence.py"
+      ]
+    },
+    {
+      "name": "transition_packet_confidence_floor_coherence_tests",
+      "description": "Validate provisional RTG transition packet confidence floor coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_packet_confidence_floor_coherence.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_anomaly_resolution_coherence_tests",
+      "description": "Validate provisional RTG unknown unknown anomaly resolution coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_anomaly_resolution_coherence.py"
+      ]
+    },
+    {
+      "name": "validity_chain_quorum_finality_coherence_tests",
+      "description": "Validate provisional RTG validity chain quorum finality coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_validity_chain_quorum_finality_coherence.py"
+      ]
+    },
+    {
+      "name": "zeno_pressure_quarantine_boundary_coherence_tests",
+      "description": "Validate provisional RTG zeno pressure quarantine boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_pressure_quarantine_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_identity_receipt_drift_coherence_tests",
+      "description": "Validate provisional RTG observer identity receipt drift coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_identity_receipt_drift_coherence.py"
+      ]
+    },
+    {
+      "name": "ecosystem_packet_continuity_coherence_tests",
+      "description": "Validate provisional RTG ecosystem packet continuity coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_ecosystem_packet_continuity_coherence.py"
+      ]
+    },
+    {
+      "name": "full_rtg_admissibility_stack_coherence_tests",
+      "description": "Validate provisional RTG full rtg admissibility stack coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_full_rtg_admissibility_stack_coherence.py"
+      ]
+    },
+    {
+      "name": "admissibility_floor_lineage_export_coherence_tests",
+      "description": "Validate provisional RTG admissibility floor lineage export coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_floor_lineage_export_coherence.py"
+      ]
+    },
+    {
+      "name": "authority_identity_receipt_quorum_coherence_tests",
+      "description": "Validate provisional RTG authority identity receipt quorum coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_identity_receipt_quorum_coherence.py"
+      ]
+    },
+    {
+      "name": "cell_geometry_detector_upgrade_coherence_tests",
+      "description": "Validate provisional RTG cell geometry detector upgrade coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_cell_geometry_detector_upgrade_coherence.py"
+      ]
+    },
+    {
+      "name": "classification_confidence_decay_coherence_tests",
+      "description": "Validate provisional RTG classification confidence decay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_classification_confidence_decay_coherence.py"
+      ]
+    },
+    {
+      "name": "commit_packet_master_record_coherence_tests",
+      "description": "Validate provisional RTG commit packet master record coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_commit_packet_master_record_coherence.py"
+      ]
+    },
+    {
+      "name": "consensus_failure_quarantine_coherence_tests",
+      "description": "Validate provisional RTG consensus failure quarantine coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_consensus_failure_quarantine_coherence.py"
+      ]
+    },
+    {
+      "name": "dark_cell_reentry_review_coherence_tests",
+      "description": "Validate provisional RTG dark cell reentry review coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_reentry_review_coherence.py"
+      ]
+    },
+    {
+      "name": "deferred_transition_receipt_continuity_coherence_tests",
+      "description": "Validate provisional RTG deferred transition receipt continuity coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_deferred_transition_receipt_continuity_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_class_authority_boundary_coherence_tests",
+      "description": "Validate provisional RTG detector class authority boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_class_authority_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_finality_quorum_coherence_tests",
+      "description": "Validate provisional RTG emission finality quorum coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_finality_quorum_coherence.py"
+      ]
+    },
+    {
+      "name": "export_boundary_unknown_unknown_coherence_tests",
+      "description": "Validate provisional RTG export boundary unknown unknown coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_boundary_unknown_unknown_coherence.py"
+      ]
+    },
+    {
+      "name": "false_transition_lineage_repair_coherence_tests",
+      "description": "Validate provisional RTG false transition lineage repair coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_transition_lineage_repair_coherence.py"
+      ]
+    },
+    {
+      "name": "governance_receipt_replay_window_coherence_tests",
+      "description": "Validate provisional RTG governance receipt replay window coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_receipt_replay_window_coherence.py"
+      ]
+    },
+    {
+      "name": "identity_surface_anomaly_retention_coherence_tests",
+      "description": "Validate provisional RTG identity surface anomaly retention coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_anomaly_retention_coherence.py"
+      ]
+    },
+    {
+      "name": "lineage_supersession_finality_coherence_tests",
+      "description": "Validate provisional RTG lineage supersession finality coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_lineage_supersession_finality_coherence.py"
+      ]
+    },
+    {
+      "name": "master_record_receipt_gap_coherence_tests",
+      "description": "Validate provisional RTG master record receipt gap coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_master_record_receipt_gap_coherence.py"
+      ]
+    },
+    {
+      "name": "multi_observer_authority_decay_coherence_tests",
+      "description": "Validate provisional RTG multi observer authority decay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_observer_authority_decay_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_detector_reentry_coherence_tests",
+      "description": "Validate provisional RTG observer detector reentry coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_detector_reentry_coherence.py"
+      ]
+    },
+    {
+      "name": "packet_hash_confidence_regrade_coherence_tests",
+      "description": "Validate provisional RTG packet hash confidence regrade coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_packet_hash_confidence_regrade_coherence.py"
+      ]
+    },
+    {
+      "name": "provisional_state_quorum_review_coherence_tests",
+      "description": "Validate provisional RTG provisional state quorum review coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_provisional_state_quorum_review_coherence.py"
+      ]
+    },
+    {
+      "name": "quarantine_release_export_boundary_coherence_tests",
+      "description": "Validate provisional RTG quarantine release export boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_release_export_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "receipt_chain_detector_disagreement_coherence_tests",
+      "description": "Validate provisional RTG receipt chain detector disagreement coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_chain_detector_disagreement_coherence.py"
+      ]
+    },
+    {
+      "name": "replay_packet_authority_repair_coherence_tests",
+      "description": "Validate provisional RTG replay packet authority repair coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_replay_packet_authority_repair_coherence.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_master_record_coherence_tests",
+      "description": "Validate provisional RTG risk pressure master record coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_master_record_coherence.py"
+      ]
+    },
+    {
+      "name": "root_boundary_confidence_floor_coherence_tests",
+      "description": "Validate provisional RTG root boundary confidence floor coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_root_boundary_confidence_floor_coherence.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_receipt_density_coherence_tests",
+      "description": "Validate provisional RTG semantic claim receipt density coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_receipt_density_coherence.py"
+      ]
+    },
+    {
+      "name": "shadow_transition_quarantine_release_coherence_tests",
+      "description": "Validate provisional RTG shadow transition quarantine release coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_shadow_transition_quarantine_release_coherence.py"
+      ]
+    },
+    {
+      "name": "source_target_lineage_fork_coherence_tests",
+      "description": "Validate provisional RTG source target lineage fork coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_source_target_lineage_fork_coherence.py"
+      ]
+    },
+    {
+      "name": "stabilization_detector_authority_coherence_tests",
+      "description": "Validate provisional RTG stabilization detector authority coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_stabilization_detector_authority_coherence.py"
+      ]
+    },
+    {
+      "name": "state_evidence_export_receipt_coherence_tests",
+      "description": "Validate provisional RTG state evidence export receipt coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_evidence_export_receipt_coherence.py"
+      ]
+    },
+    {
+      "name": "supersession_quorum_replay_coherence_tests",
+      "description": "Validate provisional RTG supersession quorum replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_quorum_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "temporal_window_receipt_decay_coherence_tests",
+      "description": "Validate provisional RTG temporal window receipt decay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_temporal_window_receipt_decay_coherence.py"
+      ]
+    },
+    {
+      "name": "transition_claim_quarantine_boundary_coherence_tests",
+      "description": "Validate provisional RTG transition claim quarantine boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_claim_quarantine_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_reentry_review_coherence_tests",
+      "description": "Validate provisional RTG unknown unknown reentry review coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_reentry_review_coherence.py"
+      ]
+    },
+    {
+      "name": "validity_chain_detector_upgrade_coherence_tests",
+      "description": "Validate provisional RTG validity chain detector upgrade coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_validity_chain_detector_upgrade_coherence.py"
+      ]
+    },
+    {
+      "name": "zeno_reversal_finality_coherence_tests",
+      "description": "Validate provisional RTG zeno reversal finality coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_reversal_finality_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_identity_master_record_coherence_tests",
+      "description": "Validate provisional RTG observer identity master record coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_identity_master_record_coherence.py"
+      ]
+    },
+    {
+      "name": "ecosystem_commit_lineage_integrity_coherence_tests",
+      "description": "Validate provisional RTG ecosystem commit lineage integrity coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_ecosystem_commit_lineage_integrity_coherence.py"
+      ]
+    },
+    {
+      "name": "full_transition_governance_stack_coherence_tests",
+      "description": "Validate provisional RTG full transition governance stack coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_full_transition_governance_stack_coherence.py"
+      ]
+    },
+    {
+      "name": "rtg_maturity_boundary_coherence_tests",
+      "description": "Validate provisional RTG rtg maturity boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_maturity_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "admissibility_gradient_observer_window_coherence_tests",
+      "description": "Validate provisional RTG admissibility gradient observer window coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_gradient_observer_window_coherence.py"
+      ]
+    },
+    {
+      "name": "authority_transfer_receipt_chain_coherence_tests",
+      "description": "Validate provisional RTG authority transfer receipt chain coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_transfer_receipt_chain_coherence.py"
+      ]
+    },
+    {
+      "name": "cell_boundary_quarantine_finality_coherence_tests",
+      "description": "Validate provisional RTG cell boundary quarantine finality coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_cell_boundary_quarantine_finality_coherence.py"
+      ]
+    },
+    {
+      "name": "classification_density_master_record_coherence_tests",
+      "description": "Validate provisional RTG classification density master record coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_classification_density_master_record_coherence.py"
+      ]
+    },
+    {
+      "name": "commit_receipt_detector_gap_coherence_tests",
+      "description": "Validate provisional RTG commit receipt detector gap coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_commit_receipt_detector_gap_coherence.py"
+      ]
+    },
+    {
+      "name": "confidence_floor_export_boundary_coherence_tests",
+      "description": "Validate provisional RTG confidence floor export boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_floor_export_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "consensus_replay_supersession_coherence_tests",
+      "description": "Validate provisional RTG consensus replay supersession coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_consensus_replay_supersession_coherence.py"
+      ]
+    },
+    {
+      "name": "dark_cell_admissibility_pressure_coherence_tests",
+      "description": "Validate provisional RTG dark cell admissibility pressure coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_admissibility_pressure_coherence.py"
+      ]
+    },
+    {
+      "name": "deferred_review_lineage_export_coherence_tests",
+      "description": "Validate provisional RTG deferred review lineage export coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_deferred_review_lineage_export_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_capability_identity_surface_coherence_tests",
+      "description": "Validate provisional RTG detector capability identity surface coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_capability_identity_surface_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_latency_receipt_integrity_coherence_tests",
+      "description": "Validate provisional RTG emission latency receipt integrity coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_latency_receipt_integrity_coherence.py"
+      ]
+    },
+    {
+      "name": "export_authority_replay_repair_coherence_tests",
+      "description": "Validate provisional RTG export authority replay repair coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_authority_replay_repair_coherence.py"
+      ]
+    },
+    {
+      "name": "false_transition_detector_consensus_coherence_tests",
+      "description": "Validate provisional RTG false transition detector consensus coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_transition_detector_consensus_coherence.py"
+      ]
+    },
+    {
+      "name": "governance_packet_confidence_floor_coherence_tests",
+      "description": "Validate provisional RTG governance packet confidence floor coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_packet_confidence_floor_coherence.py"
+      ]
+    },
+    {
+      "name": "identity_authority_maturity_boundary_coherence_tests",
+      "description": "Validate provisional RTG identity authority maturity boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_authority_maturity_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "lineage_drift_quarantine_review_coherence_tests",
+      "description": "Validate provisional RTG lineage drift quarantine review coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_lineage_drift_quarantine_review_coherence.py"
+      ]
+    },
+    {
+      "name": "master_record_confidence_regrade_coherence_tests",
+      "description": "Validate provisional RTG master record confidence regrade coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_master_record_confidence_regrade_coherence.py"
+      ]
+    },
+    {
+      "name": "multi_observer_receipt_density_coherence_tests",
+      "description": "Validate provisional RTG multi observer receipt density coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_observer_receipt_density_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_class_detector_upgrade_coherence_tests",
+      "description": "Validate provisional RTG observer class detector upgrade coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_class_detector_upgrade_coherence.py"
+      ]
+    },
+    {
+      "name": "packet_finality_reversal_coherence_tests",
+      "description": "Validate provisional RTG packet finality reversal coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_packet_finality_reversal_coherence.py"
+      ]
+    },
+    {
+      "name": "provisional_export_quorum_coherence_tests",
+      "description": "Validate provisional RTG provisional export quorum coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_provisional_export_quorum_coherence.py"
+      ]
+    },
+    {
+      "name": "quarantine_authority_decay_coherence_tests",
+      "description": "Validate provisional RTG quarantine authority decay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_authority_decay_coherence.py"
+      ]
+    },
+    {
+      "name": "receipt_hash_detector_reentry_coherence_tests",
+      "description": "Validate provisional RTG receipt hash detector reentry coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_hash_detector_reentry_coherence.py"
+      ]
+    },
+    {
+      "name": "replay_window_maturity_boundary_coherence_tests",
+      "description": "Validate provisional RTG replay window maturity boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_replay_window_maturity_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_lineage_supersession_coherence_tests",
+      "description": "Validate provisional RTG risk pressure lineage supersession coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_lineage_supersession_coherence.py"
+      ]
+    },
+    {
+      "name": "root_boundary_transition_packet_coherence_tests",
+      "description": "Validate provisional RTG root boundary transition packet coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_root_boundary_transition_packet_coherence.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_maturity_filter_coherence_tests",
+      "description": "Validate provisional RTG semantic claim maturity filter coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_maturity_filter_coherence.py"
+      ]
+    },
+    {
+      "name": "shadow_transition_receipt_gap_coherence_tests",
+      "description": "Validate provisional RTG shadow transition receipt gap coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_shadow_transition_receipt_gap_coherence.py"
+      ]
+    },
+    {
+      "name": "source_target_detector_disagreement_coherence_tests",
+      "description": "Validate provisional RTG source target detector disagreement coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_source_target_detector_disagreement_coherence.py"
+      ]
+    },
+    {
+      "name": "stabilization_emission_latency_coherence_tests",
+      "description": "Validate provisional RTG stabilization emission latency coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_stabilization_emission_latency_coherence.py"
+      ]
+    },
+    {
+      "name": "state_lineage_authority_reentry_coherence_tests",
+      "description": "Validate provisional RTG state lineage authority reentry coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_lineage_authority_reentry_coherence.py"
+      ]
+    },
+    {
+      "name": "supersession_confidence_floor_coherence_tests",
+      "description": "Validate provisional RTG supersession confidence floor coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_confidence_floor_coherence.py"
+      ]
+    },
+    {
+      "name": "temporal_receipt_replay_repair_coherence_tests",
+      "description": "Validate provisional RTG temporal receipt replay repair coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_temporal_receipt_replay_repair_coherence.py"
+      ]
+    },
+    {
+      "name": "transition_evidence_density_export_coherence_tests",
+      "description": "Validate provisional RTG transition evidence density export coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_evidence_density_export_coherence.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_confidence_floor_coherence_tests",
+      "description": "Validate provisional RTG unknown unknown confidence floor coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_confidence_floor_coherence.py"
+      ]
+    },
+    {
+      "name": "validity_chain_master_record_coherence_tests",
+      "description": "Validate provisional RTG validity chain master record coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_validity_chain_master_record_coherence.py"
+      ]
+    },
+    {
+      "name": "zeno_admissibility_pressure_coherence_tests",
+      "description": "Validate provisional RTG zeno admissibility pressure coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_admissibility_pressure_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_identity_quorum_finality_coherence_tests",
+      "description": "Validate provisional RTG observer identity quorum finality coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_identity_quorum_finality_coherence.py"
+      ]
+    },
+    {
+      "name": "ecosystem_replay_packet_integrity_coherence_tests",
+      "description": "Validate provisional RTG ecosystem replay packet integrity coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_ecosystem_replay_packet_integrity_coherence.py"
+      ]
+    },
+    {
+      "name": "full_commit_authority_receipt_stack_coherence_tests",
+      "description": "Validate provisional RTG full commit authority receipt stack coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_full_commit_authority_receipt_stack_coherence.py"
+      ]
+    },
+    {
+      "name": "admissibility_observation_geometry_coherence_tests",
+      "description": "Validate provisional RTG admissibility observation geometry coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_observation_geometry_coherence.py"
+      ]
+    },
+    {
+      "name": "authority_class_transition_visibility_coherence_tests",
+      "description": "Validate provisional RTG authority class transition visibility coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_class_transition_visibility_coherence.py"
+      ]
+    },
+    {
+      "name": "cell_color_receipt_density_coherence_tests",
+      "description": "Validate provisional RTG cell color receipt density coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_cell_color_receipt_density_coherence.py"
+      ]
+    },
+    {
+      "name": "detector_gap_false_negative_coherence_tests",
+      "description": "Validate provisional RTG detector gap false negative coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_gap_false_negative_coherence.py"
+      ]
+    },
+    {
+      "name": "emission_threshold_quarantine_boundary_coherence_tests",
+      "description": "Validate provisional RTG emission threshold quarantine boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_threshold_quarantine_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "governance_output_lineage_replay_coherence_tests",
+      "description": "Validate provisional RTG governance output lineage replay coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_lineage_replay_coherence.py"
+      ]
+    },
+    {
+      "name": "multi_entity_boundary_coupling_coherence_tests",
+      "description": "Validate provisional RTG multi entity boundary coupling coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_entity_boundary_coupling_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_reality_coupling_maturity_coherence_tests",
+      "description": "Validate provisional RTG observer reality coupling maturity coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_reality_coupling_maturity_coherence.py"
+      ]
+    },
+    {
+      "name": "purpose_convergence_boundary_coherence_tests",
+      "description": "Validate provisional RTG purpose convergence boundary coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_purpose_convergence_boundary_coherence.py"
+      ]
+    },
+    {
+      "name": "rtg_250_milestone_integrity_coherence_tests",
+      "description": "Validate provisional RTG rtg 250 milestone integrity coherence cross-layer coherence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_250_milestone_integrity_coherence.py"
+      ]
+    },
+    {
+      "name": "observer_window_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG observer window semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "authority_boundary_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG authority boundary semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_boundary_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "false_transition_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG false transition semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_transition_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG unknown unknown semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "zeno_pressure_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG zeno pressure semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_pressure_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "dark_cell_color_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG dark cell color semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_color_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "quarantine_release_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG quarantine release semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_release_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "confidence_regrade_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG confidence regrade semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_regrade_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "supersession_lineage_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG supersession lineage semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_lineage_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "emission_export_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG emission export semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_export_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "multi_entity_boundary_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG multi entity boundary semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_entity_boundary_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "purpose_convergence_boundary_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG purpose convergence boundary semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_purpose_convergence_boundary_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "observer_window_phase_shift_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG observer window phase shift semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_phase_shift_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "observer_window_dwell_threshold_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG observer window dwell threshold semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_observer_window_dwell_threshold_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "authority_delegation_chain_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG authority delegation chain semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_delegation_chain_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "authority_revocation_latency_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG authority revocation latency semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_authority_revocation_latency_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "false_transition_signature_collision_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG false transition signature collision semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_transition_signature_collision_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "false_transition_replay_spoof_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG false transition replay spoof semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_false_transition_replay_spoof_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_detector_blindspot_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG unknown unknown detector blindspot semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_detector_blindspot_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "unknown_unknown_model_boundary_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG unknown unknown model boundary semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_unknown_unknown_model_boundary_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "zeno_retry_budget_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG zeno retry budget semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_retry_budget_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "zeno_threshold_oscillation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG zeno threshold oscillation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_zeno_threshold_oscillation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "dark_cell_evidence_accumulation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG dark cell evidence accumulation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_evidence_accumulation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "dark_cell_observer_coverage_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG dark cell observer coverage semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_dark_cell_observer_coverage_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "quarantine_decay_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG quarantine decay semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_decay_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "quarantine_reentry_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG quarantine reentry semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_quarantine_reentry_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "confidence_corroboration_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG confidence corroboration semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_corroboration_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "confidence_contradiction_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG confidence contradiction semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_confidence_contradiction_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "supersession_parentage_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG supersession parentage semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_parentage_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "supersession_authority_conflict_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG supersession authority conflict semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_supersession_authority_conflict_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "emission_redaction_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG emission redaction semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_redaction_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "emission_recipient_authority_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG emission recipient authority semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_emission_recipient_authority_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "multi_entity_interference_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG multi entity interference semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_entity_interference_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "multi_entity_recoverability_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG multi entity recoverability semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_multi_entity_recoverability_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "purpose_convergence_cost_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG purpose convergence cost semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_purpose_convergence_cost_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "purpose_convergence_inversion_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG purpose convergence inversion semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_purpose_convergence_inversion_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "receipt_chain_gap_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG receipt chain gap semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_chain_gap_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "receipt_hash_continuity_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG receipt hash continuity semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_receipt_hash_continuity_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "state_lineage_fork_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG state lineage fork semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_lineage_fork_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "state_lineage_repair_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG state lineage repair semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_state_lineage_repair_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "detector_upgrade_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG detector upgrade semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_upgrade_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "detector_disagreement_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG detector disagreement semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_detector_disagreement_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "export_boundary_redaction_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG export boundary redaction semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_boundary_redaction_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "export_boundary_master_record_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG export boundary master record semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_export_boundary_master_record_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "identity_surface_drift_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG identity surface drift semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_drift_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "identity_surface_match_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG identity surface match semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_identity_surface_match_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "maturity_boundary_promotion_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG maturity boundary promotion semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_maturity_boundary_promotion_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "maturity_boundary_refusal_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG maturity boundary refusal semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_maturity_boundary_refusal_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "admissibility_pressure_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG admissibility pressure semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_pressure_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "admissibility_floor_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG admissibility floor semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_admissibility_floor_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_escalation_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG risk pressure escalation semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_escalation_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "risk_pressure_release_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG risk pressure release semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_risk_pressure_release_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "finality_gate_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG finality gate semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_finality_gate_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "finality_reversal_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG finality reversal semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_finality_reversal_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_density_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG semantic claim density semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_density_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "semantic_claim_overreach_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG semantic claim overreach semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_semantic_claim_overreach_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "transition_packet_completeness_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG transition packet completeness semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_packet_completeness_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "transition_packet_conflict_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG transition packet conflict semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_transition_packet_conflict_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "governance_output_consistency_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG governance output consistency semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_consistency_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "governance_output_block_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG governance output block semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_governance_output_block_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "master_record_export_integrity_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG master record export integrity semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_master_record_export_integrity_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "ecosystem_reentry_review_semantic_behavior_tests",
+      "description": "Validate semantic-differentiated RTG ecosystem reentry review semantic behavior.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_ecosystem_reentry_review_semantic_behavior.py"
+      ]
+    },
+    {
+      "name": "rtg_solver_case_export_tests",
+      "description": "Validate RTG semantic fixture export into math-solver-ready constraint cases.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_solver_case_export.py"
+      ]
+    },
+    {
+      "name": "rtg_math_solver_adapter_tests",
+      "description": "Validate RTG math-solver adapter manifests and input/output contract.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_math_solver_adapter.py"
+      ]
+    },
+    {
+      "name": "rtg_solver_result_ingestion_tests",
+      "description": "Validate ingestion of math-solver outputs into RTG formal posture records.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_solver_result_ingestion.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_posture_registry_tests",
+      "description": "Validate registration and summary of RTG formal posture records.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_posture_registry.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_claim_gate_tests",
+      "description": "Validate RTG formal claim gate decisions against formal posture registry evidence thresholds.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_claim_gate.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_claim_receipt_tests",
+      "description": "Validate receipt binding for RTG formal claim gate decisions.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_claim_receipt.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_claim_replay_tests",
+      "description": "Validate replay of RTG formal claim receipt decisions against registry evidence.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_claim_replay.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_claim_audit_tests",
+      "description": "Validate audit summaries across RTG formal claim receipts and replay results.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_claim_audit.py"
+      ]
+    },
+    {
+      "name": "registry_task_file_integrity_tests",
+      "description": "Validate declared task names, command shapes, canonical paths, and referenced files.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_registry_task_file_integrity.py"
+      ]
+    },
+    {
+      "name": "dispatcher_self_check",
+      "description": "Validate dispatcher registry shape and unknown-task rejection.",
+      "enabled": true,
+      "command": [
+        "python",
+        "scripts/verify_rtg_dispatcher.py"
+      ]
+    }
+  ]
+}
