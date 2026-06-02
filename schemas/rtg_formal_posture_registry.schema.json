@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse.local/schemas/rtg_formal_posture_registry.schema.json",
+  "title": "RTG Formal Posture Registry",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_repo",
+    "registry_type",
+    "formal_posture_records",
+    "summary",
+    "receipt"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "source_repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "registry_type": {
+      "type": "string",
+      "const": "rtg_formal_posture_registry"
+    },
+    "formal_posture_records": {
+      "type": "array"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "receipt": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
