@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "solver_run_id": "rtg-real-solver-run-test",
+  "results": [
+    {
+      "case_id": "RTG-SC-001",
+      "solver_status": "satisfiable",
+      "formal_posture": "formally_consistent"
+    }
+  ]
+}
