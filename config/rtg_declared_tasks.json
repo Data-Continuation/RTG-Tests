@@ -1,12 +1,12 @@
 {
-  "schema_version": "1.260.5-tv-tvc",
+  "schema_version": "1.261.5",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema versions 1.260.1-tv through 1.260.5-tv add TV/TVC authority-bound actual math-solver execution.",
-    "This supersedes any direct GH_MATH_SOLVER_TOKEN storage in Data-Continuation/RTG-Tests.",
-    "RTG requests dispatch authority from TV/TVC and records authority receipts before solver workflow dispatch.",
+    "Schema versions 1.261.1 through 1.261.5 add actual solver-result return and ingestion loop layers.",
+    "Adds TV/TVC broker receipt fixture, real solver-run request materialization, returned artifact contract validation, actual solver-results ingestion bridge, and formal posture update.",
+    "This continues from the green TV/TVC authority-bound math-solver execution baseline.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -3167,6 +3167,51 @@
       "command": [
         "python",
         "tests/test_rtg_authority_bound_solver_result_return.py"
+      ]
+    },
+    {
+      "name": "rtg_tv_tvc_broker_receipt_fixture_tests",
+      "description": "Validate RTG TV/TVC broker receipt fixture layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_tv_tvc_broker_receipt_fixture.py"
+      ]
+    },
+    {
+      "name": "rtg_real_solver_run_request_materialization_tests",
+      "description": "Validate RTG real solver-run request materialization layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_real_solver_run_request_materialization.py"
+      ]
+    },
+    {
+      "name": "rtg_math_solver_returned_artifact_contract_tests",
+      "description": "Validate RTG math-solver returned artifact contract layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_math_solver_returned_artifact_contract.py"
+      ]
+    },
+    {
+      "name": "rtg_actual_solver_results_ingestion_bridge_tests",
+      "description": "Validate RTG actual solver-results ingestion bridge layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_actual_solver_results_ingestion_bridge.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_posture_update_from_solver_result_tests",
+      "description": "Validate RTG formal posture update from returned solver result layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_posture_update_from_solver_result.py"
       ]
     },
     {

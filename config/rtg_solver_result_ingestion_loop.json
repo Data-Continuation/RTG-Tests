@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "layers": [
+    "rtg_tv_tvc_broker_receipt_fixture",
+    "rtg_real_solver_run_request_materialization",
+    "rtg_math_solver_returned_artifact_contract",
+    "rtg_actual_solver_results_ingestion_bridge",
+    "rtg_formal_posture_update_from_solver_result"
+  ],
+  "authority_boundary": "tv_tvc_brokered",
+  "returned_artifact_required": true,
+  "formal_posture_target": "formal_posture_registry"
+}
