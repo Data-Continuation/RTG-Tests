@@ -1,11 +1,12 @@
 {
-  "schema_version": "1.258.12",
+  "schema_version": "1.259.5",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema versions 1.258.1 through 1.258.12 add twelve RTG formal architecture layers.",
-    "Adds proof candidates, theorem registry, model-check and theorem-prover adapters, formal export, master-records audit, traceability, revision ledger, closure, stress, minimal basis, and readiness gating.",
+    "Schema versions 1.259.1 through 1.259.5 add RTG actual math-solver wiring layers.",
+    "Adds dispatch packet, interface contract, execution status, solver-result return, and end-to-end solver loop checks.",
+    "This is the first RTG-side wiring sequence for GCAT-BCAT-Engine/workflows/math-solver.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -3076,6 +3077,51 @@
       "command": [
         "python",
         "tests/test_rtg_formal_architecture_readiness_gate.py"
+      ]
+    },
+    {
+      "name": "rtg_actual_math_solver_dispatch_tests",
+      "description": "Validate RTG actual math-solver dispatch packet layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_actual_math_solver_dispatch.py"
+      ]
+    },
+    {
+      "name": "rtg_math_solver_interface_contract_tests",
+      "description": "Validate RTG math-solver interface contract layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_math_solver_interface_contract.py"
+      ]
+    },
+    {
+      "name": "rtg_math_solver_execution_status_tests",
+      "description": "Validate RTG math-solver execution status layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_math_solver_execution_status.py"
+      ]
+    },
+    {
+      "name": "rtg_solver_result_return_tests",
+      "description": "Validate RTG solver result return layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_solver_result_return.py"
+      ]
+    },
+    {
+      "name": "rtg_end_to_end_solver_loop_tests",
+      "description": "Validate RTG end-to-end solver loop layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_end_to_end_solver_loop.py"
       ]
     },
     {
