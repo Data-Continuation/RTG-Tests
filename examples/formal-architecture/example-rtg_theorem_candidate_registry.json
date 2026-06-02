@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "layer_id": "rtg_theorem_candidate_registry",
+  "surface": "theorem candidate registry",
+  "summary": {
+    "example": true
+  }
+}

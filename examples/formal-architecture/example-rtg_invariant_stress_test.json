@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "layer_id": "rtg_invariant_stress_test",
+  "surface": "invariant stress test",
+  "summary": {
+    "example": true
+  }
+}

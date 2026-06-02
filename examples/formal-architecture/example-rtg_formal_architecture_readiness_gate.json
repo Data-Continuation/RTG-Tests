@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "layer_id": "rtg_formal_architecture_readiness_gate",
+  "surface": "formal architecture readiness gate",
+  "summary": {
+    "example": true
+  }
+}

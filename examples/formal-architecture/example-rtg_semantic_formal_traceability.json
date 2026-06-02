@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "layer_id": "rtg_semantic_formal_traceability",
+  "surface": "semantic-to-formal traceability",
+  "summary": {
+    "example": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "layer_id": "rtg_master_records_formal_audit",
+  "surface": "master-records formal audit",
+  "summary": {
+    "example": true
+  }
+}

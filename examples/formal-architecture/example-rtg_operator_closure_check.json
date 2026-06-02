@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "layer_id": "rtg_operator_closure_check",
+  "surface": "operator closure check",
+  "summary": {
+    "example": true
+  }
+}

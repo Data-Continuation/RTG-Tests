@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "layer_id": "rtg_proof_candidate_generation",
+  "surface": "proof candidate generation",
+  "summary": {
+    "example": true
+  }
+}

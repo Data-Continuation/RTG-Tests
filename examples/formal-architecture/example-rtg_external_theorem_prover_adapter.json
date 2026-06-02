@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "layer_id": "rtg_external_theorem_prover_adapter",
+  "surface": "external theorem-prover adapter",
+  "summary": {
+    "example": true
+  }
+}

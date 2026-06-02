@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "layer_id": "rtg_model_check_adapter",
+  "surface": "model-check adapter",
+  "summary": {
+    "example": true
+  }
+}
