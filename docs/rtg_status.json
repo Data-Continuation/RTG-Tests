@@ -1,8 +1,7 @@
 {
   "repo": "Data-Continuation/RTG-Tests",
-  "generated": "2026-06-02T04:58:26Z",
+  "generated": "2026-06-02T05:08:08Z",
   "formalism": "Relative Transition Geometry",
-  "declared_tasks_total": 353,
-  "phase": "TV/TVC authority-bound math-solver execution",
-  "supersedes_uninstalled_bundle": "RTG-Tests-actual-math-solver-execution-bundle.zip"
+  "declared_tasks_total": 358,
+  "phase": "actual solver-result return and ingestion loop"
 }
