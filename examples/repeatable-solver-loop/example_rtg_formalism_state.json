@@ -1,0 +1,11 @@
+{
+  "formalism": "Relative Transition Geometry",
+  "formalism_state_id": "RTG-STATE-366",
+  "declared_task_count": 366,
+  "problem_statement": "Run the first actual RTG formalism-solving instruction through the math-solver pattern.",
+  "open_obligations": [
+    "preserve claim boundary",
+    "confirm costs",
+    "produce next instruction"
+  ]
+}

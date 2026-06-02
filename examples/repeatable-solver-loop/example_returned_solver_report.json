@@ -1,0 +1,20 @@
+{
+  "status": "candidate_generation_complete",
+  "presentation_thesis": "RTG generated a candidate formalism-solving artifact under claim boundaries.",
+  "executive_summary": {
+    "total_api_spend_usd": 0.041,
+    "total_runs": 1
+  },
+  "claim_boundary": {
+    "what_this_artifact_proves": [
+      "RTG instruction handoff and candidate artifact generation completed."
+    ],
+    "what_this_artifact_does_not_claim": [
+      "Autonomous theorem proving or final correctness without human verification."
+    ]
+  },
+  "results": {
+    "total_cost_usd": 0.041,
+    "candidate_generation_validated": true
+  }
+}
