@@ -1,6 +1,6 @@
 # RTG Repo Status
 
-Generated: `2026-06-02T03:47:49Z`
+Generated: `2026-06-02T04:00:28Z`
 
 ```text
 312 executable RTG tests
@@ -15,7 +15,13 @@ Generated: `2026-06-02T03:47:49Z`
 + 1 RTG axiom extraction test
 + 1 RTG operator extraction test
 + 1 RTG invariant validation test
++ 1 RTG counterexample search test
++ 1 RTG contradiction classification test
++ 1 RTG equivalence reduction test
++ 1 RTG axiom independence test
++ 1 RTG proof-obligation registry test
++ 1 RTG coverage geometry scoring test
 + 1 registry integrity test
 + 1 dispatcher self-check
-= 325 declared tasks total
+= 331 declared tasks total
 ```
