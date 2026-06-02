@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "summary": {
+    "invariant_count": 3,
+    "passed_count": 3,
+    "failed_count": 0,
+    "validation_posture": "invariants_pass"
+  }
+}
