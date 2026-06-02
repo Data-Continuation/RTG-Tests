@@ -1,0 +1,61 @@
+{
+  "candidate_vectors": [
+    {
+      "class": "admissible_transition_candidate",
+      "conditions": {
+        "authority_bound": true,
+        "claim_boundary_preserved": true,
+        "cost_status_receipted": true,
+        "observer_detector_match": true,
+        "publication_gate_required": true
+      },
+      "expected_posture": "ALLOW_candidate",
+      "vector_id": "RTG-381-CV-ALLOW-001"
+    },
+    {
+      "class": "false_transition_candidate",
+      "conditions": {
+        "authority_bound": true,
+        "claim_boundary_preserved": false,
+        "cost_status_receipted": true,
+        "observer_detector_match": false,
+        "publication_gate_required": true
+      },
+      "expected_posture": "DENY_candidate",
+      "vector_id": "RTG-381-CV-DENY-001"
+    },
+    {
+      "class": "unknown_unknown_candidate",
+      "conditions": {
+        "authority_bound": true,
+        "claim_boundary_preserved": true,
+        "cost_status_receipted": true,
+        "observer_detector_match": null,
+        "publication_gate_required": true
+      },
+      "expected_posture": "DEFER_candidate",
+      "vector_id": "RTG-381-CV-DEFER-001"
+    },
+    {
+      "class": "repeatable_round_trip_candidate",
+      "conditions": {
+        "instruction_artifact_present": true,
+        "next_instruction_required": true,
+        "returned_artifact_ingestion_required": true,
+        "upload_manifest_present": true
+      },
+      "expected_posture": "REPLAY_candidate",
+      "vector_id": "RTG-381-CV-REPLAY-001"
+    }
+  ],
+  "claim_boundary": {
+    "autonomous_theorem_proving_claimed": false,
+    "candidate_generation_allowed": true,
+    "human_or_formal_verification_required": true,
+    "reconstruction_allowed": true,
+    "solution_claim_allowed_without_external_verification": false
+  },
+  "generated": "2026-06-02T17:24:13Z",
+  "schema_version": "1.0",
+  "vector_surface": "rtg_upload_ready_candidate_vectors"
+}
