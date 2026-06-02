@@ -1,6 +1,6 @@
 # RTG Repo Status
 
-Generated: `2026-06-02T06:01:35Z`
+Generated: `2026-06-02T17:24:13Z`
 
 ```text
 312 executable RTG tests
@@ -10,11 +10,8 @@ Generated: `2026-06-02T06:01:35Z`
 + 5 solver-result ingestion loop tests
 + 8 compact formalism-instruction bridge tests
 + 15 repeatable solver-loop tests
++ 5 actual upload-ready math-solver package tests
 + 1 registry integrity test
 + 1 dispatcher self-check
-= 381 declared tasks total
+= 386 declared tasks total
 ```
-
-## Current Result
-
-RTG now has a compact repeatable solver cycle contract rather than a large wrapper-test expansion.
