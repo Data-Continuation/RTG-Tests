@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.257.8",
+  "schema_version": "1.258.12",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema versions 1.257.3 through 1.257.8 add six RTG formal hardening layers.",
-    "Adds counterexample search, contradiction classification, equivalence reduction, axiom independence, proof obligations, and coverage geometry scoring.",
+    "Schema versions 1.258.1 through 1.258.12 add twelve RTG formal architecture layers.",
+    "Adds proof candidates, theorem registry, model-check and theorem-prover adapters, formal export, master-records audit, traceability, revision ledger, closure, stress, minimal basis, and readiness gating.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -2968,6 +2968,114 @@
       "command": [
         "python",
         "tests/test_rtg_coverage_geometry_scoring.py"
+      ]
+    },
+    {
+      "name": "rtg_proof_candidate_generation_tests",
+      "description": "Validate RTG proof candidate generation layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_proof_candidate_generation.py"
+      ]
+    },
+    {
+      "name": "rtg_theorem_candidate_registry_tests",
+      "description": "Validate RTG theorem candidate registry layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_theorem_candidate_registry.py"
+      ]
+    },
+    {
+      "name": "rtg_model_check_adapter_tests",
+      "description": "Validate RTG model-check adapter layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_model_check_adapter.py"
+      ]
+    },
+    {
+      "name": "rtg_external_theorem_prover_adapter_tests",
+      "description": "Validate RTG external theorem-prover adapter layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_external_theorem_prover_adapter.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_evidence_export_tests",
+      "description": "Validate RTG formal evidence export layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_evidence_export.py"
+      ]
+    },
+    {
+      "name": "rtg_master_records_formal_audit_tests",
+      "description": "Validate RTG master-records formal audit layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_master_records_formal_audit.py"
+      ]
+    },
+    {
+      "name": "rtg_semantic_formal_traceability_tests",
+      "description": "Validate RTG semantic-to-formal traceability layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_semantic_formal_traceability.py"
+      ]
+    },
+    {
+      "name": "rtg_axiom_revision_ledger_tests",
+      "description": "Validate RTG axiom revision ledger layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_axiom_revision_ledger.py"
+      ]
+    },
+    {
+      "name": "rtg_operator_closure_check_tests",
+      "description": "Validate RTG operator closure check layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_operator_closure_check.py"
+      ]
+    },
+    {
+      "name": "rtg_invariant_stress_test_tests",
+      "description": "Validate RTG invariant stress test layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_invariant_stress_test.py"
+      ]
+    },
+    {
+      "name": "rtg_minimal_basis_candidate_tests",
+      "description": "Validate RTG minimal-basis candidate layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_minimal_basis_candidate.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_architecture_readiness_gate_tests",
+      "description": "Validate RTG formal architecture readiness gate layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_architecture_readiness_gate.py"
       ]
     },
     {

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "layers": [
+    "rtg_proof_candidate_generation",
+    "rtg_theorem_candidate_registry",
+    "rtg_model_check_adapter",
+    "rtg_external_theorem_prover_adapter",
+    "rtg_formal_evidence_export",
+    "rtg_master_records_formal_audit",
+    "rtg_semantic_formal_traceability",
+    "rtg_axiom_revision_ledger",
+    "rtg_operator_closure_check",
+    "rtg_invariant_stress_test",
+    "rtg_minimal_basis_candidate",
+    "rtg_formal_architecture_readiness_gate"
+  ]
+}
