@@ -1,12 +1,11 @@
 {
-  "schema_version": "1.256.5",
+  "schema_version": "1.256.6",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema version 1.256.5 adds the RTG formal posture registry layer.",
-    "The registry layer persists solver-ingested formal posture records as indexed RTG evidence.",
-    "The bridge exports solver cases; the adapter groups solver runs; ingestion creates posture records; registry persists posture evidence.",
+    "Schema version 1.256.6 adds the RTG formal claim gate layer.",
+    "The claim gate prevents formal claims unless registry evidence satisfies threshold rules.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -2852,6 +2851,15 @@
       "command": [
         "python",
         "tests/test_rtg_formal_posture_registry.py"
+      ]
+    },
+    {
+      "name": "rtg_formal_claim_gate_tests",
+      "description": "Validate RTG formal claim gate decisions against formal posture registry evidence thresholds.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_formal_claim_gate.py"
       ]
     },
     {

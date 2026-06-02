@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "gate_name": "RTG formal claim gate",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "formal_posture_registry_input": "build/formal-posture-registry/rtg_formal_posture_registry.json",
+  "formal_claim_gate_output": "build/formal-claim-gate/rtg_formal_claim_gate_decision.json",
+  "formal_claim_gate_schema": "schemas/rtg_formal_claim_gate.schema.json",
+  "thresholds": {
+    "minimum_record_count": 1,
+    "minimum_total_case_count": 1,
+    "required_ready_for_formal_claim_count": 1,
+    "maximum_formally_inconsistent_count": 0,
+    "maximum_blocked_count": 0
+  },
+  "claim_types": [
+    "local_formal_progress",
+    "formalism_candidate",
+    "mathematical_completeness"
+  ]
+}
