@@ -1,12 +1,12 @@
 {
-  "schema_version": "1.259.5",
+  "schema_version": "1.260.5-tv-tvc",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Schema versions 1.259.1 through 1.259.5 add RTG actual math-solver wiring layers.",
-    "Adds dispatch packet, interface contract, execution status, solver-result return, and end-to-end solver loop checks.",
-    "This is the first RTG-side wiring sequence for GCAT-BCAT-Engine/workflows/math-solver.",
+    "Schema versions 1.260.1-tv through 1.260.5-tv add TV/TVC authority-bound actual math-solver execution.",
+    "This supersedes any direct GH_MATH_SOLVER_TOKEN storage in Data-Continuation/RTG-Tests.",
+    "RTG requests dispatch authority from TV/TVC and records authority receipts before solver workflow dispatch.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -3122,6 +3122,51 @@
       "command": [
         "python",
         "tests/test_rtg_end_to_end_solver_loop.py"
+      ]
+    },
+    {
+      "name": "rtg_tv_tvc_authority_request_tests",
+      "description": "Validate RTG TV/TVC math-solver authority request layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_tv_tvc_authority_request.py"
+      ]
+    },
+    {
+      "name": "rtg_tv_tvc_authority_receipt_validation_tests",
+      "description": "Validate RTG TV/TVC authority receipt validation layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_tv_tvc_authority_receipt_validation.py"
+      ]
+    },
+    {
+      "name": "rtg_authority_bound_workflow_dispatch_tests",
+      "description": "Validate RTG authority-bound workflow dispatch layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_authority_bound_workflow_dispatch.py"
+      ]
+    },
+    {
+      "name": "rtg_authority_bound_solver_execution_receipt_tests",
+      "description": "Validate RTG authority-bound solver execution receipt layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_authority_bound_solver_execution_receipt.py"
+      ]
+    },
+    {
+      "name": "rtg_authority_bound_solver_result_return_tests",
+      "description": "Validate RTG authority-bound solver result return layer.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_authority_bound_solver_result_return.py"
       ]
     },
     {

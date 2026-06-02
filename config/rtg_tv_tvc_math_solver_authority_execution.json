@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "authority_repos": [
+    "StegVerse-Labs/TV",
+    "StegVerse-Labs/TVC"
+  ],
+  "target_workflow_reference": "GCAT-BCAT-Engine/workflows/math-solver.yml",
+  "credential_boundary": "tv_tvc_brokered",
+  "runtime_token_env": "TV_TVC_MATH_SOLVER_DISPATCH_TOKEN",
+  "runtime_execute_switch": "RTG_SOLVER_EXECUTE=true",
+  "completion_rule": "do_not_dispatch_without_valid_tv_tvc_authority_receipt"
+}
