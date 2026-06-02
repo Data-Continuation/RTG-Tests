@@ -1,7 +1,8 @@
 {
   "repo": "Data-Continuation/RTG-Tests",
-  "generated": "2026-06-02T04:17:13Z",
+  "generated": "2026-06-02T04:26:11Z",
   "formalism": "Relative Transition Geometry",
-  "declared_tasks_total": 343,
-  "phase": "RTG next 12 formal architecture layers"
+  "declared_tasks_total": 348,
+  "phase": "RTG actual math-solver wiring bundle",
+  "target_workflow_reference": "GCAT-BCAT-Engine/workflows/math-solver"
 }
