@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "target_solver_repo": "GCAT-BCAT-Engine/workflows",
+  "bridge_type": "actual_instruction_to_returned_artifact_to_repeatable_cycle",
+  "declared_tasks_total": 381,
+  "new_task_count": 15
+}

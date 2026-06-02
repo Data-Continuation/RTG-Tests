@@ -1,11 +1,11 @@
 {
-  "schema_version": "1.262.8",
+  "schema_version": "1.262.23",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
   "notes": [
-    "Adds compact formalism-instruction bridge to the demonstrated math-solver upload/spec/artifact pattern.",
-    "Avoids task-count accumulation; focuses on packaging RTG formalism state into a governed instruction artifact and ingesting returned paper/report artifacts.",
+    "Extends the compact formalism-instruction bridge into a 381-task repeatable solver loop.",
+    "Adds actual RTG solver instruction artifact generation, problem spec YAML generation, candidate vector seeds, upload manifest, handoff receipt, returned artifact ingestion, claim/cost confirmation, round-trip audit, next-instruction selection, delta tracking, loop state update, readiness gate, and repeatable cycle contract.",
     "Canonical fixture smoke command remains python tests/test_rtg_fixtures.py."
   ],
   "tasks": [
@@ -3283,6 +3283,141 @@
       "command": [
         "python",
         "tests/test_rtg_solver_next_instruction_generation.py"
+      ]
+    },
+    {
+      "name": "rtg_actual_instruction_artifact_generation_tests",
+      "description": "Validate rtg actual instruction artifact generation.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_actual_instruction_artifact_generation.py"
+      ]
+    },
+    {
+      "name": "rtg_actual_problem_spec_yaml_generation_tests",
+      "description": "Validate rtg actual problem spec yaml generation.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_actual_problem_spec_yaml_generation.py"
+      ]
+    },
+    {
+      "name": "rtg_actual_candidate_vector_seed_generation_tests",
+      "description": "Validate rtg actual candidate vector seed generation.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_actual_candidate_vector_seed_generation.py"
+      ]
+    },
+    {
+      "name": "rtg_actual_solver_upload_bundle_manifest_tests",
+      "description": "Validate rtg actual solver upload bundle manifest.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_actual_solver_upload_bundle_manifest.py"
+      ]
+    },
+    {
+      "name": "rtg_actual_solver_run_handoff_receipt_tests",
+      "description": "Validate rtg actual solver run handoff receipt.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_actual_solver_run_handoff_receipt.py"
+      ]
+    },
+    {
+      "name": "rtg_returned_solver_artifact_collection_tests",
+      "description": "Validate rtg returned solver artifact collection.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_returned_solver_artifact_collection.py"
+      ]
+    },
+    {
+      "name": "rtg_returned_solver_artifact_ingestion_tests",
+      "description": "Validate rtg returned solver artifact ingestion.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_returned_solver_artifact_ingestion.py"
+      ]
+    },
+    {
+      "name": "rtg_returned_claim_boundary_confirmation_tests",
+      "description": "Validate rtg returned claim boundary confirmation.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_returned_claim_boundary_confirmation.py"
+      ]
+    },
+    {
+      "name": "rtg_returned_cost_status_receipt_confirmation_tests",
+      "description": "Validate rtg returned cost status receipt confirmation.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_returned_cost_status_receipt_confirmation.py"
+      ]
+    },
+    {
+      "name": "rtg_returned_round_trip_audit_record_tests",
+      "description": "Validate rtg returned round trip audit record.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_returned_round_trip_audit_record.py"
+      ]
+    },
+    {
+      "name": "rtg_repeat_next_instruction_selection_tests",
+      "description": "Validate rtg repeat next instruction selection.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_repeat_next_instruction_selection.py"
+      ]
+    },
+    {
+      "name": "rtg_repeat_instruction_delta_tests",
+      "description": "Validate rtg repeat instruction delta.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_repeat_instruction_delta.py"
+      ]
+    },
+    {
+      "name": "rtg_repeat_solver_loop_state_update_tests",
+      "description": "Validate rtg repeat solver loop state update.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_repeat_solver_loop_state_update.py"
+      ]
+    },
+    {
+      "name": "rtg_repeat_solver_loop_readiness_gate_tests",
+      "description": "Validate rtg repeat solver loop readiness gate.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_repeat_solver_loop_readiness_gate.py"
+      ]
+    },
+    {
+      "name": "rtg_repeatable_solver_cycle_contract_tests",
+      "description": "Validate rtg repeatable solver cycle contract.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_repeatable_solver_cycle_contract.py"
       ]
     },
     {
