@@ -1,0 +1,5 @@
+{
+  "schema_version": "1.0",
+  "target_workflow_reference": "GCAT-BCAT-Engine/workflows/math-solver",
+  "dispatch_status": "dispatch_ready"
+}
