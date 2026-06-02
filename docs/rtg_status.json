@@ -1,8 +1,8 @@
 {
   "repo": "Data-Continuation/RTG-Tests",
-  "generated": "2026-06-02T04:26:11Z",
+  "generated": "2026-06-02T04:58:26Z",
   "formalism": "Relative Transition Geometry",
-  "declared_tasks_total": 348,
-  "phase": "RTG actual math-solver wiring bundle",
-  "target_workflow_reference": "GCAT-BCAT-Engine/workflows/math-solver"
+  "declared_tasks_total": 353,
+  "phase": "TV/TVC authority-bound math-solver execution",
+  "supersedes_uninstalled_bundle": "RTG-Tests-actual-math-solver-execution-bundle.zip"
 }
