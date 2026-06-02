@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-06-01T20:31:11Z",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "registry_type": "rtg_formal_posture_registry",
+  "formal_posture_records": [
+    {
+      "solver_run_id": "example-rtg-solver-run",
+      "formal_posture": "formally_consistent",
+      "case_count": 1,
+      "source_path": "build/solver-results/example/rtg_formal_posture.json",
+      "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "source_solver_results": "build/solver-results/example/solver_results.json",
+      "generated": "2026-06-01T20:31:11Z",
+      "receipt": {
+        "solver_results_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+        "ingestion_surface": "rtg_solver_result_ingestion",
+        "target_workflow_reference": "GCAT-BCAT-Engine/workflows/math-solver"
+      }
+    }
+  ],
+  "summary": {
+    "record_count": 1,
+    "total_case_count": 1,
+    "formal_posture_counts": {
+      "formally_consistent": 1
+    },
+    "ready_for_formal_claim_count": 1,
+    "review_required_count": 0
+  },
+  "receipt": {
+    "registry_surface": "rtg_formal_posture_registry",
+    "input_directory": "build/solver-results",
+    "record_hashes": [
+      "0000000000000000000000000000000000000000000000000000000000000000"
+    ]
+  }
+}
