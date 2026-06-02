@@ -1,0 +1,43 @@
+{
+  "artifact_surface": "rtg_upload_ready_instruction_artifact",
+  "claim_boundary": {
+    "autonomous_theorem_proving_claimed": false,
+    "candidate_generation_allowed": true,
+    "human_or_formal_verification_required": true,
+    "reconstruction_allowed": true,
+    "solution_claim_allowed_without_external_verification": false
+  },
+  "current_rtg_declared_task_count": 381,
+  "formalism": "Relative Transition Geometry",
+  "generated": "2026-06-02T17:24:13Z",
+  "instruction_id": "RTG-381-SOLVER-INSTRUCTION-001",
+  "open_obligations": [
+    "preserve claim boundary",
+    "track API cost and workflow status",
+    "distinguish reconstruction from verified solution",
+    "produce next governed RTG instruction"
+  ],
+  "problem_statement": "Use the math-solver pattern to generate governed RTG formalism-solving candidate artifacts from the current RTG repeatable solver-loop state.",
+  "requested_outputs": [
+    "real_results_<run_id>.json",
+    "gcat_bcat_candidate_report.json",
+    "gcat_bcat_candidate_summary.md",
+    "publisher_document_or_solver_report.yml"
+  ],
+  "schema_version": "1.0",
+  "solver_execution_model": {
+    "anthropic_reasoning_phase": {
+      "api_call_policy": "use API for high-value reasoning only; push repeatable checks to Ubuntu runner",
+      "purpose": "derive proof strategy, model-boundary classification, deterministic validation plan, and publication-safe report framing"
+    },
+    "artifact_return_phase": {
+      "purpose": "return report/paper artifacts, costs, statuses, claim boundaries, and next obligations"
+    },
+    "github_ubuntu_phase": {
+      "expected_runner": "ubuntu-latest",
+      "purpose": "run deterministic candidate-vector validation and produce structured artifacts"
+    }
+  },
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "target_repo": "GCAT-BCAT-Engine/workflows"
+}

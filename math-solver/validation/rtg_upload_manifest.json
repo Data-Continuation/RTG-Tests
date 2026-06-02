@@ -1,0 +1,46 @@
+{
+  "claim_boundary_required": true,
+  "expected_return_artifacts": [
+    "real_results_<run_id>.json",
+    "gcat_bcat_candidate_report.json",
+    "gcat_bcat_candidate_summary.md",
+    "publisher_document_or_solver_report.yml"
+  ],
+  "generated": "2026-06-02T17:24:13Z",
+  "manifest_status": "upload_ready",
+  "manifest_surface": "rtg_upload_ready_manifest",
+  "publication_gate_required": true,
+  "schema_version": "1.0",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "target_repo": "GCAT-BCAT-Engine/workflows",
+  "upload_files": [
+    {
+      "purpose": "RTG governed formalism-solving instruction artifact",
+      "sha256": "61750c777ec38fbc0d960668c3f2f701192a4142a35de6eb2c70c087b78dad5f",
+      "target_path": "math_solver/validation/rtg_instruction_artifact.json"
+    },
+    {
+      "purpose": "Math-solver problem spec for RTG instruction",
+      "sha256": "1d2907b25a34ab7af63b1002374857482cda48b1c7f6d0a2708634b2178cde45",
+      "target_path": "math_solver/validation/problem_spec_rtg_instruction.yml"
+    },
+    {
+      "purpose": "Candidate vectors for deterministic Ubuntu validation",
+      "sha256": "62ef514e64cc0477aceffe4f5053337c87f40dcc043fadcf39ece668e1929289",
+      "target_path": "math_solver/validation/candidate_vectors/rtg/rtg_candidate_vectors.json"
+    },
+    {
+      "purpose": "Human-readable upload and claim-boundary guide",
+      "sha256": "2dde0c9dbbf85aabd73fdf67b2fd5e182dff56b06ba76207d126cb194be3451f",
+      "target_path": "math_solver/validation/RTG_UPLOAD_README.md"
+    }
+  ],
+  "workflow_inputs": {
+    "budget_ceiling": "10.00",
+    "run_id": "RTG-381-SOLVER-INSTRUCTION-001"
+  },
+  "workflow_targets": [
+    ".github/workflows/validation_run_inline.yml",
+    ".github/workflows/validation_run.yml"
+  ]
+}

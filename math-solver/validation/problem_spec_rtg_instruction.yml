@@ -1,0 +1,30 @@
+problem_spec_rtg_instruction_v1:
+  problem_id: RTG-381-SOLVER-INSTRUCTION-001
+  date: "2026-06-02T17:24:13Z"
+  source_repo: Data-Continuation/RTG-Tests
+  target_repo: GCAT-BCAT-Engine/workflows
+  domain: relative_transition_geometry
+  status: candidate_generation_requested
+  current_rtg_declared_task_count: 381
+  formalism: Relative Transition Geometry
+  problem_statement: Use the math-solver pattern to generate governed RTG formalism-solving candidate artifacts from the current RTG repeatable solver-loop state.
+  solver_execution_model:
+    anthropic_reasoning_phase: derive proof strategy, model-boundary classification, deterministic validation plan, and publication-safe report framing
+    github_ubuntu_phase: run deterministic candidate-vector validation and produce structured artifacts
+    artifact_return_phase: return report/paper artifacts, costs, statuses, claim boundaries, and next obligations
+  api_call_policy:
+    use_api_for: high-value reasoning and proof-strategy classification
+    use_ubuntu_for: repeatable deterministic validation and artifact generation
+    minimization_rule: do not ask the API for work the Ubuntu runner can check deterministically
+  candidate_vector_file: math_solver/validation/candidate_vectors/rtg/rtg_candidate_vectors.json
+  claim_boundary:
+    candidate_generation_allowed: true
+    reconstruction_allowed: true
+    solution_claim_allowed_without_external_verification: false
+    autonomous_theorem_proving_claimed: false
+    human_or_formal_verification_required: true
+  expected_outputs:
+    - real_results_<run_id>.json
+    - gcat_bcat_candidate_report.json
+    - gcat_bcat_candidate_summary.md
+    - publisher_document_or_solver_report.yml
