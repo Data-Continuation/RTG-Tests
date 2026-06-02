@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "claim_type": "local_formal_progress",
+  "original_decision": "allow_formal_claim",
+  "replayed_decision": "allow_formal_claim",
+  "replay_match": true,
+  "receipt": {
+    "replay_surface": "rtg_formal_claim_replay"
+  }
+}
