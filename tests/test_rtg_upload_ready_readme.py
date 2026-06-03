@@ -6,7 +6,7 @@ def require(c,m):
     if not c: raise AssertionError(m)
 def read_json(p): return json.loads((ROOT/p).read_text(encoding="utf-8"))
 def main():
-    t=(ROOT/"math_solver/validation/RTG_UPLOAD_README.md").read_text(encoding="utf-8")
+    t=(ROOT/"math-solver/validation/RTG_UPLOAD_README.md").read_text(encoding="utf-8")
     require("GCAT-BCAT-Engine/workflows" in t,"target repo missing")
     require("run_id=RTG-381-SOLVER-INSTRUCTION-001" in t,"run id missing")
     require("does not claim autonomous theorem proving" in t,"claim boundary missing")

@@ -6,7 +6,7 @@ def require(c,m):
     if not c: raise AssertionError(m)
 def read_json(p): return json.loads((ROOT/p).read_text(encoding="utf-8"))
 def main():
-    t=(ROOT/"math_solver/validation/problem_spec_rtg_instruction.yml").read_text(encoding="utf-8")
+    t=(ROOT/"math-solver/validation/problem_spec_rtg_instruction.yml").read_text(encoding="utf-8")
     require("problem_spec_rtg_instruction_v1:" in t,"root missing")
     require("problem_id: RTG-381-SOLVER-INSTRUCTION-001" in t,"id missing")
     require("human_or_formal_verification_required: true" in t,"boundary missing")

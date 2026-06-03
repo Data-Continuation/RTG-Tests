@@ -6,7 +6,7 @@ def require(c,m):
     if not c: raise AssertionError(m)
 def read_json(p): return json.loads((ROOT/p).read_text(encoding="utf-8"))
 def main():
-    d=read_json("math_solver/validation/rtg_upload_manifest.json")
+    d=read_json("math-solver/validation/rtg_upload_manifest.json")
     require(d["manifest_status"]=="upload_ready","manifest status mismatch")
     require(".github/workflows/validation_run_inline.yml" in d["workflow_targets"],"workflow target missing")
     targets={f["target_path"] for f in d["upload_files"]}
