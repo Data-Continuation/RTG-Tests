@@ -22,6 +22,11 @@ TASKS_PATH = ROOT / "config" / "rtg_declared_tasks.json"
 
 ALLOWED_EXECUTABLES = {"python", "python3"}
 
+# Forwarding aliases: a requested name on the left resolves to the
+# declared task on the right. Lets lookups for `math_solver` hit the
+# `math-solver` task without touching anything under math-solver/.
+TASK_ALIASES = {"math_solver": "math-solver"}
+
 
 @dataclass(frozen=True)
 class Task:
@@ -100,6 +105,8 @@ def parse_tasks(registry: dict[str, Any]) -> dict[str, Task]:
 
 def selected_tasks(tasks: dict[str, Task], requested_task: str) -> list[Task]:
     enabled_tasks = [task for task in tasks.values() if task.enabled]
+
+    requested_task = TASK_ALIASES.get(requested_task, requested_task)
 
     if requested_task == "all":
         return enabled_tasks
