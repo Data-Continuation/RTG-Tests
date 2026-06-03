@@ -3481,6 +3481,15 @@
         "python",
         "scripts/verify_rtg_dispatcher.py"
       ]
+    },
+    {
+      "name": "rtg_candidate_validation",
+      "description": "Run the RTG governance validator over RTG candidate vectors (GCAT/BCAT-parity formal validation: ALLOW/DENY/DEFER/REPLAY postures vs expected).",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_candidate_validation.py"
+      ]
     }
   ]
 }
