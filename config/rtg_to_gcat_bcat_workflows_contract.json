@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "contract_name": "rtg_to_gcat_bcat_workflows_connectivity",
+  "basis_status": "live_handoff_contract",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "target_repo": "GCAT-BCAT-Engine/workflows",
+  "target_execution_layer": "math_solver/validation",
+  "workflow": ".github/workflows/validation_run.yml",
+  "trigger": "workflow_dispatch",
+  "runner": "ubuntu-latest",
+  "required_secret": "ANTHROPIC_API_KEY",
+  "api_provider": "Anthropic",
+  "dispatch_inputs": {
+    "run_id": "RTG-001",
+    "budget_ceiling": "50.00"
+  },
+  "expected_artifacts": [
+    "ext2_phase1.json",
+    "ext2_sources.json",
+    "ext2_phase3.json",
+    "ext2_report.json"
+  ],
+  "cost_estimate": {
+    "basis": "reference_math_solver_outputs_and_validation_run_phase_structure",
+    "reference_external_full_process_cost_usd": 0.02086,
+    "reference_external_incremental_cost_usd": 0.035,
+    "budget_ceiling_usd": 50.0,
+    "estimate_is_pre_execution": true,
+    "actual_cost_receipt_required_after_dispatch": true
+  },
+  "claim_boundary": {
+    "handoff_contract_ready": true,
+    "actual_dispatch_performed": false,
+    "math_solver_executed": false,
+    "anthropic_api_called": false,
+    "ubuntu_sandbox_validation_performed": false,
+    "artifacts_returned": false,
+    "rtg_ingestion_performed": false,
+    "rtg_state_updated": false,
+    "no_false_execution_claim": true
+  },
+  "dispatch_status": "contract_ready",
+  "next_required_state": "observe_workflows_auto_dispatch_or_artifact_return"
+}
