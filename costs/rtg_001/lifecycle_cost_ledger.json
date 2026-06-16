@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "case_id": "RTG-001",
+  "ledger_scope": "initial_planning_to_final_review_candidate",
+  "currency": "USD",
+  "actual_costs_previous_stage": {
+    "repo_build_and_documentation_commits": 0.0,
+    "local_fixture_tests": 0.0,
+    "github_actions_cost_recorded_in_artifacts": null,
+    "anthropic_api_cost_recorded_in_artifacts": null,
+    "status": "no_paid_solver_receipt_available_yet"
+  },
+  "known_reference_costs": {
+    "external_full_process_reference_usd": 0.02086,
+    "external_incremental_reference_usd": 0.035,
+    "native_full_process_reference_usd": 0.06505,
+    "validation_connectivity_reference_usd": 0.015,
+    "prior_framework_total_validation_spend_usd": 0.25
+  },
+  "estimated_upcoming_stage_costs": {
+    "review_packet_generation_local": 0.0,
+    "review_packet_ci_smoke_expected": 0.0,
+    "artifact_watcher_polling_expected_api_cost": 0.0,
+    "expected_solver_artifact_receipt_cost_range_usd": [0.02086, 0.035],
+    "optional_solver_replay_or_iteration_range_usd": [0.02086, 0.06505],
+    "human_or_formal_review_cost_usd": null
+  },
+  "budget": {
+    "rtg_001_budget_ceiling_usd": 50.0,
+    "expected_within_budget": true,
+    "actual_cost_receipt_source": "ext2_report.json when external-full-results is returned"
+  },
+  "cost_rules": {
+    "pre_execution_estimate_is_not_receipt": true,
+    "actual_solver_cost_must_come_from_returned_artifact": true,
+    "repo_commit_cost_is_recorded_as_zero_paid_api_cost": true,
+    "final_review_candidate_cost_must_include_all_returned_receipts": true
+  }
+}
