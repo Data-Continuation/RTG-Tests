@@ -29,6 +29,15 @@
         "python",
         "tests/test_rtg_001_state_update_from_ingestion.py"
       ]
+    },
+    {
+      "name": "rtg_001_next_instruction_selection_tests",
+      "description": "Validate governed next-instruction selection after RTG state update.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_001_next_instruction_selection.py"
+      ]
     }
   ]
 }
