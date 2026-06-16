@@ -1,0 +1,28 @@
+{
+  "run_id": "RTG-001",
+  "problem": "RTG live-basis handoff validation candidate",
+  "total_cost": 0.033,
+  "total_tokens": 4678,
+  "phases": [
+    {
+      "phase": 1,
+      "model": "haiku"
+    },
+    {
+      "phase": 2,
+      "verification": "fixture_for_ingestion_test"
+    },
+    {
+      "phase": 3,
+      "model": "sonnet"
+    }
+  ],
+  "sources_verified": true,
+  "claim_boundary": {
+    "candidate_generation_only": true,
+    "autonomous_theorem_proving_claimed": false,
+    "final_correctness_claimed": false,
+    "human_or_formal_review_required": true
+  },
+  "returned_artifact_status": "fixture_for_ingestion_test"
+}
