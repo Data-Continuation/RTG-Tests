@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "repo": "Data-Continuation/RTG-Tests",
+  "case_id": "RTG-001",
+  "tasks": [
+    {
+      "name": "rtg_to_gcat_bcat_workflows_connectivity_tests",
+      "description": "Validate RTG source-side handoff contract without falsely claiming external solver execution.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_to_gcat_bcat_workflows_connectivity.py"
+      ]
+    },
+    {
+      "name": "rtg_001_returned_artifact_ingestion_tests",
+      "description": "Validate RTG returned-artifact ingestion using fixture or real ext2 artifact files.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_001_returned_artifact_ingestion.py"
+      ]
+    }
+  ]
+}
