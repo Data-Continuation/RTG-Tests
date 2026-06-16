@@ -1,0 +1,10 @@
+{
+  "phase": 3,
+  "model": "sonnet",
+  "base_cost": 0.0618,
+  "batch_cost": 0.0309,
+  "tokens_in": 156,
+  "tokens_out": 4012,
+  "latency": 49.8,
+  "analysis": "RTG-001 fixture for returned-artifact ingestion testing. Replace with real workflow artifact after external-full-results is returned."
+}
