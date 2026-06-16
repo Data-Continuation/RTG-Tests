@@ -1,0 +1,9 @@
+{
+  "phase": 1,
+  "model": "haiku",
+  "cost": 0.0021,
+  "tokens_in": 112,
+  "tokens_out": 398,
+  "latency": 2.3,
+  "classification": "RTG-001 fixture for returned-artifact ingestion testing. Replace with real workflow artifact after external-full-results is returned."
+}
