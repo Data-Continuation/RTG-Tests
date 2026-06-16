@@ -47,6 +47,15 @@
         "python",
         "tests/test_rtg_001_review_packet_generation.py"
       ]
+    },
+    {
+      "name": "rtg_001_final_review_candidate_tests",
+      "description": "Validate final review candidate creation without claiming real artifact ingestion, final correctness, or autonomous proof.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_001_final_review_candidate.py"
+      ]
     }
   ]
 }
