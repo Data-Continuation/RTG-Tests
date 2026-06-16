@@ -1,0 +1,15 @@
+{
+  "phase": 2,
+  "sources_verified": true,
+  "verification": "fixture_for_ingestion_test",
+  "sources": [
+    {
+      "source": "Data-Continuation/RTG-Tests",
+      "status": "request_origin"
+    },
+    {
+      "source": "GCAT-BCAT-Engine/workflows",
+      "status": "execution_target"
+    }
+  ]
+}
