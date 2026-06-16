@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "case_id": "RTG-001",
+  "evidence_status": "real_workflow_artifact_detected",
+  "evidence_source": {
+    "repo": "GCAT-BCAT-Engine/workflows",
+    "workflow_run_id": 27597978374,
+    "workflow_name": "StegVerse External Full Process v2 - Erdos Class",
+    "workflow_conclusion": "success",
+    "workflow_url": "https://github.com/GCAT-BCAT-Engine/workflows/actions/runs/27597978374",
+    "artifact_id": 7658749562,
+    "artifact_name": "external-full-results",
+    "artifact_size_in_bytes": 3813,
+    "artifact_expired": false
+  },
+  "returned_files": [
+    "ext2_phase1.json",
+    "ext2_sources.json",
+    "ext2_phase3.json",
+    "ext2_report.json"
+  ],
+  "ext2_report_summary": {
+    "reported_run_id": "EXT-002-FIXED",
+    "problem": "Erdos primitive sets solved theorem",
+    "total_cost_usd": 0.0219265,
+    "total_tokens": 3193,
+    "sources_verified": true,
+    "phase_1_cost_usd": 0.001906,
+    "phase_3_batch_cost_usd": 0.0200205,
+    "phase_1_tokens_in": 81,
+    "phase_1_tokens_out": 365,
+    "phase_3_tokens_in": 97,
+    "phase_3_tokens_out": 2650
+  },
+  "rtg_boundary_assessment": {
+    "real_artifact_returned": true,
+    "actual_cost_receipt_available": true,
+    "artifact_run_id_matches_rtg_case_id": false,
+    "artifact_report_claim_boundary_field_present": false,
+    "direct_rtg_001_ingestion_allowed_without_adapter": false,
+    "normalization_or_crosswalk_required": true
+  },
+  "claim_boundary": {
+    "artifact_returned": true,
+    "actual_solver_cost_receipt_detected": true,
+    "artifact_ingested_as_rtg_001": false,
+    "rtg_state_updated_from_real_artifact": false,
+    "autonomous_theorem_proving_claimed": false,
+    "final_correctness_claimed": false
+  }
+}
