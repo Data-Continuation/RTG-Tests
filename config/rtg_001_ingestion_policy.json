@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "policy_name": "rtg_001_returned_artifact_ingestion_policy",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "execution_repo": "GCAT-BCAT-Engine/workflows",
+  "run_id": "RTG-001",
+  "required_artifacts": [
+    "ext2_phase1.json",
+    "ext2_sources.json",
+    "ext2_phase3.json",
+    "ext2_report.json"
+  ],
+  "required_report_fields": [
+    "run_id",
+    "total_cost",
+    "total_tokens",
+    "phases",
+    "sources_verified",
+    "claim_boundary"
+  ],
+  "claim_boundary_requirements": {
+    "candidate_generation_only": true,
+    "autonomous_theorem_proving_claimed": false,
+    "final_correctness_claimed": false,
+    "human_or_formal_review_required": true
+  },
+  "state_transition": {
+    "from": "artifact_returned",
+    "to": "artifact_ingested"
+  },
+  "post_ingestion_next_state": "rtg_state_update_ready"
+}
