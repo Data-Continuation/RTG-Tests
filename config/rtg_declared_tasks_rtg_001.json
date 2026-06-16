@@ -38,6 +38,15 @@
         "python",
         "tests/test_rtg_001_next_instruction_selection.py"
       ]
+    },
+    {
+      "name": "rtg_001_review_packet_generation_tests",
+      "description": "Validate final review candidate packet generation and lifecycle cost tracking.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_001_review_packet_generation.py"
+      ]
     }
   ]
 }
