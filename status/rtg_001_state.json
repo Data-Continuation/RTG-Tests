@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "case_id": "RTG-001",
+  "source_repo": "Data-Continuation/RTG-Tests",
+  "execution_repo": "GCAT-BCAT-Engine/workflows",
+  "publisher_repo": "GCAT-BCAT-Engine/Publisher",
+  "current_state": "rtg_source_side_ready__awaiting_external_artifact",
+  "known_external_state": {
+    "handoff_installed_in_execution_repo": true,
+    "auto_dispatch_workflow_installed": true,
+    "auto_run_marker_committed": true,
+    "artifact_returned": false
+  },
+  "rtg_local_state": {
+    "dead_basis_doctrine_installed": true,
+    "handoff_contract_installed": true,
+    "ingestion_policy_installed": true,
+    "ingestion_module_installed": true,
+    "fixture_ingestion_ready": true,
+    "real_artifact_ingestion_pending": true
+  },
+  "claim_boundary": {
+    "local_contract_ready": true,
+    "external_solver_execution_claimed": false,
+    "artifact_returned": false,
+    "artifact_ingested_from_real_artifact": false,
+    "rtg_state_updated_from_real_artifact": false,
+    "autonomous_theorem_proving_claimed": false,
+    "final_correctness_claimed": false
+  }
+}
