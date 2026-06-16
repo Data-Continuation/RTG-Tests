@@ -20,6 +20,15 @@
         "python",
         "tests/test_rtg_001_returned_artifact_ingestion.py"
       ]
+    },
+    {
+      "name": "rtg_001_state_update_from_ingestion_tests",
+      "description": "Validate RTG state update from an artifact ingestion result while preserving claim and review boundaries.",
+      "enabled": true,
+      "command": [
+        "python",
+        "tests/test_rtg_001_state_update_from_ingestion.py"
+      ]
     }
   ]
 }
