@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "case_id": "RTG-001",
+  "policy_name": "rtg_001_returned_artifact_crosswalk_policy",
+  "source_candidate": "evidence/rtg_001/normalized_ingestion_candidate.json",
+  "allowed_original_run_ids": [
+    "EXT-002-FIXED"
+  ],
+  "target_case_id": "RTG-001",
+  "approval_rule": {
+    "preserve_original_run_id": true,
+    "preserve_cost_receipt": true,
+    "require_sources_verified": true,
+    "require_claim_boundary_wrapper": true,
+    "block_direct_ingestion_without_crosswalk": true
+  },
+  "claim_boundary_defaults": {
+    "candidate_generation_only": true,
+    "autonomous_theorem_proving_claimed": false,
+    "final_correctness_claimed": false,
+    "human_or_formal_review_required": true
+  },
+  "approved_transition": {
+    "from": "normalized_returned_artifact_ingestion_candidate",
+    "to": "crosswalk_approved_for_rtg_001_ingestion"
+  }
+}
