@@ -3,47 +3,13 @@
   "repo": "Data-Continuation/RTG-Tests",
   "case_id": "RTG-001",
   "tasks": [
-    {
-      "name": "rtg_to_gcat_bcat_workflows_connectivity_tests",
-      "description": "Validate RTG source-side handoff contract without falsely claiming external solver execution.",
-      "enabled": true,
-      "command": ["python", "tests/test_rtg_to_gcat_bcat_workflows_connectivity.py"]
-    },
-    {
-      "name": "rtg_001_returned_artifact_ingestion_tests",
-      "description": "Validate RTG returned-artifact ingestion using fixture or real ext2 artifact files.",
-      "enabled": true,
-      "command": ["python", "tests/test_rtg_001_returned_artifact_ingestion.py"]
-    },
-    {
-      "name": "rtg_001_state_update_from_ingestion_tests",
-      "description": "Validate RTG state update from an artifact ingestion result while preserving claim and review boundaries.",
-      "enabled": true,
-      "command": ["python", "tests/test_rtg_001_state_update_from_ingestion.py"]
-    },
-    {
-      "name": "rtg_001_next_instruction_selection_tests",
-      "description": "Validate governed next-instruction selection after RTG state update.",
-      "enabled": true,
-      "command": ["python", "tests/test_rtg_001_next_instruction_selection.py"]
-    },
-    {
-      "name": "rtg_001_review_packet_generation_tests",
-      "description": "Validate final review candidate packet generation and lifecycle cost tracking.",
-      "enabled": true,
-      "command": ["python", "tests/test_rtg_001_review_packet_generation.py"]
-    },
-    {
-      "name": "rtg_001_final_review_candidate_tests",
-      "description": "Validate final review candidate creation without claiming real artifact ingestion, final correctness, or autonomous proof.",
-      "enabled": true,
-      "command": ["python", "tests/test_rtg_001_final_review_candidate.py"]
-    },
-    {
-      "name": "rtg_001_real_evidence_normalization_tests",
-      "description": "Validate real workflow evidence, preserve the EXT-002-FIXED to RTG-001 mismatch, and create a normalized ingestion candidate without false state-update claims.",
-      "enabled": true,
-      "command": ["python", "tests/test_rtg_001_real_evidence_normalization.py"]
-    }
+    {"name":"rtg_to_gcat_bcat_workflows_connectivity_tests","description":"Validate RTG source-side handoff contract without falsely claiming external solver execution.","enabled":true,"command":["python","tests/test_rtg_to_gcat_bcat_workflows_connectivity.py"]},
+    {"name":"rtg_001_returned_artifact_ingestion_tests","description":"Validate RTG returned-artifact ingestion using fixture or real ext2 artifact files.","enabled":true,"command":["python","tests/test_rtg_001_returned_artifact_ingestion.py"]},
+    {"name":"rtg_001_state_update_from_ingestion_tests","description":"Validate RTG state update from an artifact ingestion result while preserving claim and review boundaries.","enabled":true,"command":["python","tests/test_rtg_001_state_update_from_ingestion.py"]},
+    {"name":"rtg_001_next_instruction_selection_tests","description":"Validate governed next-instruction selection after RTG state update.","enabled":true,"command":["python","tests/test_rtg_001_next_instruction_selection.py"]},
+    {"name":"rtg_001_review_packet_generation_tests","description":"Validate final review candidate packet generation and lifecycle cost tracking.","enabled":true,"command":["python","tests/test_rtg_001_review_packet_generation.py"]},
+    {"name":"rtg_001_final_review_candidate_tests","description":"Validate final review candidate creation without claiming real artifact ingestion, final correctness, or autonomous proof.","enabled":true,"command":["python","tests/test_rtg_001_final_review_candidate.py"]},
+    {"name":"rtg_001_real_evidence_normalization_tests","description":"Validate real workflow evidence, preserve the EXT-002-FIXED to RTG-001 mismatch, and create a normalized ingestion candidate without false state-update claims.","enabled":true,"command":["python","tests/test_rtg_001_real_evidence_normalization.py"]},
+    {"name":"rtg_001_crosswalk_approval_tests","description":"Validate explicit crosswalk approval and wrapped real artifact receipt creation before RTG-001 real ingestion.","enabled":true,"command":["python","tests/test_rtg_001_crosswalk_approval.py"]}
   ]
 }
