@@ -10,6 +10,7 @@
     {"name":"rtg_001_review_packet_generation_tests","description":"Validate final review candidate packet generation and lifecycle cost tracking.","enabled":true,"command":["python","tests/test_rtg_001_review_packet_generation.py"]},
     {"name":"rtg_001_final_review_candidate_tests","description":"Validate final review candidate creation without claiming real artifact ingestion, final correctness, or autonomous proof.","enabled":true,"command":["python","tests/test_rtg_001_final_review_candidate.py"]},
     {"name":"rtg_001_real_evidence_normalization_tests","description":"Validate real workflow evidence, preserve the EXT-002-FIXED to RTG-001 mismatch, and create a normalized ingestion candidate without false state-update claims.","enabled":true,"command":["python","tests/test_rtg_001_real_evidence_normalization.py"]},
-    {"name":"rtg_001_crosswalk_approval_tests","description":"Validate explicit crosswalk approval and wrapped real artifact receipt creation before RTG-001 real ingestion.","enabled":true,"command":["python","tests/test_rtg_001_crosswalk_approval.py"]}
+    {"name":"rtg_001_crosswalk_approval_tests","description":"Validate explicit crosswalk approval and wrapped real artifact receipt creation before RTG-001 real ingestion.","enabled":true,"command":["python","tests/test_rtg_001_crosswalk_approval.py"]},
+    {"name":"rtg_001_wrapped_real_artifact_ingestion_tests","description":"Validate real RTG-001 artifact ingestion through approved crosswalk while preserving original run id and cost receipt.","enabled":true,"command":["python","tests/test_rtg_001_wrapped_real_artifact_ingestion.py"]}
   ]
 }
