@@ -3,7 +3,7 @@
 **Repository:** `Data-Continuation/RTG-Tests`  
 **Formalism:** Relational / Relative Transition Geometry (RTG)  
 **Updated:** 2026-07-27  
-**Status:** Active formalization and executable proof-harness expansion
+**Status:** Active executable proof-harness expansion on `rtg-multi-trajectory-executable`
 
 ## Current Source of Truth
 
@@ -27,21 +27,39 @@ Encode and test the multi-trajectory RTG model in which:
 
 See `docs/MULTI_TRAJECTORY_RELATIONAL_TRANSITION_GEOMETRY.md`.
 
+## Completed on Active Branch
+
+1. Candidate-transition field JSON Schema.
+2. Canonical fixture containing active, supporting, latent, and discardable transitions.
+3. Reachable-state frontier and geometry-deformation representation.
+4. Significance-threshold and latent-promotion tests.
+5. Topology-driven micro-node demand test.
+6. Transition-block relational-density operator.
+7. Transition-block formation and dissolution tests.
+8. Significant-state constellation activation operator and test.
+9. Decision-preserving substrate-compression signature and tests.
+10. Deterministic SHA-256 deformation receipt operator and replay test.
+
+## Active Pull Request
+
+- Draft PR #1: `Add executable multi-trajectory RTG field model`
+- Branch: `rtg-multi-trajectory-executable`
+- Formalism posture remains draft/provisional until execution verification is green.
+
 ## Immediate Build Tasks
 
-1. Add canonical schemas for candidate-transition fields, significance classes, transition constellations, reachable-state frontiers, and geometry deformation.
-2. Add fixtures for active, supporting, latent, and discardable transition classes.
-3. Add tests showing that low-immediate-significance transitions can become significant after contextual deformation.
-4. Add micro-node allocation tests driven by topology, concurrency, uncertainty, coupling, and authority regimes.
-5. Add transition-block formation and dissolution tests based on relational density and closure conditions.
-6. Add decision-preserving compression tests for the insignificant-state substrate.
-7. Add multi-trajectory simulations and deterministic receipts.
-8. Integrate with `Admissible-Existence/TT` as the local discrete execution and admissibility surface.
-9. Mirror public-facing definitions and status into `StegVerse-Labs/Site` after executable validation.
+1. Register new tests in the canonical dispatcher and declared-task registry.
+2. Add an executable multi-step trajectory simulation using the operators.
+3. Emit a JSONL receipt chain for the simulation.
+4. Add negative cases for false constellation activation and destructive compression.
+5. Add Transition Table request/result fixtures for bounded local resolution.
+6. Integrate with `Admissible-Existence/TT` as the local discrete execution and admissibility surface.
+7. Add validation-factory profiles in `Admissible-Existence/ae-validation-factory`.
+8. Mirror public-facing definitions and status into `StegVerse-Labs/Site` after executable validation.
 
 ## Remaining Modules / Destinations
 
-- `Data-Continuation/RTG-Tests`: schemas, fixtures, validators, simulations, receipts, workflows.
+- `Data-Continuation/RTG-Tests`: dispatcher registration, simulation, JSONL receipt chain, negative fixtures, TT adapter, workflows.
 - `Admissible-Existence/AE`: canonical admissible-existence interpretation of RTG state fields.
 - `Admissible-Existence/ae-validation-factory`: validation profiles and cross-formalism cases.
 - `Admissible-Existence/TT`: transition-table resolution interface for bounded local decisions.
