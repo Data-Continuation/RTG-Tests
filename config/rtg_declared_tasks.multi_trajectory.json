@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.2.0",
+  "repo": "Data-Continuation/RTG-Tests",
+  "dispatcher": "rtg-repo-dispatcher",
+  "posture": "repo-local-only",
+  "namespace": "multi-trajectory",
+  "tasks": [
+    {
+      "name": "multi_trajectory_field_tests",
+      "description": "Validate candidate transition fields, significance classes, reachable-state frontiers, deformation, and topology-driven micro-node demand.",
+      "enabled": true,
+      "command": ["python", "tests/test_multi_trajectory_field.py"]
+    },
+    {
+      "name": "multi_trajectory_operator_tests",
+      "description": "Validate block closure, constellation activation, substrate compression, and deterministic deformation receipts.",
+      "enabled": true,
+      "command": ["python", "tests/test_multi_trajectory_operators.py"]
+    },
+    {
+      "name": "rtg_tt_contract_tests",
+      "description": "Validate the bounded Relational Transition Geometry to Transition Table request contract.",
+      "enabled": true,
+      "command": ["python", "tests/test_rtg_tt_contract.py"]
+    },
+    {
+      "name": "rtg_tt_result_contract_tests",
+      "description": "Validate Transition Table result correlation, authority/evidence reference closure, and authorization consistency.",
+      "enabled": true,
+      "command": ["python", "tests/test_rtg_tt_result_contract.py"]
+    },
+    {
+      "name": "multi_trajectory_receipt_chain_tests",
+      "description": "Validate deterministic chained JSONL receipts for multi-trajectory geometry deformation.",
+      "enabled": true,
+      "command": ["python", "tests/test_multi_trajectory_receipt_chain.py"]
+    },
+    {
+      "name": "multi_trajectory_simulation_tests",
+      "description": "Validate the canonical latent-to-active trajectory simulation, block formation, TT handoff, and persisted receipt chain.",
+      "enabled": true,
+      "command": ["python", "tests/test_multi_trajectory_simulation.py"]
+    }
+  ]
+}

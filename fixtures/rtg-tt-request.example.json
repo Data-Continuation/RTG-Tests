@@ -1,0 +1,20 @@
+{
+  "contract_version": "rtg-tt-v0.1",
+  "request_id": "rtgtt-0001",
+  "transition_block_id": "block-local-route-17",
+  "candidate_transition_id": "tau-commit-route-b",
+  "current_state_ref": "state://route/pending",
+  "proposed_state_ref": "state://route/committed-b",
+  "significance_class": "active",
+  "significance_score": 0.86,
+  "contextual_threshold": 0.65,
+  "authority_refs": ["authority://operator/delegation-42"],
+  "evidence_refs": ["evidence://sensor/window-17", "evidence://policy/v3"],
+  "reachable_state_effects": {
+    "opens": ["state://route/execution-b"],
+    "closes": ["state://route/execution-a"],
+    "deformation_magnitude": 0.78,
+    "irreversible": true
+  },
+  "requested_resolution": "commit"
+}
