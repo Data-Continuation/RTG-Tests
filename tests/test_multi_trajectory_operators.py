@@ -4,8 +4,13 @@
 from __future__ import annotations
 
 import json
+import sys
 import unittest
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from engine.multi_trajectory_ops import (
     compression_is_decision_preserving,
@@ -15,8 +20,6 @@ from engine.multi_trajectory_ops import (
     transition_block_state,
 )
 
-
-ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / "fixtures" / "multi-trajectory-operators.example.json"
 
 
