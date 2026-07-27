@@ -39,30 +39,37 @@ See `docs/MULTI_TRAJECTORY_RELATIONAL_TRANSITION_GEOMETRY.md`.
 8. Significant-state constellation activation operator and test.
 9. Decision-preserving substrate-compression signature and tests.
 10. Deterministic SHA-256 deformation receipt operator and replay test.
+11. Governed extension registry for multi-trajectory tasks.
+12. Dispatcher support for canonical plus namespaced extension registries.
+13. Bounded RTG-to-Transition-Table request schema and fixture.
+14. Contract test preventing RTG from pre-deciding TT admissibility or execution.
+15. Deterministic chained JSONL receipt operator.
+16. Receipt-chain replay, tamper, and ordering tests.
+17. Baseline dispatcher workflow run 180 completed successfully before extension registration.
 
 ## Active Pull Request
 
 - Draft PR #1: `Add executable multi-trajectory RTG field model`
 - Branch: `rtg-multi-trajectory-executable`
-- Formalism posture remains draft/provisional until execution verification is green.
+- Formalism posture remains draft/provisional until the latest extended dispatcher run is green.
 
 ## Immediate Build Tasks
 
-1. Register new tests in the canonical dispatcher and declared-task registry.
+1. Verify all extension-registry tasks through the RTG Repo Dispatcher workflow.
 2. Add an executable multi-step trajectory simulation using the operators.
-3. Emit a JSONL receipt chain for the simulation.
+3. Persist a canonical example JSONL receipt chain for that simulation.
 4. Add negative cases for false constellation activation and destructive compression.
-5. Add Transition Table request/result fixtures for bounded local resolution.
-6. Integrate with `Admissible-Existence/TT` as the local discrete execution and admissibility surface.
+5. Add Transition Table result schema and bounded request/result correlation tests.
+6. Integrate the contract into `Admissible-Existence/TT` as the local discrete execution and admissibility surface.
 7. Add validation-factory profiles in `Admissible-Existence/ae-validation-factory`.
 8. Mirror public-facing definitions and status into `StegVerse-Labs/Site` after executable validation.
 
 ## Remaining Modules / Destinations
 
-- `Data-Continuation/RTG-Tests`: dispatcher registration, simulation, JSONL receipt chain, negative fixtures, TT adapter, workflows.
+- `Data-Continuation/RTG-Tests`: simulation, canonical JSONL artifact, negative fixtures, TT result adapter, workflow verification.
 - `Admissible-Existence/AE`: canonical admissible-existence interpretation of RTG state fields.
 - `Admissible-Existence/ae-validation-factory`: validation profiles and cross-formalism cases.
-- `Admissible-Existence/TT`: transition-table resolution interface for bounded local decisions.
+- `Admissible-Existence/TT`: transition-table request/result resolution interface for bounded local decisions.
 - `StegVerse-Labs/Site`: public visualization and explanatory model.
 - `GCAT-BCAT-Engine/Publisher`: publication packaging when formalism reaches release posture.
 - `admissibility-wiki`, `stegguardian-wiki`: terminology and governance implications after validation.
