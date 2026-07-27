@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "repo": "Data-Continuation/RTG-Tests",
   "dispatcher": "rtg-repo-dispatcher",
   "posture": "repo-local-only",
@@ -22,6 +22,12 @@
       "description": "Validate the bounded Relational Transition Geometry to Transition Table request contract.",
       "enabled": true,
       "command": ["python", "tests/test_rtg_tt_contract.py"]
+    },
+    {
+      "name": "rtg_tt_result_contract_tests",
+      "description": "Validate Transition Table result correlation, authority/evidence reference closure, and authorization consistency.",
+      "enabled": true,
+      "command": ["python", "tests/test_rtg_tt_result_contract.py"]
     },
     {
       "name": "multi_trajectory_receipt_chain_tests",
