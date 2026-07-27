@@ -1,0 +1,56 @@
+{
+  "receipt_id": "RTG-EXP-003-DATASET-001",
+  "experiment_id": "RTG-EXP-003",
+  "selection_state": "LOCKED_BEFORE_ANALYSIS",
+  "selected_at_utc": "2026-07-27T00:00:00Z",
+  "source_class": "quantum_teleportation",
+  "source": {
+    "title": "Data of Quantum Teleportation between Remote Qubit Memories with Only a Single Photon as a Resource",
+    "publisher": "Zenodo",
+    "record_doi": "10.5281/zenodo.4953982",
+    "related_article_doi": "10.1103/PhysRevLett.126.130502",
+    "version": "v1",
+    "published": "2021-06-15",
+    "license": "CC-BY-4.0"
+  },
+  "files": [
+    {"name": "Fig2_Data.txt", "bytes": 940, "md5": "035d952f31d92aaea7659f2fda9539f6"},
+    {"name": "Fig2_Description.txt", "bytes": 290, "md5": "25215836659697656859943ca2c849ef"},
+    {"name": "Fig3_Data.txt", "bytes": 889, "md5": "046397e8455dfb0ad999ce547771e92c"},
+    {"name": "Fig3_Description.txt", "bytes": 180, "md5": "3eddd5e62d1302a3c68d76a22f9cf930"},
+    {"name": "Fig4_Data.txt", "bytes": 440, "md5": "4c89bbe317b88810a5c1e54935429a23"},
+    {"name": "Fig4_Description.txt", "bytes": 171, "md5": "aa774a0b8af7abf4ea87169a2ba73308"}
+  ],
+  "selection_rationale": [
+    "The record is an openly licensed experimental quantum-teleportation dataset.",
+    "It concerns teleportation between remote qubit memories and therefore matches a preregistered source class.",
+    "It is compact enough for transparent independent reproduction.",
+    "Zenodo publishes immutable file-level checksums for integrity verification.",
+    "Selection was based on source class, openness, integrity metadata, and reproducibility rather than observed RTG performance."
+  ],
+  "split": {
+    "method": "sha256-row-assignment-v1",
+    "canonical_row_key": "record_doi + LF + file_name + LF + zero_based_data_row_index + LF + canonical_row_text",
+    "digest": "sha256",
+    "bucket_rule": "unsigned_big_endian(first_8_digest_bytes) mod 10",
+    "calibration_buckets": [0, 1, 2, 3, 4, 5],
+    "validation_buckets": [6, 7],
+    "locked_test_buckets": [8, 9],
+    "target_proportions": {"calibration": 0.6, "validation": 0.2, "locked_test": 0.2},
+    "stratification": "none",
+    "outcome_dependent_reassignment_allowed": false
+  },
+  "analysis_lock": {
+    "data_downloaded_before_receipt": false,
+    "outcomes_inspected_before_selection": false,
+    "rtg_parameters_may_use_locked_test": false,
+    "baseline_parameters_may_use_locked_test": false,
+    "locked_test_release_condition": "all mappings, preprocessing, parameters, and baseline implementations committed"
+  },
+  "claims": {
+    "physical_validation_claim": false,
+    "instantaneous_transport_claim": false,
+    "wormhole_claim": false,
+    "faster_than_light_claim": false
+  }
+}
