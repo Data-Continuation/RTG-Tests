@@ -1,0 +1,42 @@
+{
+  "block": {
+    "nodes": ["tau-a", "tau-b", "tau-c", "tau-d"],
+    "formation_threshold": 0.5,
+    "current_coupling_minimum": 0.25,
+    "couplings": [
+      {"source": "tau-a", "target": "tau-b"},
+      {"source": "tau-a", "target": "tau-c"},
+      {"source": "tau-b", "target": "tau-c"},
+      {"source": "tau-c", "target": "tau-d"}
+    ]
+  },
+  "constellation": {
+    "member_scores": [0.31, 0.29, 0.28],
+    "member_weights": [0.8, 0.8, 0.8],
+    "threshold": 0.65
+  },
+  "compression": {
+    "original_decisions": [
+      {"transition_id": "tau-a", "result": "REVIEW", "authority": "bounded"},
+      {"transition_id": "tau-c", "result": "DENY", "authority": "absent"}
+    ],
+    "preserving_compressed_decisions": [
+      {"transition_id": "tau-a", "result": "REVIEW", "authority": "bounded"},
+      {"transition_id": "tau-c", "result": "DENY", "authority": "absent"}
+    ],
+    "destructive_compressed_decisions": [
+      {"transition_id": "tau-a", "result": "ALLOW", "authority": "bounded"},
+      {"transition_id": "tau-c", "result": "DENY", "authority": "absent"}
+    ]
+  },
+  "receipt_payload": {
+    "transition_block_id": "block-001",
+    "constellation_id": "constellation-001",
+    "pre_geometry_hash": "geometry-before",
+    "action": "commit-tau-a",
+    "opened_states": ["state-approved"],
+    "closed_states": ["state-uncommitted"],
+    "authority_consumed": ["delegation-7"],
+    "evidence_frozen": ["evidence-19"]
+  }
+}
