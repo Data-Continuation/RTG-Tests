@@ -1,0 +1,24 @@
+name: RTG Experiment 002
+
+on:
+  pull_request:
+    paths:
+      - "docs/EXPERIMENT_002_DISTRIBUTED_HEARTBEAT_SURFACE.md"
+      - "fixtures/experiment-002-distributed-heartbeat-surface.json"
+      - "tests/test_experiment_002_distributed_heartbeat_surface.py"
+      - ".github/workflows/experiment-002-distributed-heartbeat.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run distributed heartbeat-surface experiment
+        run: python tests/test_experiment_002_distributed_heartbeat_surface.py
