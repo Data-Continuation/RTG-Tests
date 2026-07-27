@@ -1,0 +1,62 @@
+{
+  "mapping_id": "RTG-EXP-003-MAP-001",
+  "experiment_id": "RTG-EXP-003",
+  "state": "LOCKED_BEFORE_MODEL_FIT",
+  "source_record_doi": "10.5281/zenodo.4953982",
+  "allowed_partitions": ["calibration", "validation"],
+  "locked_test_access": false,
+  "source_file_roles": {
+    "Fig2_Data.txt": "teleportation-performance series",
+    "Fig3_Data.txt": "state-transfer performance series",
+    "Fig4_Data.txt": "remote-memory correlation series",
+    "Fig2_Description.txt": "schema and experimental context only",
+    "Fig3_Description.txt": "schema and experimental context only",
+    "Fig4_Description.txt": "schema and experimental context only"
+  },
+  "rtg_observables": [
+    {"name": "phase_differential", "symbol": "delta_phi", "source_rule": "normalized control-or-phase coordinate when explicitly present; otherwise missing", "range": [0.0, 1.0]},
+    {"name": "cadence_differential", "symbol": "delta_f", "source_rule": "normalized inverse spacing of ordered acquisition coordinates when available; otherwise missing", "range": [0.0, 1.0]},
+    {"name": "authority_differential", "symbol": "delta_a", "source_rule": "fixed zero for a single governed experimental protocol unless a protocol-class change is explicitly encoded", "range": [0.0, 1.0]},
+    {"name": "lineage_differential", "symbol": "delta_lambda", "source_rule": "zero within a published trace and one across non-composable source lineages; no inferred intermediate values", "range": [0.0, 1.0]},
+    {"name": "route_differential", "symbol": "delta_r", "source_rule": "normalized experimental path or channel-setting difference when explicitly present; otherwise missing", "range": [0.0, 1.0]},
+    {"name": "destination_differential", "symbol": "delta_d", "source_rule": "one minus a preregistered normalized transfer-quality observable; no test-derived scaling", "range": [0.0, 1.0]},
+    {"name": "necessity", "symbol": "N", "source_rule": "binary protocol-required indicator derived from experimental design, not outcome magnitude", "range": [0.0, 1.0]},
+    {"name": "weighted_mismatch", "symbol": "M", "source_rule": "sum_i w_i * delta_i^2 using weights fixed before locked-test release", "range": [0.0, 1.0]},
+    {"name": "closure", "symbol": "C", "source_rule": "binary record-completion indicator based on presence of the required experimental row fields", "range": [0.0, 1.0]},
+    {"name": "recoverability", "symbol": "R", "source_rule": "binary ability to reconstruct the canonical row and source lineage from the sealed manifest", "range": [0.0, 1.0]}
+  ],
+  "normalization": {
+    "method": "calibration-min-max-with-predeclared-degenerate-rule",
+    "fit_partition": "calibration",
+    "validation_clipping": [0.0, 1.0],
+    "locked_test_clipping": [0.0, 1.0],
+    "degenerate_column_rule": "map all non-missing values to zero",
+    "outcome_dependent_feature_creation": false
+  },
+  "missing_data": {
+    "numeric": "retain missing marker; do not mean-impute",
+    "categorical": "retain explicit MISSING category",
+    "rtg_activation": "a row with a missing required observable is INDETERMINATE, not ALLOW or DENY",
+    "row_deletion": "forbidden except exact duplicate canonical rows",
+    "test-informed_rule_changes": false
+  },
+  "baseline_contracts": [
+    {"name": "constant_mean", "class": "intercept-only", "fit": "calibration only"},
+    {"name": "ordinary_least_squares", "class": "linear", "fit": "calibration only"},
+    {"name": "ridge_regression", "class": "regularized-linear", "fit": "calibration with validation-selected lambda"},
+    {"name": "isotonic_regression", "class": "monotone-nonlinear", "fit": "calibration only"},
+    {"name": "random_forest", "class": "nonlinear-ensemble", "fit": "calibration with preregistered bounded grid selected on validation"}
+  ],
+  "scoring": {
+    "primary": "mean_absolute_error",
+    "secondary": ["root_mean_squared_error", "spearman_rank_correlation"],
+    "advancement_rule": "RTG must improve validation MAE over every baseline by at least 0.01 absolute without worse closure or recoverability",
+    "stop_rule": "stop if mapping coverage is below 0.70 or any baseline class cannot be implemented from published fields"
+  },
+  "claims": {
+    "physical_validation_claim": false,
+    "instantaneous_transport_claim": false,
+    "wormhole_claim": false,
+    "faster_than_light_claim": false
+  }
+}
