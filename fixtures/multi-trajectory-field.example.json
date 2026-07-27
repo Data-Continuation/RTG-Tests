@@ -1,0 +1,18 @@
+{
+  "field_id": "rtg-field-0001",
+  "observed_at": "2026-07-27T03:15:00Z",
+  "entity_id": "sv-ai-entity-001",
+  "context": {"risk": 0.62, "uncertainty": 0.48, "capacity": 12, "authority_complexity": 3, "significance_threshold": 0.55},
+  "candidate_transitions": [
+    {"transition_id": "tau-active-1", "class": "active", "score": 0.82, "score_components": {"causal": 0.9, "decision": 0.9, "authority": 0.8, "identity": 0.5, "risk": 0.9, "latent": 0.6}, "coupled_transition_ids": ["tau-supporting-1", "tau-latent-1"], "authority_regime": "delegated-execution", "reversible": false, "retention_reason": "Immediate commit-time admissibility review required", "supersedes": null},
+    {"transition_id": "tau-supporting-1", "class": "supporting", "score": 0.47, "score_components": {"causal": 0.5, "decision": 0.4, "authority": 0.2, "identity": 0.3, "risk": 0.4, "latent": 0.7}, "coupled_transition_ids": ["tau-active-1"], "authority_regime": "observation-only", "reversible": true, "retention_reason": "Required to interpret tau-active-1", "supersedes": null},
+    {"transition_id": "tau-latent-1", "class": "latent", "score": 0.41, "score_components": {"causal": 0.3, "decision": 0.3, "authority": 0.1, "identity": 0.2, "risk": 0.3, "latent": 0.95}, "coupled_transition_ids": ["tau-active-1"], "authority_regime": "none", "reversible": true, "retention_reason": "Could become active if action closes state-safe-2", "supersedes": null},
+    {"transition_id": "tau-discardable-1", "class": "discardable", "score": 0.08, "score_components": {"causal": 0.1, "decision": 0.0, "authority": 0.0, "identity": 0.0, "risk": 0.1, "latent": 0.1}, "coupled_transition_ids": [], "authority_regime": "none", "reversible": true, "retention_reason": "No material effect on current or foreseeable decision frontier", "supersedes": null}
+  ],
+  "reachable_state_frontier": [
+    {"state_id": "state-safe-1", "probability": 0.52, "reachable_via": ["tau-active-1"]},
+    {"state_id": "state-safe-2", "probability": 0.31, "reachable_via": ["tau-supporting-1", "tau-active-1"]},
+    {"state_id": "state-risk-1", "probability": 0.17, "reachable_via": ["tau-latent-1"]}
+  ],
+  "geometry_deformation": {"action_id": "commit-tau-active-1", "closed_state_ids": ["state-safe-2"], "opened_state_ids": ["state-risk-2"], "authority_changes": ["delegated-execution consumed"], "evidence_changes": ["pre-commit evidence frozen"], "magnitude": 0.73}
+}
