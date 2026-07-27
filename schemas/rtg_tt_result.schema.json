@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://stegverse.org/schemas/rtg_tt_result.schema.json",
+  "title": "RTG to Transition Table Result Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "request_id",
+    "result_id",
+    "candidate_transition_id",
+    "resolution",
+    "admissibility",
+    "commit_authorized",
+    "execution_authorized",
+    "authority_refs_evaluated",
+    "evidence_refs_evaluated",
+    "result_receipt_hash"
+  ],
+  "properties": {
+    "contract_version": {"const": "rtg-tt-v0.1"},
+    "request_id": {"type": "string", "minLength": 1},
+    "result_id": {"type": "string", "minLength": 1},
+    "candidate_transition_id": {"type": "string", "minLength": 1},
+    "resolution": {"enum": ["ALLOW", "DENY", "DEFER", "REPLAY"]},
+    "admissibility": {"enum": ["admissible", "inadmissible", "undetermined", "replay_required"]},
+    "commit_authorized": {"type": "boolean"},
+    "execution_authorized": {"type": "boolean"},
+    "authority_refs_evaluated": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "evidence_refs_evaluated": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "policy_refs_evaluated": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "reason_codes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "committed_state_ref": {"type": ["string", "null"]},
+    "execution_ref": {"type": ["string", "null"]},
+    "result_receipt_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"resolution": {"const": "ALLOW"}}},
+      "then": {
+        "properties": {
+          "admissibility": {"const": "admissible"},
+          "commit_authorized": {"const": true}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"resolution": {"const": "DENY"}}},
+      "then": {
+        "properties": {
+          "admissibility": {"const": "inadmissible"},
+          "commit_authorized": {"const": false},
+          "execution_authorized": {"const": false}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"execution_authorized": {"const": true}}},
+      "then": {
+        "properties": {
+          "commit_authorized": {"const": true},
+          "admissibility": {"const": "admissible"}
+        }
+      }
+    }
+  ]
+}
