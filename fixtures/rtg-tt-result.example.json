@@ -1,0 +1,17 @@
+{
+  "contract_version": "rtg-tt-v0.1",
+  "request_id": "rtgtt-0001",
+  "result_id": "tt-result-0001",
+  "candidate_transition_id": "tau-commit-route-b",
+  "resolution": "ALLOW",
+  "admissibility": "admissible",
+  "commit_authorized": true,
+  "execution_authorized": false,
+  "authority_refs_evaluated": ["authority://operator/delegation-42"],
+  "evidence_refs_evaluated": ["evidence://sensor/window-17", "evidence://policy/v3"],
+  "policy_refs_evaluated": ["policy://route/v3"],
+  "reason_codes": ["authority_valid", "evidence_sufficient", "commit_admissible"],
+  "committed_state_ref": "state://route/committed-b",
+  "execution_ref": null,
+  "result_receipt_hash": "1d5d7bd830981fbb2f7f3f82d2e6c9f44186fa49fd75f9e522b14e734fdf8d8b"
+}
