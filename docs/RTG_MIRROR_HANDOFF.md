@@ -3,7 +3,7 @@
 **Repository:** `Data-Continuation/RTG-Tests`  
 **Formalism:** Relational / Relative Transition Geometry (RTG)  
 **Updated:** 2026-07-27  
-**Status:** Active executable proof-harness expansion on `rtg-multi-trajectory-executable`
+**Status:** Verified executable proof-harness expansion on `rtg-multi-trajectory-executable`
 
 ## Current Source of Truth
 
@@ -45,34 +45,41 @@ See `docs/MULTI_TRAJECTORY_RELATIONAL_TRANSITION_GEOMETRY.md`.
 14. Contract test preventing RTG from pre-deciding TT admissibility or execution.
 15. Deterministic chained JSONL receipt operator.
 16. Receipt-chain replay, tamper, and ordering tests.
-17. Baseline dispatcher workflow run 180 completed successfully before extension registration.
+17. Executable latent-to-active trajectory simulation.
+18. Persisted canonical JSONL simulation receipt chain.
+19. Transition Table result schema and correlated result fixture.
+20. Result correlation tests for request identity, candidate identity, authority/evidence closure, and authorization consistency.
+21. Negative cases for mismatched requests, unknown evidence, execution without commit, and contradictory DENY outcomes.
+22. RTG Repo Dispatcher run 198 completed successfully on branch head `22b2b6885581b8c476387f4c51fc97da49120d67`.
+23. Reciprocal adapter opened in `Admissible-Existence/TT` PR #1.
+24. TT Admissible Resolution Validation run 3 and TT Validation run 204 completed successfully.
 
-## Active Pull Request
+## Active Pull Requests
 
-- Draft PR #1: `Add executable multi-trajectory RTG field model`
-- Branch: `rtg-multi-trajectory-executable`
-- Formalism posture remains draft/provisional until the latest extended dispatcher run is green.
+- `Data-Continuation/RTG-Tests` PR #1: `Add executable multi-trajectory RTG field model`
+- `Admissible-Existence/TT` PR #1: `Add bounded RTG request/result adapter`
+
+Both branches are verified and may move from draft into review posture. The formalism remains provisional; verification establishes executable consistency, not mathematical completeness.
 
 ## Immediate Build Tasks
 
-1. Verify all extension-registry tasks through the RTG Repo Dispatcher workflow.
-2. Add an executable multi-step trajectory simulation using the operators.
-3. Persist a canonical example JSONL receipt chain for that simulation.
-4. Add negative cases for false constellation activation and destructive compression.
-5. Add Transition Table result schema and bounded request/result correlation tests.
-6. Integrate the contract into `Admissible-Existence/TT` as the local discrete execution and admissibility surface.
-7. Add validation-factory profiles in `Admissible-Existence/ae-validation-factory`.
-8. Mirror public-facing definitions and status into `StegVerse-Labs/Site` after executable validation.
+1. Add cross-repository receipt verification using exported RTG request and TT result artifacts.
+2. Add negative fixtures for false constellation activation and destructive substrate compression as durable files.
+3. Add validation-factory profiles in `Admissible-Existence/ae-validation-factory`.
+4. Add the AE interpretation connecting geometric minimum-node declarations to the Admissible Resolution Function.
+5. Generate propagation bundle updates in TT.
+6. Mirror public-facing definitions and verified status into `StegVerse-Labs/Site` and `StegVerse-Labs/admissibility-wiki`.
+7. Evaluate release/tag posture after cross-repository verification and propagation are green.
 
 ## Remaining Modules / Destinations
 
-- `Data-Continuation/RTG-Tests`: simulation, canonical JSONL artifact, negative fixtures, TT result adapter, workflow verification.
+- `Data-Continuation/RTG-Tests`: cross-repository receipt verification, durable negative fixtures, release snapshot.
 - `Admissible-Existence/AE`: canonical admissible-existence interpretation of RTG state fields.
 - `Admissible-Existence/ae-validation-factory`: validation profiles and cross-formalism cases.
-- `Admissible-Existence/TT`: transition-table request/result resolution interface for bounded local decisions.
+- `Admissible-Existence/TT`: workflow registration, propagation bundle updates, cross-repository receipt verification.
 - `StegVerse-Labs/Site`: public visualization and explanatory model.
 - `GCAT-BCAT-Engine/Publisher`: publication packaging when formalism reaches release posture.
-- `admissibility-wiki`, `stegguardian-wiki`: terminology and governance implications after validation.
+- `StegVerse-Labs/admissibility-wiki`, `stegguardian-wiki`: terminology and governance implications after validation.
 
 ## Maturity Rule
 
@@ -88,3 +95,5 @@ A release/tag candidate requires:
 - documented non-claims;
 - cross-repository integration verification;
 - confirmed updates to Site, Publisher, admissibility-wiki, and stegguardian-wiki.
+
+The complete thread is ready for archiving; this handoff and the two active PRs contain the full state needed to continue.
