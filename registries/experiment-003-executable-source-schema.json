@@ -1,0 +1,85 @@
+{
+  "schema_id": "RTG-EXP-003-SOURCE-SCHEMA-001",
+  "experiment_id": "RTG-EXP-003",
+  "state": "LOCKED_BEFORE_OUTCOME_STATISTICS_OR_MODEL_FIT",
+  "source_record_doi": "10.5281/zenodo.4953982",
+  "evidence": {
+    "publisher_description_extraction_id": "RTG-EXP-003-PUBLISHER-SCHEMA-EXTRACTION-001",
+    "publisher_description_artifact_sha256": "52e8bcd99c3c2c6dba64bf4691fe605bb13ede0b724e6078f71ceaf2d0dee0c1",
+    "sealed_manifest_id": "RTG-EXP-003-SEALED-SPLIT-001",
+    "derivation_partitions": ["calibration", "validation"],
+    "locked_test_opened": false
+  },
+  "analysis_units": [
+    {
+      "unit_id": "fig3_experimental_fidelity",
+      "source_file": "Fig3_Data.txt",
+      "include": true,
+      "publisher_semantics": "teleportation fidelity as a function of mean photon number",
+      "parser": {
+        "coordinate_record_prefix": "nbar =",
+        "target_record_prefix": "expfidelity =",
+        "coordinate_error_record_prefix": "errornbar=",
+        "target_error_record_prefix": "errorsexpfidelity =",
+        "container": "brace_delimited_numeric_array",
+        "alignment": "same_zero_based_element_index",
+        "required_equal_lengths": true
+      },
+      "columns": [
+        {"name": "mean_photon_number", "role": "predictor", "unit": "dimensionless", "source": "nbar", "transform": "identity"},
+        {"name": "teleportation_fidelity", "role": "prediction_target", "unit": "proportion", "source": "expfidelity_percent", "transform": "divide_by_100"},
+        {"name": "mean_photon_number_error", "role": "measurement_uncertainty", "unit": "dimensionless", "source": "errornbar", "transform": "identity"},
+        {"name": "teleportation_fidelity_error", "role": "target_uncertainty", "unit": "proportion", "source": "errorsexpfidelity_percent", "transform": "divide_by_100"}
+      ],
+      "excluded_records": ["theorynbar", "theoryfidelity"],
+      "exclusion_reason": "theoretical curve is not an independently observed target and may not be used as training data"
+    },
+    {
+      "unit_id": "fig4_experimental_fidelity",
+      "source_file": "Fig4_Data.txt",
+      "include": true,
+      "publisher_semantics": "teleportation fidelity as a function of delay tau",
+      "parser": {
+        "experimental_header_prefix": "Data points, {tau, teleportation fidelity in percent}",
+        "record_container": "brace_delimited_pairs",
+        "pair_order": ["delay_tau", "teleportation_fidelity_with_optional_plus_minus_error"],
+        "uncertainty_syntax": "+-",
+        "required_pair_arity": 2
+      },
+      "columns": [
+        {"name": "delay_tau", "role": "predictor", "unit": "publisher_unspecified_delay_unit", "source": "pair_element_0", "transform": "identity"},
+        {"name": "teleportation_fidelity", "role": "prediction_target", "unit": "proportion", "source": "pair_element_1_central_percent", "transform": "divide_by_100"},
+        {"name": "teleportation_fidelity_error", "role": "target_uncertainty", "unit": "proportion", "source": "pair_element_1_plus_minus_percent", "transform": "divide_by_100"}
+      ],
+      "excluded_records": ["Simulated blue theory curve"],
+      "exclusion_reason": "simulated curve is not an independently observed target and may not be used as training data"
+    },
+    {
+      "unit_id": "fig2_density_matrices_and_summary_fidelities",
+      "source_file": "Fig2_Data.txt",
+      "include": false,
+      "publisher_semantics": "heterogeneous density matrices and summary teleportation fidelities",
+      "exclusion_reason": "non-tabular mixed object types cannot be converted into the preregistered scalar prediction task without a new preregistration"
+    }
+  ],
+  "global_rules": {
+    "prediction_target": "teleportation_fidelity",
+    "target_range": [0.0, 1.0],
+    "missing_markers": ["", "NA", "NaN", "null"],
+    "numeric_locale": "decimal_point",
+    "duplicate_rule": "reject exact duplicate predictor-target-source tuples after preserving one canonical record",
+    "normalization": "fit predictor min and max on calibration records only; clip validation to [0,1]",
+    "partition_assignment_unit": "publisher source record before array expansion",
+    "expanded_elements_inherit_source_record_partition": true,
+    "validation_may_select_parameters": false,
+    "locked_test_access": false,
+    "outcome_statistics_computed": false,
+    "model_fit_performed": false
+  },
+  "claim_boundaries": {
+    "physical_validation_claim": false,
+    "instantaneous_transport_claim": false,
+    "wormhole_claim": false,
+    "faster_than_light_claim": false
+  }
+}
