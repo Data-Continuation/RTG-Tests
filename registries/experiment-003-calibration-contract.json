@@ -1,0 +1,45 @@
+{
+  "contract_id": "RTG-EXP-003-CALIBRATION-V1",
+  "experiment_id": "RTG-EXP-003",
+  "state": "LOCKED_BEFORE_MODEL_FIT",
+  "allowed_partitions": ["calibration", "validation"],
+  "forbidden_partitions": ["locked_test"],
+  "primary_metric": "mean_absolute_error",
+  "secondary_metrics": ["closure_rate", "recoverability_rate", "indeterminate_rate"],
+  "minimum_mapping_coverage": 0.70,
+  "minimum_absolute_mae_improvement": 0.01,
+  "candidate": {
+    "name": "rtg_relational_transition_candidate",
+    "fit_partition": "calibration",
+    "evaluation_partition": "validation",
+    "normalization_fit_partition": "calibration",
+    "may_use_validation_for_parameter_selection": false,
+    "may_use_locked_test": false
+  },
+  "baselines": [
+    {"name": "constant_mean", "deterministic": true},
+    {"name": "ordinary_least_squares", "deterministic": true},
+    {"name": "ridge_regression", "deterministic": true, "alpha": 1.0},
+    {"name": "isotonic_regression", "deterministic": true, "out_of_bounds": "clip"},
+    {"name": "random_forest", "deterministic": true, "random_state": 3003, "n_estimators": 256}
+  ],
+  "advancement_rule": {
+    "beats_every_baseline": true,
+    "minimum_absolute_mae_improvement": 0.01,
+    "closure_rate_must_not_decrease": true,
+    "recoverability_rate_must_not_decrease": true
+  },
+  "stop_rules": [
+    "mapping_coverage_below_0.70",
+    "required_baseline_unconstructable",
+    "partition_leakage_detected",
+    "outcome_dependent_feature_creation_detected",
+    "locked_test_access_detected"
+  ],
+  "claim_boundaries": {
+    "physical_validation_claim": false,
+    "instantaneous_transport_claim": false,
+    "wormhole_claim": false,
+    "faster_than_light_claim": false
+  }
+}
