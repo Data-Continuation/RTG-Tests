@@ -1,0 +1,25 @@
+name: RTG Experiment 003 Composite Object Split
+
+on:
+  pull_request:
+    paths:
+      - 'registries/experiment-003-composite-object-split.json'
+      - 'tests/test_experiment_003_composite_object_split.py'
+      - '.github/workflows/experiment-003-composite-object-split.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-composite-object-split:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install pytest
+      - name: Validate composite-object split contract
+        run: python -m pytest -q tests/test_experiment_003_composite_object_split.py

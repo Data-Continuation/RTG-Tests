@@ -1,0 +1,29 @@
+name: RTG Experiment 003 Publisher Schema Extraction
+
+on:
+  pull_request:
+    paths:
+      - 'tools/extract_experiment_003_publisher_schema.py'
+      - 'tests/test_experiment_003_publisher_schema_extraction.py'
+      - 'registry/experiment-003-dataset-selection-receipt.json'
+      - '.github/workflows/experiment-003-publisher-schema-extraction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  extract-publisher-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate extraction contract
+        run: python tests/test_experiment_003_publisher_schema_extraction.py
+      - name: Retrieve and verify publisher descriptions
+        run: python tools/extract_experiment_003_publisher_schema.py
+      - name: Upload exact publisher schema evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: rtg-experiment-003-publisher-schema-extraction
+          path: results/experiment-003-publisher-schema-extraction.json
+          if-no-files-found: error

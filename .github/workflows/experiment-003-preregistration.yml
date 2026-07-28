@@ -1,0 +1,24 @@
+name: RTG Experiment 003 Preregistration
+
+on:
+  pull_request:
+    paths:
+      - "docs/EXPERIMENT_003_QUANTUM_NETWORK_REINTERPRETATION.md"
+      - "registries/experiment-003-preregistration.json"
+      - "tests/test_experiment_003_preregistration.py"
+      - ".github/workflows/experiment-003-preregistration.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-preregistration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate Experiment 003 preregistration
+        run: python tests/test_experiment_003_preregistration.py

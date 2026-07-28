@@ -1,0 +1,64 @@
+{
+  "experiment_id": "RTG-EXP-003",
+  "title": "Quantum-Network Reinterpretation",
+  "status": "preregistered",
+  "maturity": "QUANTUM_REINTERPRETATION_REGISTERED",
+  "dataset_selected": false,
+  "dataset_identifier": null,
+  "dataset_checksum": null,
+  "source_classes_allowed": [
+    "quantum_teleportation",
+    "entanglement_swapping",
+    "quantum_repeater",
+    "quantum_switch"
+  ],
+  "locked_variables": [
+    "delta_phase",
+    "delta_cadence",
+    "delta_authority",
+    "delta_lineage",
+    "delta_route",
+    "delta_destination",
+    "necessity",
+    "weighted_mismatch",
+    "corridor_active",
+    "closure"
+  ],
+  "required_baselines": [
+    "source_standard_model",
+    "fidelity_loss_only",
+    "timing_only",
+    "channel_availability",
+    "simple_multivariable"
+  ],
+  "split_constraints": {
+    "training_max_fraction": 0.6,
+    "validation_min_fraction": 0.2,
+    "test_min_fraction": 0.2,
+    "test_locked_before_evaluation": true
+  },
+  "advancement_requires": [
+    "frozen_mapping",
+    "locked_test_evaluation",
+    "difference_from_every_registered_baseline",
+    "declared_metric_improvement_or_preregistered_region_prediction",
+    "sensitivity_analysis",
+    "no_post_hoc_exclusions",
+    "reproducible_result"
+  ],
+  "stop_conditions": [
+    "variables_reduce_to_existing_standard_variables",
+    "no_out_of_sample_result",
+    "split_instability",
+    "outcome_dependent_mapping",
+    "insufficient_lineage_or_closure_data",
+    "nonreproducible_source_data"
+  ],
+  "claims": {
+    "proof_claim": false,
+    "physical_validation_claim": false,
+    "instantaneous_transport_claim": false,
+    "wormhole_claim": false,
+    "faster_than_light_claim": false
+  }
+}

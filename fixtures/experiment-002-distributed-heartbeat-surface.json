@@ -1,0 +1,92 @@
+{
+  "experiment_id": "RTG-EXP-002",
+  "posture": "falsifiable-computational-only",
+  "weights": {
+    "phase": 0.10,
+    "cadence": 0.10,
+    "authority": 0.25,
+    "lineage": 0.25,
+    "route": 0.15,
+    "destination": 0.15
+  },
+  "thresholds": {
+    "weighted_mismatch": 0.20,
+    "necessity": 0.70,
+    "queue": 0.75,
+    "scalar_component": 0.70
+  },
+  "cases": [
+    {
+      "event_id": "coherent-allow-corridor",
+      "transition_requested": true,
+      "necessity": 0.88,
+      "queue_pressure": 0.40,
+      "route_available": true,
+      "authority_valid": true,
+      "lineage_valid": true,
+      "destination_ingests": true,
+      "components": {"phase": 0.80, "cadence": 0.72, "authority": 0.10, "lineage": 0.10, "route": 0.82, "destination": 0.76},
+      "expected": {"rtg_active": true, "decision": "ALLOW", "event_null": true, "queue_null": false, "scalar_null": true, "static_route_null": true}
+    },
+    {
+      "event_id": "authority-invalid-no-corridor",
+      "transition_requested": true,
+      "necessity": 0.92,
+      "queue_pressure": 0.90,
+      "route_available": true,
+      "authority_valid": false,
+      "lineage_valid": true,
+      "destination_ingests": false,
+      "components": {"phase": 0.82, "cadence": 0.80, "authority": 0.95, "lineage": 0.10, "route": 0.85, "destination": 0.80},
+      "expected": {"rtg_active": false, "decision": "NONE", "event_null": true, "queue_null": true, "scalar_null": true, "static_route_null": true}
+    },
+    {
+      "event_id": "lineage-invalid-quarantine",
+      "transition_requested": true,
+      "necessity": 0.91,
+      "queue_pressure": 0.30,
+      "route_available": true,
+      "authority_valid": true,
+      "lineage_valid": false,
+      "destination_ingests": true,
+      "components": {"phase": 0.75, "cadence": 0.75, "authority": 0.15, "lineage": 0.95, "route": 0.78, "destination": 0.74},
+      "expected": {"rtg_active": false, "decision": "NONE", "event_null": true, "queue_null": false, "scalar_null": true, "static_route_null": true}
+    },
+    {
+      "event_id": "low-necessity-no-corridor",
+      "transition_requested": true,
+      "necessity": 0.25,
+      "queue_pressure": 0.82,
+      "route_available": true,
+      "authority_valid": true,
+      "lineage_valid": true,
+      "destination_ingests": false,
+      "components": {"phase": 0.90, "cadence": 0.88, "authority": 0.20, "lineage": 0.20, "route": 0.90, "destination": 0.88},
+      "expected": {"rtg_active": false, "decision": "NONE", "event_null": true, "queue_null": true, "scalar_null": true, "static_route_null": true}
+    },
+    {
+      "event_id": "distributed-small-differences-cross-weighted-threshold",
+      "transition_requested": true,
+      "necessity": 0.86,
+      "queue_pressure": 0.50,
+      "route_available": true,
+      "authority_valid": true,
+      "lineage_valid": true,
+      "destination_ingests": true,
+      "components": {"phase": 0.55, "cadence": 0.55, "authority": 0.55, "lineage": 0.55, "route": 0.55, "destination": 0.55},
+      "expected": {"rtg_active": true, "decision": "ALLOW", "event_null": true, "queue_null": false, "scalar_null": false, "static_route_null": true}
+    },
+    {
+      "event_id": "route-missing-no-corridor",
+      "transition_requested": true,
+      "necessity": 0.95,
+      "queue_pressure": 0.20,
+      "route_available": false,
+      "authority_valid": true,
+      "lineage_valid": true,
+      "destination_ingests": false,
+      "components": {"phase": 0.90, "cadence": 0.90, "authority": 0.10, "lineage": 0.10, "route": 1.00, "destination": 0.90},
+      "expected": {"rtg_active": false, "decision": "NONE", "event_null": true, "queue_null": false, "scalar_null": true, "static_route_null": false}
+    }
+  ]
+}

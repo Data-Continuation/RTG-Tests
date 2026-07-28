@@ -1,0 +1,24 @@
+name: RTG Experiment 003 Dataset Selection
+
+on:
+  pull_request:
+    paths:
+      - "docs/EXPERIMENT_003_DATASET_SELECTION.md"
+      - "registry/experiment-003-dataset-selection-receipt.json"
+      - "tests/test_experiment_003_dataset_selection_receipt.py"
+      - ".github/workflows/experiment-003-dataset-selection.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate dataset selection receipt
+        run: python tests/test_experiment_003_dataset_selection_receipt.py

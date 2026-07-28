@@ -1,0 +1,44 @@
+name: RTG Experiment 002
+
+on:
+  pull_request:
+    paths:
+      - "docs/EXPERIMENT_002_DISTRIBUTED_HEARTBEAT_SURFACE.md"
+      - "docs/QUANTUM_ADVANCEMENT_GATE.md"
+      - "fixtures/experiment-002-distributed-heartbeat-surface.json"
+      - "tests/test_experiment_002_distributed_heartbeat_surface.py"
+      - "tools/run_experiment_002.py"
+      - ".github/workflows/experiment-002-distributed-heartbeat.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run distributed heartbeat-surface experiment
+        run: python tests/test_experiment_002_distributed_heartbeat_surface.py
+      - name: Generate deterministic result record
+        run: python tools/run_experiment_002.py
+      - name: Validate claim boundaries
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          result = json.loads(Path('results/experiment-002-result.json').read_text())
+          assert result['distinguishable_from_each_null'] is True
+          assert result['proof_claim'] is False
+          assert result['physical_validation_claim'] is False
+          assert result['quantum_claim'] is False
+          PY
+      - name: Upload Experiment 002 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: rtg-experiment-002-result
+          path: results/experiment-002-result.json

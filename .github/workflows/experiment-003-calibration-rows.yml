@@ -1,0 +1,49 @@
+name: RTG Experiment 003 Calibration Rows
+
+on:
+  pull_request:
+    paths:
+      - 'tools/prepare_experiment_003_calibration_rows.py'
+      - 'tests/test_experiment_003_calibration_rows.py'
+      - 'registries/experiment-003-executable-source-schema.json'
+      - 'tools/ingest_experiment_003_source.py'
+      - '.github/workflows/experiment-003-calibration-rows.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prepare-calibration-rows:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install --disable-pip-version-check pytest
+      - name: Run parser unit tests
+        run: python -m pytest -q tests/test_experiment_003_calibration_rows.py
+      - name: Rebuild sealed source manifest
+        run: python tools/ingest_experiment_003_source.py
+      - name: Prepare calibration and validation rows
+        run: python tools/prepare_experiment_003_calibration_rows.py
+      - name: Verify no locked-test exposure or fitting
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          receipt = json.loads(Path('results/experiment-003-calibration-rows.json').read_text())
+          assert receipt['locked_test_content_opened'] is False
+          assert receipt['outcome_statistics_computed'] is False
+          assert receipt['model_fit_performed'] is False
+          assert all(r['partition'] in {'calibration', 'validation'} for r in receipt['records'])
+          print('calibration_row_state=' + receipt['state'])
+          PY
+      - name: Upload calibration readiness receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: rtg-experiment-003-calibration-rows
+          path: results/experiment-003-calibration-rows.json
+          if-no-files-found: error

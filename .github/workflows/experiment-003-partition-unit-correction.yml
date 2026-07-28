@@ -1,0 +1,38 @@
+name: RTG Experiment 003 Partition Unit Correction
+
+on:
+  pull_request:
+    paths:
+      - 'registries/experiment-003-partition-unit-correction.json'
+      - 'tests/test_experiment_003_partition_unit_correction.py'
+      - 'docs/EXPERIMENT_003_PARTITION_UNIT_CORRECTION.md'
+      - '.github/workflows/experiment-003-partition-unit-correction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-correction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install pytest
+      - name: Validate correction contract
+        run: python -m pytest -q tests/test_experiment_003_partition_unit_correction.py
+      - name: Verify stop boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          record = json.loads(Path('registries/experiment-003-partition-unit-correction.json').read_text())
+          assert record['state'] == 'STOPPED_BEFORE_MODEL_FIT'
+          assert record['observed']['locked_test_content_opened'] is False
+          assert record['observed']['model_fit_performed'] is False
+          assert record['required_correction']['new_manifest_required'] is True
+          print('partition_unit_correction=VALID')
+          PY

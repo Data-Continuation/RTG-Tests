@@ -1,0 +1,24 @@
+name: RTG Experiment 003 Semantic Mapping
+
+on:
+  pull_request:
+    paths:
+      - "registries/experiment-003-semantic-mapping.json"
+      - "tests/test_experiment_003_semantic_mapping.py"
+      - "docs/EXPERIMENT_003_SEMANTIC_MAPPING.md"
+      - ".github/workflows/experiment-003-semantic-mapping.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate semantic mapping and baseline contracts
+        run: python tests/test_experiment_003_semantic_mapping.py

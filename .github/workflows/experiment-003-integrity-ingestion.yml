@@ -1,0 +1,59 @@
+name: RTG Experiment 003 Integrity Ingestion
+
+on:
+  pull_request:
+    paths:
+      - "registry/experiment-003-dataset-selection-receipt.json"
+      - "tools/ingest_experiment_003_source.py"
+      - "tests/test_experiment_003_integrity_ingestion.py"
+      - "docs/EXPERIMENT_003_INTEGRITY_INGESTION.md"
+      - ".github/workflows/experiment-003-integrity-ingestion.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-and-seal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run ingestion unit tests
+        run: python tests/test_experiment_003_integrity_ingestion.py
+      - name: Retrieve, verify, and seal source partitions
+        run: python tools/ingest_experiment_003_source.py
+      - name: Validate sealed manifest posture
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path("results/experiment-003-sealed-split-manifest.json")
+          manifest = json.loads(path.read_text(encoding="utf-8"))
+          assert manifest["integrity_state"] == "ALL_SOURCE_FILES_VERIFIED"
+          assert manifest["analysis_state"] == "NOT_STARTED"
+          assert len(manifest["files"]) == 6
+          assert all(item["md5_verified"] for item in manifest["files"])
+          assert manifest["locks"]["outcome_statistics_computed"] is False
+          assert manifest["locks"]["rtg_parameters_fitted"] is False
+          assert manifest["locks"]["baseline_parameters_fitted"] is False
+          assert manifest["locks"]["locked_test_content_exposed"] is False
+          assert manifest["locks"]["partition_reassignment_allowed"] is False
+          for row in manifest["rows"]:
+              if row["partition"] == "locked_test":
+                  assert row["canonical_row_text"] is None
+                  assert row["sealed"] is True
+          assert manifest["claims"]["physical_validation_claim"] is False
+          assert manifest["claims"]["instantaneous_transport_claim"] is False
+          assert manifest["claims"]["wormhole_claim"] is False
+          assert manifest["claims"]["faster_than_light_claim"] is False
+          print("sealed manifest posture valid")
+          PY
+      - name: Upload sealed split manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: rtg-experiment-003-sealed-split-manifest
+          path: results/experiment-003-sealed-split-manifest.json
+          if-no-files-found: error

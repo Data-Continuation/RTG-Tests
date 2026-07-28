@@ -1,0 +1,45 @@
+{
+  "correction_id": "RTG-EXP-003-PARTITION-UNIT-CORRECTION-001",
+  "experiment_id": "RTG-EXP-003",
+  "state": "STOPPED_BEFORE_MODEL_FIT",
+  "supersedes_for_fitting": "RTG-EXP-003-SEALED-SPLIT-001",
+  "does_not_delete_or_modify": "RTG-EXP-003-SEALED-SPLIT-001",
+  "trigger_receipt": "RTG-EXP-003-CALIBRATION-ROWS-001",
+  "trigger_receipt_sha256": "59410b77224d19da496dab617bd75bea1c5ae7a2d507f7795093ffff2cc9adc4",
+  "observed": {
+    "calibration_records": 12,
+    "validation_records": 5,
+    "mapping_coverage": 0.15384615384615385,
+    "minimum_mapping_coverage": 0.70,
+    "locked_test_content_opened": false,
+    "model_fit_performed": false
+  },
+  "finding": "Partition assignment at individual source-record granularity separated components of publisher-defined composite analysis objects, preventing admissible reconstruction of required aligned arrays.",
+  "required_correction": {
+    "new_manifest_required": true,
+    "new_manifest_id": "RTG-EXP-003-COMPOSITE-SPLIT-001",
+    "partition_assignment_unit": "publisher-defined composite analysis object before element expansion",
+    "fig3_composite_members": ["nbar", "expfidelity", "errornbar", "errorsexpfidelity"],
+    "fig4_composite_rule": "each publisher experimental series record remains indivisible before element expansion",
+    "all_expanded_elements_inherit_composite_partition": true,
+    "deterministic_hash_rule": "sha256(record_doi + analysis_unit_id + canonical_composite_payload)",
+    "partition_buckets": {
+      "calibration": [0, 1, 2, 3, 4, 5],
+      "validation": [6, 7],
+      "locked_test": [8, 9]
+    }
+  },
+  "prohibitions": [
+    "no reuse of the superseded split for fitting",
+    "no cross-partition reconstruction",
+    "no locked-test content access",
+    "no model fitting before the new composite manifest passes readiness",
+    "no deletion or rewriting of prior receipts"
+  ],
+  "claim_boundaries": {
+    "physical_validation_claim": false,
+    "instantaneous_transport_claim": false,
+    "wormhole_claim": false,
+    "faster_than_light_claim": false
+  }
+}
