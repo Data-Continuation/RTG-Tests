@@ -1,0 +1,40 @@
+{
+  "split_id": "RTG-EXP-003-COMPOSITE-SPLIT-001",
+  "experiment_id": "RTG-EXP-003",
+  "supersedes_for_fitting": "RTG-EXP-003-SEALED-SPLIT-001",
+  "superseded_manifest_retained": true,
+  "state": "LOCKED_BEFORE_COMPOSITE_ASSIGNMENT",
+  "partition_unit": "composite_analysis_object",
+  "objects": [
+    {
+      "object_id": "fig3_experimental_series",
+      "source_file": "Fig3_Data.txt",
+      "required_records": ["nbar", "expfidelity", "errornbar", "errorsexpfidelity"],
+      "assignment_rule": "all required records receive one shared partition",
+      "theoretical_records_excluded": ["theorynbar", "theoryfidelity"]
+    },
+    {
+      "object_id": "fig4_experimental_series",
+      "source_file": "Fig4_Data.txt",
+      "required_records": ["Data points, {tau, teleportation fidelity in percent}"],
+      "assignment_rule": "the complete experimental pair series receives one partition",
+      "theoretical_records_excluded": ["Simulated blue theory curve"]
+    }
+  ],
+  "allocation": {
+    "method": "sha256_mod_100",
+    "salt": "RTG-EXP-003-COMPOSITE-SPLIT-001",
+    "calibration_buckets": [0, 59],
+    "validation_buckets": [60, 79],
+    "locked_test_buckets": [80, 99],
+    "retries_or_rebalancing": false
+  },
+  "locks": {
+    "locked_test_content_opened": false,
+    "validation_may_select_parameters": false,
+    "outcome_statistics_computed": false,
+    "model_fit_performed": false,
+    "superseded_split_may_be_reused_for_fitting": false
+  },
+  "advancement_rule": "A fresh manifest may be generated only from these composite objects and this deterministic allocation. Fitting remains prohibited until calibration and validation coverage are recomputed from that manifest."
+}
