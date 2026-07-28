@@ -1,0 +1,32 @@
+{
+  "readiness_id": "RTG-EXP-003-CALIBRATION-READINESS-001",
+  "experiment_id": "RTG-EXP-003",
+  "state": "STOP_REQUIRED",
+  "evaluated_stage": "pre-fit schema readiness",
+  "locked_test_opened": false,
+  "model_fit_performed": false,
+  "blocking_findings": [
+    "exact per-file column bindings are not preregistered",
+    "prediction target column is not preregistered",
+    "feature-to-observable transformations are not executable at column level",
+    "baseline design matrices cannot be constructed without analyst discretion"
+  ],
+  "required_before_fit": [
+    "bind every source data file to an exact ordered column schema",
+    "designate one preregistered prediction target per analysis task",
+    "bind each RTG observable to explicit source columns and deterministic transforms",
+    "declare units, missing markers, header handling, and duplicate-row behavior",
+    "validate the bindings against description-file metadata only",
+    "commit the revised registry before calculating calibration or validation outcomes"
+  ],
+  "governance_basis": [
+    "required_baseline_unconstructable",
+    "outcome_dependent_feature_creation_detected_if_schema_is_chosen_after_outcome_review"
+  ],
+  "claims": {
+    "physical_validation_claim": false,
+    "instantaneous_transport_claim": false,
+    "wormhole_claim": false,
+    "faster_than_light_claim": false
+  }
+}
