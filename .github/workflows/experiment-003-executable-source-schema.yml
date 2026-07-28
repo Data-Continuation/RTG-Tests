@@ -1,0 +1,20 @@
+name: RTG Experiment 003 Executable Source Schema
+
+on:
+  pull_request:
+    paths:
+      - 'registries/experiment-003-executable-source-schema.json'
+      - 'tests/test_experiment_003_executable_source_schema.py'
+      - '.github/workflows/experiment-003-executable-source-schema.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-source-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate publisher-bound executable schema
+        run: python tests/test_experiment_003_executable_source_schema.py
