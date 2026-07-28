@@ -1,0 +1,54 @@
+name: RTG Experiment 003 Object Manifest
+
+on:
+  pull_request:
+    paths:
+      - 'tools/build_experiment_003_object_manifest.py'
+      - 'tests/test_experiment_003_object_manifest.py'
+      - 'registries/experiment-003-composite-object-split.json'
+      - 'registry/experiment-003-dataset-selection-receipt.json'
+      - '.github/workflows/experiment-003-object-manifest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-object-manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test dependency
+        run: python -m pip install pytest
+      - name: Run object-manifest tests
+        run: python -m pytest -q tests/test_experiment_003_object_manifest.py
+      - name: Generate corrected object manifest
+        run: python tools/build_experiment_003_object_manifest.py
+      - name: Verify sealing and no fitting
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path('results/experiment-003-object-manifest.json').read_text())
+          assert manifest['partition_unit'] == 'publisher_aligned_experimental_observation'
+          assert manifest['locks']['locked_test_content_exposed'] is False
+          assert manifest['locks']['outcome_statistics_computed'] is False
+          assert manifest['locks']['model_fit_performed'] is False
+          for obj in manifest['objects']:
+              if obj['partition'] == 'locked_test':
+                  assert obj['sealed'] is True
+                  assert obj['values'] is None
+              else:
+                  assert obj['sealed'] is False
+                  assert obj['values'] is not None
+          print('partition_counts=' + json.dumps(manifest['partition_counts'], sort_keys=True))
+          PY
+      - name: Upload corrected object manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: rtg-experiment-003-object-manifest
+          path: results/experiment-003-object-manifest.json
+          if-no-files-found: error
