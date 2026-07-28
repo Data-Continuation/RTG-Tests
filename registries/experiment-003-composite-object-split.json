@@ -4,23 +4,32 @@
   "supersedes_for_fitting": "RTG-EXP-003-SEALED-SPLIT-001",
   "superseded_manifest_retained": true,
   "state": "LOCKED_BEFORE_COMPOSITE_ASSIGNMENT",
-  "partition_unit": "composite_analysis_object",
-  "objects": [
+  "partition_unit": "composite_observation_object",
+  "object_construction": [
     {
-      "object_id": "fig3_experimental_series",
+      "object_class": "fig3_experimental_observation",
       "source_file": "Fig3_Data.txt",
       "required_records": ["nbar", "expfidelity", "errornbar", "errorsexpfidelity"],
-      "assignment_rule": "all required records receive one shared partition",
+      "alignment": "same_zero_based_element_index",
+      "object_fields": ["mean_photon_number", "teleportation_fidelity", "mean_photon_number_error", "teleportation_fidelity_error"],
+      "assignment_rule": "each aligned four-field tuple receives exactly one shared partition",
       "theoretical_records_excluded": ["theorynbar", "theoryfidelity"]
     },
     {
-      "object_id": "fig4_experimental_series",
+      "object_class": "fig4_experimental_observation",
       "source_file": "Fig4_Data.txt",
       "required_records": ["Data points, {tau, teleportation fidelity in percent}"],
-      "assignment_rule": "the complete experimental pair series receives one partition",
+      "alignment": "one published experimental pair",
+      "object_fields": ["delay_tau", "teleportation_fidelity", "teleportation_fidelity_error"],
+      "assignment_rule": "each experimental pair and its uncertainty receive exactly one shared partition",
       "theoretical_records_excluded": ["Simulated blue theory curve"]
     }
   ],
+  "object_identity": {
+    "canonicalization": "source_file || object_class || zero_based_element_index || canonical_numeric_tuple",
+    "hash": "sha256",
+    "partition_input": "salt || object_sha256"
+  },
   "allocation": {
     "method": "sha256_mod_100",
     "salt": "RTG-EXP-003-COMPOSITE-SPLIT-001",
@@ -29,12 +38,13 @@
     "locked_test_buckets": [80, 99],
     "retries_or_rebalancing": false
   },
+  "sealing_rule": "source data may be parsed once to construct immutable object identities; objects assigned to locked_test must be omitted from all calibration and validation outputs after assignment",
   "locks": {
-    "locked_test_content_opened": false,
+    "locked_test_content_opened_after_assignment": false,
     "validation_may_select_parameters": false,
     "outcome_statistics_computed": false,
     "model_fit_performed": false,
     "superseded_split_may_be_reused_for_fitting": false
   },
-  "advancement_rule": "A fresh manifest may be generated only from these composite objects and this deterministic allocation. Fitting remains prohibited until calibration and validation coverage are recomputed from that manifest."
+  "advancement_rule": "A fresh manifest may be generated only from publisher-aligned composite observation objects and this deterministic allocation. Fitting remains prohibited until calibration and validation coverage are recomputed from that manifest."
 }
