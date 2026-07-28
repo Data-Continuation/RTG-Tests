@@ -1,0 +1,26 @@
+name: RTG Experiment 003 Calibration Readiness
+
+on:
+  pull_request:
+    paths:
+      - "registries/experiment-003-calibration-readiness.json"
+      - "registries/experiment-003-calibration-contract.json"
+      - "registries/experiment-003-semantic-mapping.json"
+      - "tests/test_experiment_003_calibration_readiness.py"
+      - "docs/EXPERIMENT_003_CALIBRATION_READINESS.md"
+      - ".github/workflows/experiment-003-calibration-readiness.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate calibration readiness stop
+        run: python tests/test_experiment_003_calibration_readiness.py
