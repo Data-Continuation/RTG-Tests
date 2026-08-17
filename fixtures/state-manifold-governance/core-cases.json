@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "source_bindings": {
+    "ae": "Admissible-Existence/AE:docs/STATE_MANIFOLD_RELATIONAL_GOVERNANCE_MATHEMATICS.md",
+    "rtg": "StegVerse-Labs/StegScholar:papers/relational-transition-geometry/state-manifold-governance-extension.md"
+  },
+  "cases": [
+    {
+      "id": "two-snapshots-no-edge",
+      "snapshot_a": ["a", "b"],
+      "snapshot_b": ["c", "d"],
+      "observed_causal_edges": [],
+      "expected_continuity_edges": []
+    },
+    {
+      "id": "coarse-edge-refined",
+      "observed_causal_edges": [["a", "d"]],
+      "refined_edges": [["a", "b"], ["b", "c"], ["c", "d"]],
+      "expected_coarse_edge_preserved": true
+    },
+    {
+      "id": "higher-order-deny-does-not-erase-edge",
+      "observed_causal_edges": [["a", "b"]],
+      "governance": {"order": 2, "result": "INADMISSIBLE"},
+      "expected_edge_preserved": true,
+      "expected_first_order_realizable": true
+    },
+    {
+      "id": "trajectory-no-default-taint",
+      "trajectory": [
+        {"edge": ["a", "b"], "governance": "ADMISSIBLE"},
+        {"edge": ["b", "c"], "governance": "INADMISSIBLE"},
+        {"edge": ["c", "d"], "governance": "ADMISSIBLE"}
+      ],
+      "lineage_rule_present": false,
+      "expected_last_transition_admissible": true
+    },
+    {
+      "id": "deny-without-intervention",
+      "governance_classification": "DENY",
+      "causal_intervention_edge": null,
+      "expected_enforcement": false
+    }
+  ]
+}
