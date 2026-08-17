@@ -1,0 +1,32 @@
+name: State Manifold Governance Alignment
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "RTG_TESTS_MIRROR_HANDOFF.md"
+      - "fixtures/state-manifold-governance/**"
+      - "tests/test_state_manifold_governance_alignment.py"
+      - ".github/workflows/state-manifold-governance-alignment.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "RTG_TESTS_MIRROR_HANDOFF.md"
+      - "fixtures/state-manifold-governance/**"
+      - "tests/test_state_manifold_governance_alignment.py"
+      - ".github/workflows/state-manifold-governance-alignment.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run independent relational-governance tests
+        run: python -m pytest -q tests/test_state_manifold_governance_alignment.py
